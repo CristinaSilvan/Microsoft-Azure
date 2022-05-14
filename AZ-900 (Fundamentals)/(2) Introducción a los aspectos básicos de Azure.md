@@ -439,14 +439,25 @@ DevOps reúne a individuos, procesos y tecnología mediante la automatización d
 
 
 
-#
+# Introducción a las cuentas de Azure
 
+Para crear y usar los servicios de Azure, necesita una suscripción de Azure. Al completar los módulos de Microsoft Learn, la mayoría de las veces se crea una suscripción temporal de forma automática, que se ejecuta en un entorno denominado espacio aislado de Microsoft Learn. Cuando trabaje con aplicaciones y necesidades empresariales propias, tendrá que crear una cuenta de Azure y se creará una suscripción de forma automática. Después de crear una cuenta de Azure, puede crear suscripciones adicionales. Por ejemplo, es posible que la empresa use una única cuenta de Azure para el negocio y suscripciones independientes para los departamentos de desarrollo, marketing y ventas. Una vez que ha creado una suscripción de Azure, puede empezar a crear recursos de Azure dentro de cada suscripción.
 
-#
+Si no está familiarizado con Azure, puede registrarse para obtener una cuenta gratuita en el sitio web de Azure y, de este modo, empezar a explorar sin coste alguno. Cuando esté listo, puede optar por actualizar la cuenta gratuita. Puede crear una suscripción que le permita comenzar a pagar por los servicios de Azure que necesita usar y a los que no puede acceder mediante una cuenta gratuita.
 
+# Crear una cuenta de Azure
 
-#
+Puede comprar el acceso a Azure directamente desde Microsoft, si se registra en el sitio web de Azure, o bien a través de un representante de Microsoft. También puede comprar el acceso a Azure a través de un partner de Microsoft. Los partners del programa Proveedor de soluciones en la nube ofrecen una amplia gama de soluciones en la nube administradas y completas para Azure.
 
+# ¿Qué es la cuenta gratuita de Azure?
+
+La cuenta gratuita de Azure incluye lo siguiente:
+
+* Acceso gratuito a productos populares de Azure durante 12 meses.
+* Crédito para gastar durante los primeros 30 días.
+* Acceso a más de 25 productos que siempre son gratuitos.
+
+La cuenta gratuita de Azure es una manera excelente para que los nuevos usuarios empiecen y exploren. Para registrarse, necesita un número de teléfono, una tarjeta de crédito y una cuenta de Microsoft o de GitHub. La información de la tarjeta de crédito solo se usa para la verificación de identidad. No se le cobrará por ningún servicio hasta que actualice a una suscripción de pago.
 
 #
 
