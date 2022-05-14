@@ -459,34 +459,41 @@ La cuenta gratuita de Azure incluye lo siguiente:
 
 La cuenta gratuita de Azure es una manera excelente para que los nuevos usuarios empiecen y exploren. Para registrarse, necesita un número de teléfono, una tarjeta de crédito y una cuenta de Microsoft o de GitHub. La información de la tarjeta de crédito solo se usa para la verificación de identidad. No se le cobrará por ningún servicio hasta que actualice a una suscripción de pago.
 
-#
+# ¿Qué es la cuenta de estudiante gratuita de Azure?
+
+La oferta de la cuenta de estudiante gratuita de Azure incluye lo siguiente:
+
+* Acceso gratuito a determinados servicios de Azure durante 12 meses.
+* Un crédito para usar en los primeros 12 meses.
+* Acceso gratuito a determinadas herramientas de desarrollo de software.
+
+La cuenta de estudiante gratuita de Azure es una oferta para estudiantes que ofrece 100 USD de crédito y herramientas de desarrollo gratuitas. Además, puede registrarse sin tarjeta de crédito.
+
+# ¿Qué es el espacio aislado de Azure?
+
+En muchos de los ejercicios de Learn se usa una tecnología denominada espacio aislado, que crea una suscripción temporal que se agrega a la cuenta de Azure. Esta suscripción temporal le permite crear recursos de Azure para la duración de un módulo de Learn. Learn limpia de forma automática los recursos temporales una vez que haya completado el módulo.
+
+Cuando complete un módulo de Learn, puede usar la suscripción personal para finalizar los ejercicios que incluye. Pero el espacio aislado es el método preferido para usar, ya que permite crear y probar recursos de Azure sin costo alguno.
 
 
-#
+# Introducción a un caso práctico
+
+A lo largo de las rutas de aprendizaje Aspectos básicos de Azure, trabajará con Tailwind Traders, un distribuidor ficticio de mejoras para el hogar. Esta empresa cuenta con ferreterías minoristas en todo el mundo y en línea.
+
+En la actualidad, Tailwind Traders administra un centro de datos local en el que se hospeda el sitio web comercial de la empresa. En el centro de datos también se almacenan todos los datos y vídeos de streaming para sus aplicaciones. Actualmente, el departamento de TI es responsable de todas las tareas de administración de su hardware y software informáticos. Por ejemplo, imagine que trabaja como especialista de TI para el departamento de TI de la empresa. El equipo de TI controla el proceso de adquisición de nuevo hardware, instala y configura software y realiza todas las implementaciones en el centro de datos.
+
+Estas responsabilidades de administración generan varios obstáculos a la hora de proporcionar las aplicaciones a los usuarios de manera oportuna. Como profesional de TI, observa que sería ventajoso tener los servidores, el almacenamiento, las bases de datos y los demás servicios disponibles de inmediato al desarrollar e implementar aplicaciones. Quiere iniciar fácilmente un nuevo servidor o agregar servicios a las soluciones.
+
+En las demás unidades de este módulo de aprendizaje, ha obtenido información sobre algunos de los servicios basados en la nube que Tailwind Traders puede usar para abordar sus desafíos tecnológicos. Teniendo esto en cuenta, los servicios que están disponibles a través de Azure pueden ayudar a Tailwind Traders a desarrollar su negocio de forma más eficaz.
+
+A medida que complete los distintos módulos de las rutas de aprendizaje de Aspectos básicos de Azure, se analizarán los desafíos a los que se enfrenta Tailwind Traders. Verá cómo puede usar los servicios de Azure para solucionar cada uno de esos problemas a medida que surgen. Una vez que haya completado cada uno de los módulos, los conocimientos que ha adquirido al resolver los desafíos hipotéticos a los que se enfrentaba la empresa ficticia Tailwind Traders deberían ayudarle en los entornos reales.
 
 
-#
 
+# Resumen
 
-#
+En este módulo ha aprendido a:
 
-
-#
-
-
-#
-
-
-#
-
-
-#
-
-
-#
-
-
-#
-
-
-#
+* Describir los conceptos básicos de la informática en la nube.
+* Determinar si Azure es la solución adecuada para las necesidades empresariales.
+* Diferenciar entre los distintos métodos para crear una suscripción de Azure.
