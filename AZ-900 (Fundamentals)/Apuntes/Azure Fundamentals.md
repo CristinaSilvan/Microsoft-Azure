@@ -26,6 +26,9 @@ The Cloud Computing also has some characteristics which make them so useful:
 - Fault Tolerance
 - High Availability
 
+Other benefits are:
+- Geo-distribution
+- Consumption-based model
 -----
 ## Scalability
 
@@ -36,6 +39,10 @@ Scalability is the ability to scale
 Scaling is a process of:
 - **Allocating** (adding) resources
 - **Deallocating** (removing) resources
+
+Apps in the cloud can scale vertically and horizontally:
+- **Scale vertically** to increase compute capacity by adding RAM or CPUs to a virtual machine
+- **Scaling horizontally** increases compute capacity by adding instances of resources, such as adding VMs to the configuration
 
 -----
 ## Elasticity
@@ -53,7 +60,7 @@ Elasticity is the ability to scale dynamically
 
 Agility is the ability to react quickly, specifically abut allocating and deallocating resources
 
-> **On-premise** means hardware in the area of the company (the opposite of cloud)
+> **On-premise** means hardware in the area of the company (may refers to opposite of cloud, but also private cloud)
 
 ----
 ## Fault Tolerance
@@ -63,7 +70,9 @@ Agility is the ability to react quickly, specifically abut allocating and deallo
 Fault tolerance is the ability to remain up and running during component and service failures
 
 
-Disaster is a serious disruption of services caused by natural or human-induced causes (they can affect entires Azure's regions) and **Disaster Recovery** is the ability to recover from that event by replication of the data in different regions for example
+Disaster is a serious disruption of services caused by natural or human-induced causes (they can affect entires Azure's regions) and **Disaster Recovery** is the ability to recover from that event
+
+By taking advantage of cloud-based backup services, data replication, and geo-distribution, you can deploy your apps with the confidence that comes from knowing that your data is safe in the event of disaster
 
 ![6.png](img/6.png)
 
@@ -79,11 +88,26 @@ The way we measure it: **availability = uptime/(uptime + downtime)**
 
 **High availability** is the ability to keep services running for extended periods of time with very little downtime (the downtime refers to the maintenance which needs to turn off the services while the course)
 
+Depending on the service-level agreement (SLA) that you choose, your cloud-based apps can provide a continuous user experience with no apparent downtime, even when things go wrong
+
 - Each company decide how many 9's the availability need to have in order to consider the service **High**
 
 - They also decide to express the availability in terms of year, month or day
 
 - Depending of the criticaly of your system, you need to choose whenever this system should be highly available or not (in Azure, many services has high availability by default)
+
+## Geo-distribution
+
+You can deploy apps and data to regional datacenters around the globe, thereby ensuring that your customers always have the best performance in their region
+
+## Consumption-based model
+
+Cloud service providers operate on a consumption-based model, which means that **end users only pay for the resources that they use**
+
+- No upfront costs.
+- No need to purchase and manage costly infrastructure that users might not use to its fullest.
+- The ability to pay for additional resources when they are needed.
+- The ability to stop paying for resources that are no longer needed.
 
 -----
 -----
