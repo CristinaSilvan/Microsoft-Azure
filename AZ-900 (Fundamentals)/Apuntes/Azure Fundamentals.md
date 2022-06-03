@@ -9,13 +9,20 @@
 # Cloud Computing and Vocabulary
 ## Cloud Computing
 
+**Cloud Computing** is the renting of resources in the **data center** of other company
+
 It's a delivery model for services like:
 - **Storage**: like files and/or databases
-- **Compute Power**: meaning servers such as windows, linux, hosting environments, etc.
+- **Compute Power**: meaning servers such as windows, linux, hosting environments, virtual machines, containers, serverless, etc.
 - **Networking**: in azure but also outside when connecting to your company network
-- **Analytics**: services for visualization and telemetry data
+- **Administration and Analytics**: services for visualization and telemetry data
 
-There are more services, but those are the four main (all of this delivered by the **internet**)
+There are more services depending on **which Cloud Provider**, but this are the main four in common (all of this delivered by the **internet**)
+
+Some of the main **Cloud Providers** are:
+- Microsoft
+- Google
+- Amazon
 
 ![2.png](img/2.png)
 
