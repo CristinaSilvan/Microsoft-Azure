@@ -154,3 +154,126 @@ In fact, in the current scale, Microsoft can already offer multiple services for
 ![12](img/12.png)
 
 To sum up, **CapEx** is related to **On-premise** infrastructures, while **OpEx** is related to the **Cloud**
+
+---
+---
+---
+# Consumption-based Model
+
+![13](img/13.png)
+
+The consumption-based model is a **pricing model** used in the cloud so that customers are only charged **based on their resource usage**
+
+This model is characterized by:
+- No associated upfront cost
+
+- No wasted resources as such no charges are incurred for unused resources. Unused in this case is different per service. For instance, blob storage that stores any data is considered to be used, as it consumes the storage space. Virtual Machines that are running consume CPU, memory and other resources even if there isn’t any traffic. Hence they are considered to be used and will incur charges
+
+- Pay for what you need
+
+- Stop paying when you don’t
+
+![14](img/14.png)
+
+**Consumption is the virtual metric** used to calculate how much each resource (service) in Azure was used. Each service has many smaller metrics that track its consumption to offer best possible pricing model. Those metrics are tracked on very granular level
+
+---
+---
+---
+# Cloud Service Models responsibilities
+
+![15](img/15.png)
+
+**As a service** means which party will manage the particular layer and all the layers below
+
+- **Software layer** consists the application (application code and set) & the application data
+
+- **Platform layer** means all the supporting software and the operating system required to host the application
+
+- **Infrastructure layer** consists hardware the infrastructure and virtualization required to host the platform
+
+> If the customer owns the physical severs, that means they have their own data centers/server rooms. This is so-called **On-Premise Enviroment**
+
+## Infrastructure as a Service (IaaS)
+
+![16](img/16.png)
+
+![18](img/18.png)
+
+Use common cases:
+- **Migration of workloads**
+- **Test and development**
+- **Storage, backups and recovery**
+
+## Platform as a Service (PaaS)
+
+![17](img/17.png)
+
+![19](img/19.png)
+
+Use common cases:
+- **Development framework**
+- **Analytics and business intelligence**
+
+## Software as a Service (SaaS)
+
+![20](img/20.png)
+
+![21](img/21.png)
+
+Use common cases:
+- **Buying of-the-shell (license) applications**
+
+## Comparation
+
+![22](img/22.png)
+
+**Responsibility Matrix:**
+
+![23](img/23.png)
+
+---
+---
+---
+# Public, Private and Hybrid Cloud
+
+**Cloud Deployment Model** is simple a separation which describes where are the company resources deployed. Whenever this is in public cloud provider environment or private datacenter
+
+There are so many reason why this three models exists, in which are include politics, security, cost and options about recovery
+
+## Public Cloud
+
+![24](img/24.png)
+
+![25](img/25.png)
+
+## Private Cloud
+
+![26](img/26.png)
+
+![27](img/27.png)
+
+## Hybrid Cloud
+
+![28](img/28.png)
+
+![29](img/29.png)
+
+---
+---
+---
+# Geographies, Regions and Availability Zones
+
+## Data Center
+
+![30](img/30.png)
+
+## Region
+
+![31](img/31.png)
+
+![32](img/32.png)
+
+![33](img/33.png)
+
+We choose the region closest as possible to our client for their services location (the closer it is, the lower the delay it is between the data center and the client)
