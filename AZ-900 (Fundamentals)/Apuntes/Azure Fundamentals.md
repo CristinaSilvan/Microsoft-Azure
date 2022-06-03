@@ -277,3 +277,30 @@ There are so many reason why this three models exists, in which are include poli
 ![33](img/33.png)
 
 We choose the region closest as possible to our client for their services location (the closer it is, the lower the delay it is between the data center and the client)
+
+## Availability Zones
+
+![34](img/34.png)
+
+- **Not all regions** are supported
+
+- Supported regions has **three or more zones**
+
+## Zones Services
+
+![35](img/35.png)
+
+## Region Pairs
+
+![36](img/36.png)
+![37](img/37.png)
+![38](img/38.png)
+
+## Geographies
+
+![39](img/39.png)
+![40](img/40.png)
+
+---
+---
+---
