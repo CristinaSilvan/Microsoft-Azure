@@ -246,7 +246,7 @@ Use common cases:
 
 **Cloud Deployment Model** is simple a separation which describes where are the company resources deployed. Whenever this is in public cloud provider environment or private datacenter
 
-There are so many reason why this three models exists, in which are include politics, security, cost and options about recovery
+There are so many reason why this three models exists, in which are include **politics, security, cost and options about recovery**
 
 ## Public Cloud
 
@@ -269,41 +269,84 @@ There are so many reason why this three models exists, in which are include poli
 ---
 ---
 ---
-# Geographies, Regions and Availability Zones
+# Azure Infrastructure
 
 ## Data Center
+
+Data Centers are **building blocks of global azure infractucture** which contain servers with **power electricity, cooling and networking by their own**
 
 ![30](img/30.png)
 
 ## Region
 
+**A group of data centers that are connected with each other** with high throughput internet connectivity with **low latency network** (under 2 miliseconds latency)
+
+They can be on **different sizes**, as small as a single data center or they can contain multiple ones
+
 ![31](img/31.png)
+
+Regions are simply a geographical area on the planet and there are **more than 50**
+
+There are special regions, like **government regions** (or government regulations) and **partner regions**
 
 ![32](img/32.png)
 
+They are globally distributed for instances but **some services are available only in certain regions**, while others are considered globals services with are not assigned/deployed in an specific region
+
 ![33](img/33.png)
 
-We choose the region closest as possible to our client for their services location (the closer it is, the lower the delay it is between the data center and the client)
+We choose the **region closest as possible to our client** for their services location (the closer it is, the lower the delay it is **between the servers and the client**)
 
 ## Availability Zones
 
+An Availability Zone is a **Data Center in the same region** with reduncance or other way of protectiong from **data center's failures**
+
+They're prepared to **redirect** the client workflow to other Data Center is something goes wrong so the client **doesn't even realize it**
+
 ![34](img/34.png)
 
-- **Not all regions** are supported
+- **Not all regions** are supported since not all regions has multiple data centers or those are not necesarely created for availability
 
-- Supported regions has **three or more zones**
+- Supported regions has **three or more zones** at least (and they can be as the same time multiple **data centers**)
 
-## Zones Services
+## Zones Categories
+
+- **Zonal Services**: which allow us to **choose the availability zones** we are doing the deployment to
+
+- **Zone-redundant**: replicate data through multiple availability zones and will work **in a redundant way** (the cloud provider decided where to allocate the replication)
 
 ![35](img/35.png)
 
+
 ## Region Pairs
+ 
+If there is a Region Level Failure (the entire region goes down), the use of **Availability Zones doesn't matter becuase it only affect inside of the region**
+
+That's why Microsoft also created **Regions Pairs**, in a enough distantce to cover **natural disasters** (**Physical isolation** with at least 300 miles distance (when possible))
+
+This way, they create another level of security for your data, allowing you to replicate the data **in the region pairs** of the one you deployed your data
+
+**Every region** is paired exactly with **one other region** (no more than one)
+
+The **ragion pairs** are always in the same **geography** so customers can **maintain their data residency**
 
 ![36](img/36.png)
 ![37](img/37.png)
 ![38](img/38.png)
 
+The plan updates will rollout **first in one pair region**, and when everything is working correctly, they'll proceed to update the **second pair region** so they avoid disasters to happen to the same paired regions
+
+Making sure that even the **platform update** won't affect our applications
+
+Some of them are not in the **same country**, but they have to be **close enough to maintain high speed connectivity**
+
+They can also replicate into others regions, but **paired regions are preffered**
+
 ## Geographies
+
+Everything before, is **grouped into geographies**
+
+It's porpuse is that **all data leverl requirements are met**, like residency, sovereignty, resiliency and compliance
 
 ![39](img/39.png)
 ![40](img/40.png)
@@ -311,3 +354,4 @@ We choose the region closest as possible to our client for their services locati
 ---
 ---
 ---
+# Resources, Resource Gropus and Resource Manager
