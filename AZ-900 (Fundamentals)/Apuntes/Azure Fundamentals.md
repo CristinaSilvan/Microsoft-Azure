@@ -354,4 +354,76 @@ It's porpuse is that **all data leverl requirements are met**, like residency, s
 ---
 ---
 ---
-# Resources, Resource Gropus and Resource Manager
+# Resources management
+
+## What Resources Are
+Resources is the **representation of our services** in Azure, like objects
+
+Objects **used to manage services** in Azure
+
+Azure use the resources to **save all the configuration** we make for our services
+
+It also represent **the service lifecycle** of the recourse, so not only save configuration but **state** (such us the time used, the recoursed associated and if it's still renting or going to be delete)
+
+All of this as the **properties of the object**
+
+![41](img/41.png)
+
+Every resource in Azure can be **represented as a Json template** that describe all this properties and values
+
+![42](img/42.png)
+
+There are **four common properties** in this Json formats across all resources:
+- **Type**
+- **Api Version**
+- **Name**
+- **Location**
+
+## Resource Group
+
+Everything created in Azure, **belongs to something called resource group** and **only belongs to that group**
+
+A **resource group** is a **logical container** for resources related
+
+It was created as a **utility to manage** and **organizate**
+
+![43](img/43.png)
+
+Resources groups have **their own location assigned** beside the resources themself **can reside in different locations**
+
+The resources **can be moved** between the resources groups
+
+> Resources groups **can't be nested**
+
+## Organization
+
+We can organize our resources in different ways, but the more common and **recommended** are:
+- By Type:
+
+![44](img/44.png)
+
+- By Applications:
+
+![45](img/45.png)
+
+- By Department, Billing, Location (which is Azure Region) **or a combination of that**
+
+This way it's **easier to manage data sovereignty and security**
+
+> The organization **deppends on the needs**
+
+## Resource Manager
+
+However we communicate towards Azure, the same **Json template** is managed by a **common entity behind every interact**
+
+That entity is the **Azure Resource Manager**
+
+It is a **centralized service governing all resources** and groups of resources in Azure and it is the **responsible for creating** each service within Azure
+
+It has an **unified template lenguage** so we always send the same **Json template form** with the same validations so everything is **consistent**
+
+![46](img/46.png)
+
+---
+---
+---
