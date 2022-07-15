@@ -145,7 +145,7 @@
 
 ![12](img/12.png)
 
->> [Volver al Índice](#índice)
+>> [Volver al Índice o descansa y tómate un algo](#índice)
 
 ---
 ---
@@ -229,7 +229,7 @@ El escalado se mide mediante el **número de instancias**, no de la **potencia**
 
 <Continuación en minuto 31:00>
 
->> [Volver al Índice](#índice)
+>> [Volver al Índice o pégate una ducha fría](#índice)
 
 ---
 ---
