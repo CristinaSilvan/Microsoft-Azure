@@ -4,6 +4,9 @@
 
 >[Enlace a los laboratorios de GitHub](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure)
 
+****Añadir enlace:
+>[Comandos de Azure CLI]()
+
 **Conceptos**:
 - *Software escalable*: applicación utilizada por infinidad de usuarios (lo opuesto a un software usado por uno o pocos miembros dentro de una misma organización)
 
@@ -12,6 +15,9 @@
 - *SLA (Service Level Agreement)*: Acuerdo de alta disponibilidad mínima de recursos medido en porcentaje
 
 - *Planes SKU*: planes de tarifa para los diferentes servicios que se ajusta a las necesidades y difieren en los precios
+
+****Añadir info sobre planes:
+> NOTA: Es necesario conocer los distintos planes según lo que ofrecen
 
 ---
 ---
@@ -122,6 +128,8 @@
 **salidas de datos** de mi aplicación
 
 ![12](img/12.png)
+
+
 
 ---
 ---
