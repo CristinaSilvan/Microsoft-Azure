@@ -2,7 +2,7 @@
 
 # Inicio
 
-Los comandos del CLI de Azure siempre deben empezar con **az** seguido del tipo de recurso sobre el que vamos a realizar la acción requerida (**group**, **webapp**, ...)
+Los comandos del CLI de Azure siempre deben empezar con **az** seguido del tipo de recurso sobre el que vamos a realizar la acción requerida (**group**, **webapp**, **vm** ...)
 
 ---
 ---
@@ -13,6 +13,7 @@ Los comandos del CLI de Azure siempre deben empezar con **az** seguido del tipo 
 Normalmente los recursos se crean de la siguiente forma (sustituyendo las <>):
 
 az <recurso> create --name <nombre> --location <zona geografica> --resource-group <nombre del grupo>
+
 
 ---
 ---
