@@ -40,6 +40,10 @@
 
 ![5](img/5.png)
 
+- Es un servicio **PAAS (Platform as a Service)**
+
+![10](img/10.png)
+
 - Servicio **basado HTTP** (Protocolo de transferencia de datos a través de internet, *Hypertext Transfer Protocol*); define la sintáxis y semántica de la **comunicación entre aplicaciones web**
 
 - Permite **hospedar aplicaciones web, API de Rest y back-ends para dispositivos móviles**
@@ -76,4 +80,14 @@
 
 - También llamado **CI CD (Contincontinuous integration and continuous delivery)** ya que todo el **SDLA** se produce en la nube
 
+- El uso de **ranuras de implementación** permite que los usuarios sigan utilizando la solución sin interrupciones de actualización exponiendo un **duplicado temporal de la solución** durante el transcurso de la actualización para que sea consumida en su lugar
+
 ![9](img/9.png)
+
+- Es posible añadir un **factor de autenticación** a nuestra App Service para la que el **usuario o programa** que quiera usar mi aplicación tenga que pasar por un **proveedor de autenticación** (ya que se hace de forma externa y este retorna la información a mi app)
+
+- También se puede especificar un comportamiento de **autorización** para otorgar permisos y que dependiendo de este, mi solución se muestre de una forma u otra, o que permita o no ciertos comportamientos
+
+- **Azure tiene autenticaciones integradas** que sin necesidad de que nosotros administremos, se comunican con los **proveedores** (de una serie de proveedores que se encuentran a disposición de Azure como son **Microsoft**, **Google**, **Facebook** y **Twitter**)
+
+![11](img/11.png)
