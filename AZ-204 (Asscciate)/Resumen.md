@@ -11,7 +11,7 @@
 
 - *SLA (Service Level Agreement)*: Acuerdo de alta disponibilidad mínima de recursos medido en porcentaje
 
-- *Planes SKU*: planes de tarifa para los diferentes servicios que se ajusta a las necesidades y difieren en los precios. Muchos servicios tienen planes los mismos tipos de tarifa mientras que otros tienen los suyos propios
+- *Planes SKU*: planes de tarifa para los diferentes servicios que se ajusta a las necesidades y difieren en los precios
 
 ---
 ---
@@ -23,6 +23,8 @@
 ## [Ruta certificación](#ruta-completa-certificación)
 ## [Esquema módulos](#esquema-de-módulos)
 
+---
+---
 ---
 
 ## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
@@ -120,3 +122,9 @@
 **salidas de datos** de mi aplicación
 
 ![12](img/12.png)
+
+---
+---
+---
+
+# Módulo 2: 
