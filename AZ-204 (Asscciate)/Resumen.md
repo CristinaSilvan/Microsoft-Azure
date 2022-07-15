@@ -47,7 +47,9 @@
 ![2](img/2.png)
 
 [AZ-900 Fundamentals](https://docs.microsoft.com/en-us/certifications/exams/az-900)
+
 [AZ-204 Associate](https://docs.microsoft.com/en-us/certifications/exams/az-204)
+
 [AZ-400 Expert](https://docs.microsoft.com/es-es/certifications/exams/az-400)
 
 # Esquema de módulos
