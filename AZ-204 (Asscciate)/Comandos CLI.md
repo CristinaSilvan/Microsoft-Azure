@@ -2,8 +2,7 @@
 
 # Inicio
 
-Los comandos del CLI de Azure siempre deben empezar con `az` seguido del tipo de recurso sobre el que vamos a realizar la acción requerida (`group`, `webapp`, `vm` ...)
-
+Los comandos del CLI de Azure relacionados con sus productos deben empezar con `az` seguido del tipo de recurso sobre el que vamos a realizar la acción requerida (`group`, `webapp`, `vm` ...)
 ---
 ---
 ---
