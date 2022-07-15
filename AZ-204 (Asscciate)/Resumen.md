@@ -33,6 +33,7 @@
 ---
 
 ## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
+## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functions)
 
 ---
 ---
@@ -134,10 +135,32 @@
 
 ![12](img/12.png)
 
-
+> [Volver al Índice](#índice)
 
 ---
 ---
 ---
 
-# Módulo 2: 
+# Módulo 2: Implementación de Azure Functions
+
+# Qué es un Azure Function
+
+[Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/azure-functions/functions-overview)
+
+Es una solución que permite escribir menos código, mantener menos infraestructura para ahorrar costos. En lugar de preocuparse por implementar y mantener servidores (**Serverless**), la infraestructura en la nube proporciona todos los recursos actualizados necesarios para mantener las aplicaciones en ejecución
+
+Como desarrolladores, nos centramos en los fragmentos de código que importan y Azure Functions se ocupa del resto de forma secundaria
+
+![13](img/13.png)
+
+Ejemplos de uso:
+
+    - *Integrar sistemas*: es decir, comunicación entre distintos sistemas mediante pequeños trozos de código sin tener que levantar proyectos completos de desarrollo o máquinas virtuales (una funcionalidad muy concreta)
+    
+    - *IoT o Internet de las cosas*: para realizar la comunicación vía internet con dispisitivos o electrodomésticos por ejemplo, ya sea para supervisar u ordenar
+
+> [Volver al Índice](#índice)
+
+---
+---
+---
