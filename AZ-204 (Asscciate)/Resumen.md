@@ -37,8 +37,8 @@
 ---
 
 `<Arreglar, no funcionan estos enlaces>`
-## [Creación de aplicaciones web](#creación-de-aplicaciones-web)
-## [Implementación de Azure Functions](#implementación-de-azure-functions)
+## [1. Creación de aplicaciones web](#1-creación-de-aplicaciones-web)
+## [2. Implementación de Azure Functions](#2-implementación-de-azure-functions)
 
 ---
 ---
@@ -64,7 +64,7 @@
 ![3](img/3.png)
 ![4](img/4.png)
 
-# Creación de aplicaciones web
+# 1. Creación de aplicaciones web
 
 ![5](img/5.png)
 
@@ -147,7 +147,7 @@
 ---
 ---
 
-# Implementación de Azure Functions
+# 2. Implementación de Azure Functions
 `<Clase del 01/07/2022>`
 
 ## Qué es un Azure Function
