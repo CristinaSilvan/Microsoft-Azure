@@ -36,7 +36,7 @@
 ---
 ---
 
-<Arreglar, no funcionan estos enlaces>
+`<Arreglar, no funcionan estos enlaces>`
 ## [Creación de aplicaciones web](#creación-de-aplicaciones-web)
 ## [Implementación de Azure Functions](#implementación-de-azure-functions)
 
