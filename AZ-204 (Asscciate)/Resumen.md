@@ -42,6 +42,7 @@
 ---
 
 # Introducción
+`<Clase del 29/06/2022>`
 
 ![1](img/1.png)
 
@@ -144,6 +145,7 @@
 ---
 
 # Implementación de Azure Functions
+`<Clase del 01/07/2022>`
 
 ## Qué es un Azure Function
 
@@ -218,7 +220,7 @@ El escalado se mide mediante el **número de instancias**, no de la **potencia**
 
 ![23](img/23.png)
 
-<minuto 31:00>
+<Continuación en minuto 31:00>
 
 > [Volver al Índice](#índice)
 
