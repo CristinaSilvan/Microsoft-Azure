@@ -6,7 +6,7 @@
 
 >[Comandos de Azure CLI](https://github.com/CristinaSilvan/Microsoft-Azure/blob/main/AZ-204%20(Asscciate)/Comandos%20CLI.md)
 
-**Conceptos**:
+**Conceptos importantes**:
 - *Software escalable*: applicación utilizada por infinidad de usuarios (lo opuesto a un software usado por uno o pocos miembros dentro de una misma organización)
 
 - *SDLA o software development life cycle*: El ciclo de desarrollo, compilación, testeo, despliegue, versionamiento y demás que se lleva a cabo en la producción del software y que continua con la actualización del mismo
@@ -45,6 +45,10 @@
 # Ruta completa certificación
 
 ![2](img/2.png)
+
+[AZ-900 Fundamentals](https://docs.microsoft.com/en-us/certifications/exams/az-900)
+[AZ-204 Associate](https://docs.microsoft.com/en-us/certifications/exams/az-204)
+[AZ-400 Expert](https://docs.microsoft.com/es-es/certifications/exams/az-400)
 
 # Esquema de módulos
 
