@@ -33,8 +33,9 @@
 ---
 ---
 
-## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
-## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functions)
+<Arreglar, no funcionan estos enlaces>
+## [Creación de aplicaciones web](#creación-de-aplicaciones-web)
+## [Implementación de Azure Functions](#implementación-de-azure-functions)
 
 ---
 ---
@@ -59,7 +60,7 @@
 ![3](img/3.png)
 ![4](img/4.png)
 
-# Módulo 1, Creación de aplicaciones web
+# Creación de aplicaciones web
 
 ![5](img/5.png)
 
@@ -142,9 +143,9 @@
 ---
 ---
 
-# Módulo 2, Implementación de Azure Functions
+# Implementación de Azure Functions
 
-# Qué es un Azure Function
+## Qué es un Azure Function
 
 [Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/azure-functions/functions-overview)
 
@@ -170,19 +171,19 @@ En definitiva, permiten que se ejecute **una determinada lógica ante una acció
 
 ![14](img/14.png)
 
-# Qué es Azure Logic App
+## Qué es Azure Logic App
 
 ![15](img/15.png)
 
 Utiliza conectores para llevar a cabo un flujo de trabajo que le especifiquemos
 
-# Qué es WebJobs
+## Qué es WebJobs
 
 ![16](img/16.png)
 
 Permite meter una pequeña funcionalidad que se ejecute cada cierto tiempo o ante cualquier determinada situación **dentro de una aplicación web .NET**
 
-# Hospedaje de Azure Functions
+## Hospedaje de Azure Functions
 
 Tarifas de planes según la carga de trabajo que tenga que sorportar nuestra App Service:
 
@@ -206,7 +207,7 @@ Si no configuramos el **Always On**, la App Service solo empezará una función 
 
 Las Azure Functions pueden **necesitar cuentas de almacenamiento** para guardar información de seguimiento, de seguridad o de determinadas cosas que se requieran
 
-# Escalado de Azure Functions
+## Escalado de Azure Functions
 
 ![20](img/20.png)
 ![22](img/22.png)
@@ -214,6 +215,10 @@ Las Azure Functions pueden **necesitar cuentas de almacenamiento** para guardar 
 Evidentemente, podemos configurar el **número de instancias máxima** (llamadas o solicitudes) por segundo para que el servicio no colapse o se dispare el costo
 
 El escalado se mide mediante el **número de instancias**, no de la **potencia**
+
+![23](img/23.png)
+
+<minuto 31:00>
 
 > [Volver al Índice](#índice)
 
