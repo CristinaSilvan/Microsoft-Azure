@@ -15,7 +15,8 @@
 
 - *Planes SKU*: planes de tarifa para los diferentes servicios que se ajusta a las necesidades y difieren en los precios
 
-****Añadir info sobre planes:
+- *Instancias en Azure Functions*: llamadas o solicitudes mediante protocolo hacia un servicio
+
 > NOTA: Es necesario conocer los distintos planes según lo que ofrecen
 
 ---
@@ -151,13 +152,68 @@ Es una solución que permite escribir menos código, mantener menos infraestruct
 
 Como desarrolladores, nos centramos en los fragmentos de código que importan y Azure Functions se ocupa del resto de forma secundaria
 
+En definitiva, permiten que se ejecute **una determinada lógica ante una acción que ocurra**
+
 ![13](img/13.png)
 
 - Ejemplos de uso:
 
-    - *Integrar sistemas*: es decir, comunicación entre distintos sistemas mediante pequeños trozos de código sin tener que levantar proyectos completos de desarrollo o máquinas virtuales (una funcionalidad muy concreta)
+    - *Integrar sistemas*: es decir, **comunicación entre distintos sistemas** mediante pequeños trozos de código sin tener que levantar proyectos completos de desarrollo o máquinas virtuales (**una funcionalidad muy concreta**)
     
-    - *IoT o Internet de las cosas*: para realizar la comunicación vía internet con dispisitivos o electrodomésticos por ejemplo, ya sea para supervisar u ordenar
+    - *IoT o Internet de las cosas*: para realizar la **comunicación vía internet con dispisitivos** o electrodomésticos por ejemplo, ya sea para supervisar u ordenar
+
+    - *Implementación de microservicios*: en lugar de tener un proyecto gigantesco, **separo el código en pequeñas partes cada una con una funcionalidad** (estas últimas serían funcions) y permiten una actualización modular/alta tolerancia a fallos
+
+    - *Procesamiento de imágenes o pedidos*: para **comprimir imágenes o lo que se considere** necesario según el caso
+
+    - *Desencadenadores*: pueden ser utilizadas como **triggers** que desencadenen sucesos
+
+![14](img/14.png)
+
+# Qué es Azure Logic App
+
+![15](img/15.png)
+
+Utiliza conectores para llevar a cabo un flujo de trabajo que le especifiquemos
+
+# Qué es WebJobs
+
+![16](img/16.png)
+
+Permite meter una pequeña funcionalidad que se ejecute cada cierto tiempo o ante cualquier determinada situación **dentro de una aplicación web .NET**
+
+# Hospedaje de Azure Functions
+
+Tarifas de planes según la carga de trabajo que tenga que sorportar nuestra App Service:
+
+![17](img/17.png)
+
+![18](img/18.png)
+
+**Plan de Consumo**: tarifa predeterminada que se encarga de escalar los recursos (sin tener nosotros que definir el cómo se escala, ya que es el mismo Azure el que decide según la situación) en función de las llamadas que reciba por parte de los usuarios. Tomará más recursos cuando los necesita y los reducirá cuando no sean requeridos de forma dinámica
+
+**Plan Premium**: también funciona bajo demanda pero tiene unas caracterísiticas más avanzadas que el plan de consumo. No tiene **retardo inicial** en responder a las llamadas ya que siempre está preparado para devolver la información necesaria
+
+**Plan de App Service**: colgamos la Azure Function **como si fuera una App Service más**, y esta escalará o desescalará en función de la carga global que tenga el App Service
+
+**RESUMEN**: En el plan de **consumo** y en el **premium**, es Azure quien decide el escalado según el consumo mediante un **controlador de escala** (en función del número de eventos, del consumo de recursos, el número de instancias, etc)
+
+- Si elegimos la tercera tarifa, el Plan App Service:
+
+![19](img/19.png)
+
+Si no configuramos el **Always On**, la App Service solo empezará una función tras un desencadenante (en algunos casos, puede no ser necesario; dependiendo de los requisitos)
+
+Las Azure Functions pueden **necesitar cuentas de almacenamiento** para guardar información de seguimiento, de seguridad o de determinadas cosas que se requieran
+
+# Escalado de Azure Functions
+
+![20](img/20.png)
+![22](img/22.png)
+
+Evidentemente, podemos configurar el **número de instancias máxima** (llamadas o solicitudes) por segundo para que el servicio no colapse o se dispare el costo
+
+El escalado se mide mediante el **número de instancias**, no de la **potencia**
 
 > [Volver al Índice](#índice)
 
