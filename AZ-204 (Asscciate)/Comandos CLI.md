@@ -1,3 +1,22 @@
+[Documentación Microsoft](https://docs.microsoft.com/es-es/azure/virtual-machines/linux/cli-manage)
+
+# Inicio
+
+Los comandos del CLI de Azure siempre deben empezar con **az** seguido del tipo de recurso sobre el que vamos a realizar la acción requerida (**group**, **webapp**, ...)
+
+---
+---
+---
+
+# Creación de un recurso
+
+Normalmente los recursos se crean de la siguiente forma (sustituyendo las <>):
+
+az <recurso> create --name <nombre> --location <zona geografica> --resource-group <nombre del grupo>
+
+---
+---
+---
 
 # Información adicional sobre la salida
 
@@ -6,4 +25,5 @@
 ## Formas de imprimir la salida
 
 - **tsv** ->  formato tabular
-- **table** -> forma de tabla
+- **table** -> formato tabla
+- **list** -> formato lista
