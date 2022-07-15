@@ -153,7 +153,7 @@ Como desarrolladores, nos centramos en los fragmentos de código que importan y 
 
 ![13](img/13.png)
 
-Ejemplos de uso:
+- Ejemplos de uso:
 
     - *Integrar sistemas*: es decir, comunicación entre distintos sistemas mediante pequeños trozos de código sin tener que levantar proyectos completos de desarrollo o máquinas virtuales (una funcionalidad muy concreta)
     
