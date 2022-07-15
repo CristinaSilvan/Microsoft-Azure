@@ -34,7 +34,7 @@
 ---
 
 ## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
-## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functionss)
+## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functions)
 
 ---
 ---
