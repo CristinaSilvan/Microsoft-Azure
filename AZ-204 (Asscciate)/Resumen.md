@@ -88,6 +88,6 @@
 
 - También se puede especificar un comportamiento de **autorización** para otorgar permisos y que dependiendo de este, mi solución se muestre de una forma u otra, o que permita o no ciertos comportamientos
 
-- **Azure tiene autenticaciones integradas** que sin necesidad de que nosotros administremos, se comunican con los **proveedores** (de una serie de proveedores que se encuentran a disposición de Azure como son **Microsoft**, **Google**, **Facebook** y **Twitter**)
+- **Azure tiene autenticaciones integradas** que sin necesidad de que nosotros administremos, se comunican con los **proveedores** (de una serie de proveedores que se encuentran de forma predeterminada, como son **Microsoft**, **Google**, **Facebook** y **Twitter**)
 
 ![11](img/11.png)
