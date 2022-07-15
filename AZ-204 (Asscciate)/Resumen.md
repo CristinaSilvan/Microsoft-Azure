@@ -1,3 +1,6 @@
+`Siento la mala calidad de las imágenes, las capturas de pantalla de las grabaciones son horrorosas!`
+`Ánimo con los estudios!!`
+
 # Azure 204 - Developing Solutions for Microsoft Azure
 
 >[Enlace al examen y las rutas de aprendizaje](https://docs.microsoft.com/en-us/learn/certifications/exams/az-204)
