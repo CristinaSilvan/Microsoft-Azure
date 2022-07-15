@@ -1,0 +1,10 @@
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\bin\Debug\netstandard2.1\AdventureWorks.Models.deps.json
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\bin\Debug\netstandard2.1\AdventureWorks.Models.dll
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\bin\Debug\netstandard2.1\AdventureWorks.Models.pdb
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.csproj.AssemblyReference.cache
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.AssemblyInfoInputs.cache
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.AssemblyInfo.cs
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.csproj.CoreCompileInputs.cache
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.dll
+C:\3-MicrosoftAzureEOI\AZ-204 (Asscciate)\Labs\04\Starter\AdventureWorks\AdventureWorks.Models\obj\Debug\netstandard2.1\AdventureWorks.Models.pdb
