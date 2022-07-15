@@ -21,10 +21,13 @@ Normalmente los recursos se crean de la siguiente forma (sustituyendo las <>):
 
 # Información adicional sobre la salida
 
-- **o** formato de salida (también **--output**) -> Indica que queremos especificar la forma en la que se imprime la información
+`-o`
+`--output`
+
+Indica que queremos especificar la forma en la que se imprime la información
 
 ## Formas de imprimir la salida
 
-- **tsv** ->  formato tabular
-- **table** -> formato tabla
-- **list** -> formato lista
+- `tsv` ->  formato tabular
+- `table` -> formato tabla
+- `list` -> formato lista
