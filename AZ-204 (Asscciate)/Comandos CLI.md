@@ -12,7 +12,7 @@ Los comandos del CLI de Azure siempre deben empezar con **az** seguido del tipo 
 
 Normalmente los recursos se crean de la siguiente forma (sustituyendo las <>):
 
-'''az <recurso> create --name <nombre> --location <zona geografica> --resource-group <nombre del grupo>'''
+`az <recurso> create --name <nombre> --location <zona geografica> --resource-group <nombre del grupo>`
 
 
 ---
