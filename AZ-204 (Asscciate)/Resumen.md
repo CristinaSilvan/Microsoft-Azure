@@ -1,6 +1,7 @@
 # Azure 204 - Developing Solutions for Microsoft Azure
 
 >[Enlace al examen y las rutas de aprendizaje](https://docs.microsoft.com/en-us/learn/certifications/exams/az-204)
+
 >[Enlace a los laboratorios de GitHub](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure)
 
 **Conceptos**:
