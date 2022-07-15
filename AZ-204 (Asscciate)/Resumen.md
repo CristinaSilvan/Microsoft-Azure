@@ -20,7 +20,7 @@
 
 - *Instancias en Azure Functions*: llamadas o solicitudes mediante protocolo hacia un servicio
 
-> NOTA: Es necesario conocer los distintos planes según lo que ofrecen
+>> NOTA: Es necesario conocer los distintos planes según lo que ofrecen
 
 ---
 ---
@@ -36,16 +36,15 @@
 ---
 ---
 
-`<Arreglar, no funcionan estos enlaces>`
-## [1. Creación de aplicaciones web](#1-creación-de-aplicaciones-web)
-## [2. Implementación de Azure Functions](#2-implementación-de-azure-functions)
+>>`<Arreglar, no funcionan estos enlaces>`
+## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
+## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functions)
 
 ---
 ---
 ---
 
 # Introducción
->`<Clase del 29/06/2022>`
 
 ![1](img/1.png)
 
@@ -68,7 +67,8 @@
 ---
 ---
 
-# 1. Creación de aplicaciones web
+# Módulo 1: Creación de aplicaciones web
+>>`<Clase del 01/07/2022>`
 
 ![5](img/5.png)
 
@@ -145,14 +145,14 @@
 
 ![12](img/12.png)
 
-> [Volver al Índice](#índice)
+>> [Volver al Índice](#índice)
 
 ---
 ---
 ---
 
-# 2. Implementación de Azure Functions
->`<Clase del 01/07/2022>`
+# Módulo 2 (Implementación de Azure Functions)
+>>`<Clase del 01/07/2022>`
 
 ## Qué es un Azure Function
 
@@ -229,7 +229,7 @@ El escalado se mide mediante el **número de instancias**, no de la **potencia**
 
 <Continuación en minuto 31:00>
 
-> [Volver al Índice](#índice)
+>> [Volver al Índice](#índice)
 
 ---
 ---
