@@ -45,7 +45,7 @@
 ---
 
 # Introducción
-`<Clase del 29/06/2022>`
+>`<Clase del 29/06/2022>`
 
 ![1](img/1.png)
 
@@ -63,6 +63,10 @@
 
 ![3](img/3.png)
 ![4](img/4.png)
+
+---
+---
+---
 
 # 1. Creación de aplicaciones web
 
@@ -148,7 +152,7 @@
 ---
 
 # 2. Implementación de Azure Functions
-`<Clase del 01/07/2022>`
+>`<Clase del 01/07/2022>`
 
 ## Qué es un Azure Function
 
