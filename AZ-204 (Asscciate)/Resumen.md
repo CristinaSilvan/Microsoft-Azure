@@ -88,6 +88,20 @@
 
 - También se puede especificar un comportamiento de **autorización** para otorgar permisos y que dependiendo de este, mi solución se muestre de una forma u otra, o que permita o no ciertos comportamientos
 
-- **Azure tiene autenticaciones integradas** que sin necesidad de que nosotros administremos, se comunican con los **proveedores** (de una serie de proveedores que se encuentran de forma predeterminada, como son **Microsoft**, **Google**, **Facebook** y **Twitter**)
+- **Azure tiene autenticaciones integradas** que sin necesidad de que nosotros administremos, se comunican con los **proveedores**
+
+- Proveedores que se encuentran de **forma predeterminada** en la plataforma:
+    - Microsoft
+    - Facebook
+    - Google
+    - Twitter
+
+(Existen otros con los que podemos autenticar y que también se basan en **OAuth o Open Authoritation**, que es un **estándar abierto** que define cómo, de forma segura, se debe realizarse la autorización de una API para aplicaciones web, móviles o de escritorio)
+
+- Es posible **configurar el App Service para que pueda utilizar otros proveedores** que cumplan con el **OAuth**, dando la opción a los usuarios de que se idenfiquen mediantes otras plataformas
+
+- Azure App Service permite esta configuración de forma **automática y más rápida que de la manera convencional**
+
+- La autenticación se lleva a cabo **mediante cookies** que transmiten la información de forma **Segura** mediante el proveedor y nuestra Web App
 
 ![11](img/11.png)
