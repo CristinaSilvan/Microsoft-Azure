@@ -34,7 +34,7 @@
 ---
 
 ## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
-## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functions)
+## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functionss)
 
 ---
 ---
@@ -59,7 +59,7 @@
 ![3](img/3.png)
 ![4](img/4.png)
 
-# Modulo 1: Creación de aplicaciones web
+# Módulo 1, Creación de aplicaciones web
 
 ![5](img/5.png)
 
@@ -142,7 +142,7 @@
 ---
 ---
 
-# Modulo 2: Implementación de Azure Functions
+# Módulo 2, Implementación de Azure Functions
 
 # Qué es un Azure Function
 
