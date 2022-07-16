@@ -460,8 +460,9 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 >> [ENHORABUENA](https://www.usameme.com/wp-content/uploads/2022/02/congratulations-meme-usameme.jpg)
 
 
-```Notas personales:
+<
+Notas personales:
     - Añadir ejemplos de decoración de Azure Functions
     - Es necesario una decoración para que sea una Azure Function
     - Añadir ?name=nombre a la url de la function, añade el nombre a la queue
-```
+>
