@@ -1,5 +1,5 @@
 `Siento la mala calidad de las imágenes, las capturas de pantalla de las grabaciones son horrorosas!`
-`Ánimo con los estudios!!`
+`Ánimo con los estudios!!`😅
 
 # Azure 204 - Developing Solutions for Microsoft Azure
 
@@ -185,7 +185,7 @@
 
 ![12](img/12.png)
 
->> [Vuelve al Índice o descansa y tómate un algo](#índice)
+>> [Vuelve al Índice o descansa y tómate un algo](#índice)😎
 
 ---
 ---
@@ -372,7 +372,7 @@ Una **Queue o cola** es una serie de mensajes apilados que al ser recibidos y cu
 
 Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pasa a una **poison queue**
 
->> [Vuelve al Índice o pégate una ducha fría](#índice)
+>> [Vuelve al Índice o date una ducha fría](#índice)😎
 
 ---
 ---
@@ -380,7 +380,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 3: 
 
->> [Vuelve al Índice o tómate un café por dios](#índice)
+>> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
 ---
 ---
@@ -388,7 +388,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 4: 
 
->> [Vuelve al Índice o descansa un rato la vista](#índice)
+>> [Vuelve al Índice o descansa un rato la vista](#índice)😎
 
 ---
 ---
@@ -396,7 +396,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 5: 
 
->> [Vuelve al Índice o sal con los amigos un rato](#índice)
+>> [Vuelve al Índice o sal con los amigos un rato](#índice)😎
 
 ---
 ---
@@ -404,7 +404,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 6: 
 
->> [Vuelve al Índice o haz una maratón de una serie](#índice)
+>> [Vuelve al Índice o haz una maratón de una serie](#índice)😎
 
 
 ---
@@ -413,7 +413,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 7: 
 
->> [Vuelve al Índice o date un chapuzón si tienes piscina](#índice)
+>> [Vuelve al Índice o date un chapuzón si tienes piscina](#índice)😎
 
 ---
 ---
@@ -421,7 +421,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 8: 
 
->> [Vuelve al Índice o échate una siesta](#índice)
+>> [Vuelve al Índice o échate una siesta](#índice)😎
 
 ---
 ---
@@ -429,7 +429,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 9: 
 
->> [Vuelve al Índice o date una vuelta en moto](#índice)
+>> [Vuelve al Índice o date una vuelta en moto](#índice)😎
 
 ---
 ---
@@ -437,7 +437,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 10: 
 
->> [Vuelve al Índice o dale caña a la play](#índice)
+>> [Vuelve al Índice o dale caña a la play](#índice)😎
 
 
 ---
@@ -446,7 +446,7 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 11: 
 
->> [Vuelve al Índice o vete a la playa a echar la tarde](#índice)
+>> [Vuelve al Índice o vete a la playa a echar la tarde](#índice)😎
 
 
 ---
@@ -455,9 +455,9 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 # Módulo 12: 
 
->> [Vuelve al Índice o date un respiro por haber llegado al final](#índice)
+>> [Vuelve al Índice o date un respiro por haber llegado al final](#índice)😎
 
->> [ENHORABUENA](https://www.usameme.com/wp-content/uploads/2022/02/congratulations-meme-usameme.jpg)
+>> [ENHORABUENA](https://www.usameme.com/wp-content/uploads/2022/02/congratulations-meme-usameme.jpg) 👏 👏 👏
 
 
 ---
