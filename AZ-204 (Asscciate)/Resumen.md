@@ -37,9 +37,8 @@
 ---
 ---
 
->>`<Arreglar, no funcionan estos enlaces>`
-## [Módulo 1: Creación de aplicaciones web](#módulo-1-creación-de-aplicaciones-web)
-## [Módulo 2: Implementación de Azure Functions](#módulo-2-implementación-de-azure-functions)
+## [Módulo 1: Creación de aplicaciones web](#módulo-1)
+## [Módulo 2: Implementación de Azure Functions](#módulo-2)
 
 ---
 ---
@@ -68,7 +67,8 @@
 ---
 ---
 
-# Módulo 1: Creación de aplicaciones web
+# Módulo 1
+## (Creación de aplicaciones web)
 >>`<Clase del 01/07/2022>`
 
 ![5](img/5.png)
@@ -152,7 +152,8 @@
 ---
 ---
 
-# Módulo 2 (Implementación de Azure Functions)
+# Módulo 2
+## (Implementación de Azure Functions)
 >>`<Clase del 01/07/2022>`
 
 ## Qué es un Azure Function
