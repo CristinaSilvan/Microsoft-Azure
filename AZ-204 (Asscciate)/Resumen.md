@@ -262,7 +262,7 @@ Es decir, tenemos la opción de **desarrollo local o en la nube** (es importante
 
 El concepto es prácticamente el mismo que con los **triggeres** (un conector configurado), excepto que en el caso de las **Azure Function** el desencadenador es a **nivel de código** 
 
-En dicho código, se define **cómo se invoca ese desencadenador** y **cada función debe estar relacionada con un desencadenador** que la haga ejecutarse**)
+En dicho código, se define **cómo se invoca ese desencadenador** y **cada función debe estar relacionada con un desencadenador** que la haga ejecutarse)
 
 No se puede tener un **Azure Function** sin un desencadencadenador
 
@@ -284,9 +284,35 @@ En el caso de **bibliotecas de C# y Java**, se definen mediante **atributos** (m
 
 En el caso de **JavaScript/PowerShell/Python/TypeScript**, se definen dentro del **fichero JSON** como en el ejemplo de la imagen 
 
+Es decir, en el caso de **.NET y Java**, no va a ser necesario que toquemos ni redactemos el fichero **JSON** ya que van a ser las mismas herramientas del framework las que se encargaran de crearlo y configurarlo (aunque hay que tener en cuenta que el fichero existe dentro del proyecto y se define automáticamente a raíz del código que diseñemos)
+
+(Si sería necesario tocarlo en **los demás frameworks** como se expecifica arriba)
+
 ## Dirección de enlaces
 
 ![29](img/29.png)
+
+Los enlaces permiten **vincular** nuestras Azure Functions con algunos **servicios de Azure**
+
+La vinculación puede ser de **entrada, salida o ambas** (in, out o inout)
+
+**RESUMEN: desencadenador (desencadena la funcón) y enlace (lo que necesita la función para llevar a cabo su objetivo)**
+
+## Ejemplo 1
+![30](img/30.png)
+
+Este es un ejemplo de uso disparador/enlace (aquí vemos un JSON)
+
+En el caso de la imagen **Azure Queue Storage** es el desencadenador y **Azure Table Storage** el enlace o blinding, lo que significa que cada vez que alguien introduzca información en la **Queu Storage**, va a añadirse una fila en la **Table Storage**
+
+**Azure Table Storage** es un servicio que nos permite guardar información de forma **tabular** (como una hoja de excel)
+
+## Ejemplo 2
+![31](img/31.png)
+
+Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el JSON ya que este se crea automáticamente según el código que especifiquemos, por lo que en el ejemplo analizamos el código C#)
+
+`<minuto 56>`
 
 >> [Vuelve al Índice o pégate una ducha fría](#índice)
 
