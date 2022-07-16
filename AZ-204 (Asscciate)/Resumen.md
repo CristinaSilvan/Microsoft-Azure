@@ -101,7 +101,7 @@
 
 ![5](img/5.png)
 
-- Es un servicio **PAAS (Platform as a Service)**
+## Es un servicio **PAAS (Platform as a Service)**
 
 ![10](img/10.png)
 
@@ -125,6 +125,8 @@
 
 [Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/overview-hosting-plans)
 
+## Tarifas o planes
+
 - Los **App Service Plan** deben tener una tarifa en función de la cual se desplegará la **Web App** y que especifica la cantidad de tiempo/peticiones que puede alcanzar. Los distintos planes se serparan según la utilidad que tenga la aplicación web:
     - Proceso compartido
     - Proceso dedicado
@@ -139,13 +141,20 @@
 
 ![8](img/8.png)
 
+## El SDLA de nuestra solución
+
 - Hay varios "caminos" para compilar el código del repositorio y llevarlo a mi App Service, aunque lo lógico es **hacerlo de una forma automatizada**. Lo ideal es que sea compilado en la nube con herramientas como **Azure DevOps** y demás antes mencionados para verificar que puede ser compilado en cualquier ordenador al margen del equipo o máquina que use el desarrollador (**que pueda tener instalados paquetes que el resto de usuarios finales no**)
 
 - También llamado **CI CD (Contincontinuous integration and continuous delivery)** ya que todo el **SDLA** se produce en la nube
 
+## Ranuras de implementación
+
 - El uso de **ranuras de implementación** permite que los usuarios sigan utilizando la solución sin interrupciones de actualización exponiendo un **duplicado temporal de la solución** durante el transcurso de la actualización para que sea consumida en su lugar
 
 ![9](img/9.png)
+
+
+## Autenticación y proveedores 
 
 - Es posible añadir un **factor de autenticación** a nuestra App Service para la que el **usuario o programa** que quiera usar mi aplicación tenga que pasar por un **proveedor de autenticación** (ya que se hace de forma externa y este retorna la información a mi app)
 
@@ -345,7 +354,17 @@ En el caso de la imagen **Azure Queue Storage** es el desencadenador y **Azure T
 
 Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el JSON ya que este se crea automáticamente según el código que especifiquemos, por lo que en el ejemplo analizamos el código C#)
 
+## Otros Ejemplos
 
+![32](img/32.png)
+![33](img/33.png)
+
+## Conexiones con cuentas de almacenamiento
+
+![34](img/34.png)
+![35](img/35.png)
+
+> **NOTA: el concepto de identidad se explica más adelante junto al tema de seguridad**
 
 >> [Vuelve al Índice o pégate una ducha fría](#índice)
 
