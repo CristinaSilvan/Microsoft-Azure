@@ -69,7 +69,7 @@
 ---
 
 # Módulo 1
-## (Creación de aplicaciones web)
+# (Creación de aplicaciones web)
 >>`<Clase del 01/07/2022>`
 
 ![5](img/5.png)
@@ -154,7 +154,7 @@
 ---
 
 # Módulo 2
-## (Implementación de Azure Functions)
+# (Implementación de Azure Functions)
 >>`<Clase del 01/07/2022>`
 
 ## Qué es un Azure Function
