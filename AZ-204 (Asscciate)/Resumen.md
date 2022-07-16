@@ -427,6 +427,51 @@ Ejemplo de procesamiento de pedido EN PARALELO (pedido con mercancía de cada un
 
 El **tiempo total** en este caso la suma de los componentes que más tiempo tardan en cada fase, dado que el pedido no puede ser completado hasta que todas las partes han hecho su trabajo
 
+![40](img/40.png)
+
+    En este caso, lanzo una función pero se habilita una opción para preguntar por el estado de dicha función
+
+![41](img/41.png)
+
+    En este caso, lanzo una función y compruebo su estado e incluso puedo llegar a cancelarla o pausarla
+
+![42](img/42.png)
+
+    En este caso, lanzo una Durable Function y esta espera a ser aprobada o denegada (se encuentra desactivada durante el proceso)
+
+## Tipos de Durable Function
+
+![43](img/43.png)
+
+- **Orquestador**: se encarga de hacer que todo funcione
+
+- **Actividad**: las distinas functions que se ejecutan, los F anteriores
+
+- **Entidad**: los elementos con los que se comunican, donde se guarda la información
+
+- **Cliente**: el que solicita la ejecución del proceso
+
+![44](img/44.png)
+
+![45](img/45.png)
+
+## Centros de tareas
+
+![46](img/46.png)
+
+Dado que las **Azure Functions** se pueden alargar en el tiempo (**Durable Function**), es necesario algún tipo de almacenamiento de información
+
+Cuando se queda pendiente de volver a ser activada, la información se guarda en el **Azure Storage** dentro del centro de tareas asignado
+
+En definitiva, **un centro de tareas**, es una serie de recursos de **Azure** necesarios para el correcto funcionamiento de las **Azure Functions**. Estos recursos son:
+
+- Una o más colas de control
+- Una cola de elementos de trabajo
+- Una tabla de historial
+- Una tabla de instancias
+- Un contenedor de almacenamiento que contiene uno o varios blobs
+- Un conetenedor de almacenamiento que contiene cargas de mensajes grandes, en caso de que sea necesario
+
 >> [Vuelve al Índice o date una ducha fría](#índice)😎
 
 ---
