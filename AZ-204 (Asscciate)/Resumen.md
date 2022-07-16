@@ -21,6 +21,7 @@
 - *Instancias en Azure Functions*: llamadas o solicitudes mediante protocolo hacia un servicio
 
 >> NOTA: Es necesario conocer los distintos planes según lo que ofrecen **(Free (F), Basic (B), Standar (S))**
+> (El plan **Free** no contiene escalado automático)
 
 ---
 ---
@@ -145,7 +146,7 @@
 
 ![12](img/12.png)
 
->> [Volver al Índice o descansa y tómate un algo](#índice)
+>> [Vuelve al Índice o descansa y tómate un algo](#índice)
 
 ---
 ---
@@ -229,9 +230,86 @@ El escalado se mide mediante el **número de instancias**, no de la **potencia**
 ![23](img/23.png)
 ![24](img/24.png)
 
+## Partes de un Azure Function
 
->> [Volver al Índice o pégate una ducha fría](#índice)
+![21](img/21.png)
+
+En nuestros proyectos **.NET**, además de un **.exe** o un **.dll**, debemos tener un fichero **json con la configuración** que defina la **Azure Function**
+
+![22](img/22.png)
+
+**Azure Function** ofrece un **contexto de ejecución**, al igual que cuando ejecutamos una aplicación de escritorio tenemos el contexto de un sistema operativo. Esto quiere decir que, entre nuestra Azure Function y nuestro sistema operativo, se generan una **serie de funcionalidades** cuando **levantamos** nuestra Azure Function relacionadas con su finalidad y que ayudan a que esta se lleve a cabo. La duración de estas funcionalidades termina con la finalización del propósito del Azure Funcion (componentes configurados para permitir el objetivo de la function que nacen y mueren junto con esta)
+
+**Todas las funciones** que se encuentran dentro de **un mismo proyecto, comparten el mismo plan de precios** por fuerza. También comparten **métodos de implementación e incluso la misma versión de tiempo de ejecución**
+
+Esto sirve para **administrar las Azure Functions de forma conjunta**
+
+![25](img/25.png)
+
+Azure Function no solo es compatible con **.NET**
+
+También lo es con **Node.js o Python** por ejemplo; es un servicio abierto a todo tipo de lenguajes y frameworks
+
+![26](img/26.png)
+
+Las **Azure Functions** permiten a los desarrolladores trabajar en nuestro equipo con nuestras herramientas elegidas y luego conectarlas con **Azure cuando sea necesario**
+
+Es decir, tenemos la opción de **desarrollo local o en la nube** (es importante recordar que la compilación debe llevarse a cabo en la nube para evitar el problema antes mencionado sobre los paquetes del equipo local)
+
+## Creación de desencadenadores y enlaces
+
+![27](img/27.png)
+
+El concepto es prácticamente el mismo que con los **triggeres** (un conector configurado), excepto que en el caso de las **Azure Function** el desencadenador es a **nivel de código** 
+
+En dicho código, se define **cómo se invoca ese desencadenador** y **cada función debe estar relacionada con un desencadenador** que la haga ejecutarse**)
+
+No se puede tener un **Azure Function** sin un desencadencadenador
+
+---
+
+También podemos tener **enlaces o bindings** que nos permite **vincular una función con un determinado recurso (cola de almaceamiento, tabla de storage, blob storage, base de datos,...)**
+
+Estos **enlaces pueden ser de entrada, salida o ambos**
+
+Los enlaces sirven para **simplificar el código para determinar qué va a ocurrir** (si quiero tener una determinada función que se dispare cuando un usuario introduzca un fichero en un blob, necesito conectarme con ese blob para poder tener acceso a ese nuevo fichero; de la forma tradicional, sería necesario un bloque de código para llevarlo a cabo; sin embargo, los **enlaces** simplifican el desarrollo ahorrando el código y sustituyéndolo con variables relacionadas que permiten el acceso de forma **simplificada**)
+
+Yo puedo tener en una misma **Function** varios **enlaces**
+
+## Definir desencadenadores y enlaces
+
+![28](img/28.png)
+
+En el caso de **bibliotecas de C# y Java**, se definen mediante **atributos** (métodos y parámetros)
+
+En el caso de **JavaScript/PowerShell/Python/TypeScript**, se definen dentro del **fichero JSON** como en el ejemplo de la imagen 
+
+## Dirección de enlaces
+
+![29](img/29.png)
+
+>> [Vuelve al Índice o pégate una ducha fría](#índice)
 
 ---
 ---
 ---
+
+# Módulo 3: 
+
+>> [Vuelve al Índice o tómate un café por dios](#índice)
+
+---
+---
+---
+
+# Módulo 4: 
+
+>> [Vuelve al Índice o descansa un rato la vista](#índice)
+
+---
+---
+---
+
+# Módulo 5: 
+
+>> [Vuelve al Índice o sal con los amigos un rato](#índice)
