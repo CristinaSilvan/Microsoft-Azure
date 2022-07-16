@@ -366,6 +366,12 @@ Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el
 
 > **NOTA: el concepto de identidad se explica más adelante junto al tema de seguridad**
 
+## Examinando código
+
+Una **Queue o cola** es una serie de mensajes apilados que al ser recibidos y cumplir con su función, desaparecen
+
+Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pasa a una **poison queue**
+
 >> [Vuelve al Índice o pégate una ducha fría](#índice)
 
 ---
@@ -452,3 +458,11 @@ Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el
 >> [Vuelve al Índice o date un respiro por haber llegado al final](#índice)
 
 >> [ENHORABUENA](https://www.usameme.com/wp-content/uploads/2022/02/congratulations-meme-usameme.jpg)
+
+
+<--
+Notas personales:
+    - Añadir ejemplos de decoración de Azure Functions
+    - Es necesario una decoración para que sea una Azure Function
+    - Añadir ?name=nombre a la url de la function, añade el nombre a la queue
+--!>
