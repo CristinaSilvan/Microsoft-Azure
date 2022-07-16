@@ -368,9 +368,13 @@ Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el
 
 ## Examinando código
 
-Una **Queue o cola** es una serie de mensajes apilados que al ser recibidos y cumplir con su función, desaparecen
 
-Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pasa a una **poison queue**
+- Una **Queue o cola** es una serie de mensajes apilados que al ser recibidos y cumplir con su función, desaparecen
+
+- Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pasa a una **poison queue**
+
+- Cuando añadimos un mensaje a la **queue**, podemos indicarle el **tiempo de expiración**. Es decir, si después de dicho tiempo el mensaje no es leído, desaparecerá automáticamente
+
 
 >> [Vuelve al Índice o date una ducha fría](#índice)😎
 
@@ -472,10 +476,13 @@ Si el **mensaje de la cola** intenta su cometido tres veces sin conseguirlo, pas
 
 Notas personales:
 
+Módulo2:
 - Añadir ejemplos de decoración de Azure Functions
 
 - Es necesario una decoración para que sea una Azure Function
 
 - Añadir ?name=nombre a la url de la function, añade el nombre a la queue
+
+- Diferencia visual entre blinding y triggered en el código
 
 ```
