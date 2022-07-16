@@ -21,7 +21,8 @@
 - *Instancias en Azure Functions*: llamadas o solicitudes mediante protocolo hacia un servicio
 
 >> NOTA: Es necesario conocer los distintos planes según lo que ofrecen **(Free (F), Basic (B), Standar (S))**
-> (El plan **Free** no contiene escalado automático)
+
+>> (El plan **Free** no contiene escalado automático)
 
 ---
 ---
