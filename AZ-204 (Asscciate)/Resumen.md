@@ -463,7 +463,7 @@ Dado que las **Azure Functions** se pueden alargar en el tiempo (**Durable Funct
 
 Cuando se queda pendiente de volver a ser activada, la información se guarda en el **Azure Storage** dentro del centro de tareas asignado
 
-En definitiva, **un centro de tareas**, es una serie de recursos de **Azure** necesarios para el correcto funcionamiento de las **Azure Functions**. Estos recursos son:
+En definitiva, **un centro de tareas**, es un conjunto de recursos de **Azure** necesarios para el correcto funcionamiento de las **Azure Functions**. Estos recursos son:
 
 - Una o más colas de control
 - Una cola de elementos de trabajo
