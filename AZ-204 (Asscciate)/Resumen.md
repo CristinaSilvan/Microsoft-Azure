@@ -41,7 +41,28 @@
 ---
 
 ## [Módulo 1: Creación de aplicaciones web](#módulo-1)
+
 ## [Módulo 2: Implementación de Azure Functions](#módulo-2)
+
+## [Módulo 3: Desarrollo de soluciones que usan Blob Storage](#módulo-3)
+
+## [Módulo 4: Desarrollo de soluciones que usan Azure Cosmos DB](#módulo-4)
+
+## [Módulo 5: Implementación de soluciones de infraestructura como servicio](#módulo-5)
+
+## [Módulo 6: Implementación de la autenticación y autorización de usuarios](#módulo-6)
+
+## [Módulo 7: Implementación de soluciones en la nube seguras](#módulo-7)
+
+## [Módulo 8: Implementación de API Management](#módulo-8)
+
+## [Módulo 9: Desarrollo de soluciones basadas en eventos](#módulo-9)
+
+## [Módulo 10: Desarrollo de soluciones basadas en mensajes](#módulo-10)
+
+## [Módulo 11: Instrumentación de soluciones para admitir la supervisión y el registro](#módulo-11)
+
+## [Módulo 12: Integración de almacenamiento en caché y entrega de contenido en las soluciones](#módulo-12)
 
 ---
 ---
@@ -75,6 +96,7 @@
 >>`<Clase del 01/07/2022>`
 
 [Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/)
+
 [Enlace a documentación Microsoft](https://azure.conosur.tech/azurefundamentals-que-es-un-azure-app-service-plan-y-para-que-sirve/)
 
 ![5](img/5.png)
@@ -173,6 +195,8 @@ Es una solución que permite escribir menos código, mantener menos infraestruct
 Como desarrolladores, nos centramos en los fragmentos de código que importan y Azure Functions se ocupa del resto de forma secundaria
 
 En definitiva, permiten que se ejecute **una determinada lógica ante una acción que ocurra**
+
+Cada Azure Function debe tener por fuerza **un desencadenador**
 
 ![13](img/13.png)
 
@@ -321,7 +345,7 @@ En el caso de la imagen **Azure Queue Storage** es el desencadenador y **Azure T
 
 Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el JSON ya que este se crea automáticamente según el código que especifiquemos, por lo que en el ejemplo analizamos el código C#)
 
-`<minuto 56>`
+
 
 >> [Vuelve al Índice o pégate una ducha fría](#índice)
 
@@ -348,3 +372,62 @@ Otro ejemplo de uso disparador/enlace en C# (aquí no es necesario configurar el
 # Módulo 5: 
 
 >> [Vuelve al Índice o sal con los amigos un rato](#índice)
+
+---
+---
+---
+
+# Módulo 6: 
+
+>> [Vuelve al Índice o haz una maratón de una serie](#índice)
+
+
+---
+---
+---
+
+# Módulo 7: 
+
+>> [Vuelve al Índice o date un chapuzón si tienes piscina](#índice)
+
+---
+---
+---
+
+# Módulo 8: 
+
+>> [Vuelve al Índice o échate una siesta](#índice)
+
+---
+---
+---
+
+# Módulo 9: 
+
+>> [Vuelve al Índice o date una vuelta en moto](#índice)
+
+---
+---
+---
+
+# Módulo 10: 
+
+>> [Vuelve al Índice o dale caña a la play](#índice)
+
+
+---
+---
+---
+
+# Módulo 11: 
+
+>> [Vuelve al Índice o vete a la playa a echar la tarde](#índice)
+
+
+---
+---
+---
+
+# Módulo 12: 
+
+>> [Vuelve al Índice o date un respiro por haber llegado al final](#índice)
