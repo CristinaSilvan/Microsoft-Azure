@@ -74,6 +74,9 @@
 # (Creación de aplicaciones web)
 >>`<Clase del 01/07/2022>`
 
+[Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/)
+[Enlace a documentación Microsoft](https://azure.conosur.tech/azurefundamentals-que-es-un-azure-app-service-plan-y-para-que-sirve/)
+
 ![5](img/5.png)
 
 - Es un servicio **PAAS (Platform as a Service)**
@@ -97,6 +100,8 @@
 - Un **Azure App Service Plan** es un conjunto de recursos necesarios para tener una aplicación web (es como una máquina de la que tira mi app web pero más complejo)
 
 ![6](img/6.png)
+
+[Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/overview-hosting-plans)
 
 - Los **App Service Plan** deben tener una tarifa en función de la cual se desplegará la **Web App** y que especifica la cantidad de tiempo/peticiones que puede alcanzar. Los distintos planes se serparan según la utilidad que tenga la aplicación web:
     - Proceso compartido
