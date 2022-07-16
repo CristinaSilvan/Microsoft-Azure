@@ -20,7 +20,7 @@
 
 - *Instancias en Azure Functions*: llamadas o solicitudes mediante protocolo hacia un servicio
 
->> NOTA: Es necesario conocer los distintos planes según lo que ofrecen
+>> NOTA: Es necesario conocer los distintos planes según lo que ofrecen **(Free (F), Basic (B), Standar (S))**
 
 ---
 ---
@@ -208,26 +208,27 @@ Tarifas de planes según la carga de trabajo que tenga que sorportar nuestra App
 
 **RESUMEN**: En el plan de **consumo** y en el **premium**, es Azure quien decide el escalado según el consumo mediante un **controlador de escala** (en función del número de eventos, del consumo de recursos, el número de instancias, etc)
 
-- Si elegimos la tercera tarifa, el Plan App Service:
+---
+
+Si elegimos la tercera tarifa, el Plan App Service:
 
 ![19](img/19.png)
 
 Si no configuramos el **Always On**, la App Service solo empezará una función tras un desencadenante (en algunos casos, puede no ser necesario; dependiendo de los requisitos)
 
-Las Azure Functions pueden **necesitar cuentas de almacenamiento** para guardar información de seguimiento, de seguridad o de determinadas cosas que se requieran
+Las Azure Functions pueden **necesitar cuentas de almacenamiento** para guardar información de seguimiento, de sincronización, de seguridad o de determinadas cosas que se requieran
 
 ## Escalado de Azure Functions
 
 ![20](img/20.png)
-![22](img/22.png)
 
 Evidentemente, podemos configurar el **número de instancias máxima** (llamadas o solicitudes) por segundo para que el servicio no colapse o se dispare el costo
 
 El escalado se mide mediante el **número de instancias**, no de la **potencia**
 
 ![23](img/23.png)
+![24](img/24.png)
 
-<Continuación en minuto 31:00>
 
 >> [Volver al Índice o pégate una ducha fría](#índice)
 
