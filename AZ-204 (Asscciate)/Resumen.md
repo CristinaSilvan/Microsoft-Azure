@@ -649,7 +649,28 @@ Una **ruta** es la **url con la que accedo a la información en almacenamiento**
 Un **Filtro** define la ruta a la cual afecta **una determinada regla**
 (ejemplo, en la ruta anterior, puedo ordenar mediante el filtro que la regla afecte al contenido que se encuentre dentro de la **carpeta**; es decir, a todos los ficheros que se encuentren dentro de la ruta https://cuentadealmacenamiento.blob.core.windows.net/carpeta/...)
 
-Las **acciones se aplican al conjunto filtrado de archivos o ficheros** antes mencionado
+Las **acciones se aplican al conjunto filtrado de archivos o ficheros** antes mencionado. Todos los **objetos que se encuentren dentro de la url filtrada**, se comportaran según la **regla especificada** (ejemplo, los objetos del filtro visto arriba, se guardarán en nivel esporádico)
+
+## Cómo se definen las reglas de un ciclo de vida
+
+Se definen mediante un **JSON**
+
+![68](img/68.png)
+![69](img/69.png)
+
+Los **parámetros para definir una directiva son**:
+- name
+- enable
+- type
+- definition
+
+Este tipo de **implementación se lleva a cabo en Azure CLI o en el PowerShell**
+
+## Rehidratación de un Blob
+
+![70](img/70.png)
+
+Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel más bajo), necesitan ser **rehidratados** para poder ser accedidos
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
