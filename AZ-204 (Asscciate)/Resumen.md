@@ -624,7 +624,7 @@ Dependiendo de **la frecuencia con la que se accede a los datos**, elegimos dife
 ![65](img/65.png)
 
 Las **directivas de administración del ciclo de vida** son en definitiva:
-- La elección del tipo de **nivel** (**frecuente, esporádico o de archivo**) y el **intercambio entre estos** según vaya necesitando el almacenamiento (según cambie la frecuencia de uso)
+- La elección del tipo de **nivel** (**frecuente (HOT), esporádico (COLD) o de archivo (ARCHIVE)**) y el **intercambio entre estos** según vaya necesitando el almacenamiento (según cambie la frecuencia de uso)
 
 - La eliminación del almacenamiento al final de su ciclo de vida o uso (**muere**)
 
@@ -670,7 +670,11 @@ Este tipo de **implementación se lleva a cabo en Azure CLI o en el PowerShell**
 
 ![70](img/70.png)
 
-Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel más bajo), necesitan ser **rehidratados** para poder ser accedidos
+Los **archivos** que se encuentran en el **nivel archivo o arquive** (el nivel más bajo), necesitan ser **rehidratados** para poder ser accedidos de nuevo
+
+## Bibliotecas de Azure Storage
+
+![71](img/71.png)
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
@@ -680,6 +684,7 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 4: 
 # (Desarrollo de soluciones que usan Azure Cosmos DB)
+>>`<Clase del x/07/2022>`
 
 >> [Vuelve al Índice o descansa un rato la vista](#índice)😎
 
@@ -689,6 +694,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 5: 
 # (Implementación de soluciones de infraestructura como servicio)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o sal con los amigos un rato](#índice)😎
 
@@ -698,6 +705,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 6: 
 # (Implementación de la autenticación y autorización de usuarios)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o haz una maratón de una serie](#índice)😎
 
@@ -708,6 +717,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 7: 
 # (Implementación de soluciones en la nube seguras)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o date un chapuzón si tienes piscina](#índice)😎
 
@@ -717,6 +728,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 8: 
 # (Implementación de API Management)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o échate una siesta](#índice)😎
 
@@ -726,6 +739,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 9: 
 # (Desarrollo de soluciones basadas en eventos)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o date una vuelta en moto](#índice)😎
 
@@ -735,6 +750,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 10: 
 # (Desarrollo de soluciones basadas en mensajes)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o dale caña a la play](#índice)😎
 
@@ -745,6 +762,8 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 11: 
 # (Instrumentación de soluciones para admitir la supervisión y el registro)
+>>`<Clase del x/07/2022>`
+
 
 >> [Vuelve al Índice o vete a la playa a echar la tarde](#índice)😎
 
@@ -755,6 +774,7 @@ Los **archivos** que se encuentran en el nivel **archivo o arquive** (el nivel m
 
 # Módulo 12: 
 # (Integración de almacenamiento en caché y entrega de contenido en las soluciones)
+>>`<Clase del x/07/2022>`
 
 
 >> [Vuelve al Índice o date un respiro por haber llegado al final](#índice)😎
