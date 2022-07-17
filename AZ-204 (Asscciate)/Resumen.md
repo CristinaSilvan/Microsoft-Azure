@@ -596,6 +596,15 @@ El **cifrado** no se puede desactivar y está activo para **todos los datos inde
 
 ## Redundancia en Azure Storage
 
+Redundancia primaria:
+- Redundancia local **LRS**: Replica de los datos en **tres sitios** distintos **dentro del mismo centro de datos**
+- Reduncia de zona **ZRS**: Replica de los datos en **las otras zonas disponibles de la región**
+
+Redundancia secundaria:
+- Redundancia geográfica **GRS**: Replica de los datos en **otra geografía**
+- Redundancia de zona geográfica **GZRS**: Replica de los datos **en otras zonas disponibles de la región, además una réplica extra en otra geografía**
+
+
 ![59](img/59.png)
 
 
