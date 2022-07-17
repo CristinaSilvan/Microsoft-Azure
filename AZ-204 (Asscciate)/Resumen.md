@@ -596,7 +596,9 @@ El **cifrado** no se puede desactivar y está activo para **todos los datos inde
 
 ## Redundancia en Azure Storage
 
-![58](img/58.png)
+![59](img/59.png)
+
+
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
