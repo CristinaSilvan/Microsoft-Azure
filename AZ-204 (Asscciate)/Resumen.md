@@ -443,13 +443,13 @@ El **tiempo total** en este caso la suma de los componentes que más tiempo tard
 
 ![43](img/43.png)
 
-- **Orquestador**: se encarga de hacer que todo funcione
+- **Función Orquestador**: se encarga de hacer que todo funcione
 
-- **Actividad**: las distinas functions que se ejecutan, los F anteriores
+- **Función de Actividad**: las distinas functions que se ejecutan, los F anteriores
 
-- **Entidad**: los elementos con los que se comunican, donde se guarda la información
+- **Función de Entidad**: los elementos con los que se comunican, donde se guarda la información
 
-- **Cliente**: el que solicita la ejecución del proceso
+- **Función Cliente**: el que solicita la ejecución del proceso
 
 ![44](img/44.png)
 
@@ -461,16 +461,47 @@ El **tiempo total** en este caso la suma de los componentes que más tiempo tard
 
 Dado que las **Azure Functions** se pueden alargar en el tiempo (**Durable Function**), es necesario algún tipo de almacenamiento de información
 
-Cuando se queda pendiente de volver a ser activada, la información se guarda en el **Azure Storage** dentro del centro de tareas asignado
+Cuando se queda pendiente de volver a ser activada, la información se guarda en el **Azure Storage** en el cual se encuentra el centro de tareas
 
 En definitiva, **un centro de tareas**, es un conjunto de recursos de **Azure** necesarios para el correcto funcionamiento de las **Azure Functions**. Estos recursos son:
 
+En el Azure Storage, se encuentra el centro de tareas cuyos recursos son:
 - Una o más colas de control
 - Una cola de elementos de trabajo
 - Una tabla de historial
 - Una tabla de instancias
 - Un contenedor de almacenamiento que contiene uno o varios blobs
 - Un conetenedor de almacenamiento que contiene cargas de mensajes grandes, en caso de que sea necesario
+
+El nombre del **centro de tareas** se declara en el archivo **json**
+![47](img/47.png)
+
+## Orquestador 
+
+![48](img/48.png)
+
+Cada orquestador tiene un **identificador único** por el cuál podemos buscar
+
+Se encarga de concatenar los procesos
+
+![49](img/49.png)
+
+## Timer
+
+Existen mecanismos por los que podemos hacer a la Durable Function deje de hacer nada durante un tiempo, pero sin consumir recursos
+
+El orquestador genera un mensaje dentro del tiempo que queramos, que reactive la durable function
+
+![50](img/50.png)
+
+Cómo se lleva a cabo dicha espera:
+
+![51](img/51.png)
+![52](img/52.png)
+
+Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, espere una aprobación:
+
+![53](img/53.png)
 
 >> [Vuelve al Índice o date una ducha fría](#índice)😎
 
