@@ -2,6 +2,7 @@
 `Ánimo con los estudios!!`😅
 
 # Azure 204 - Developing Solutions for Microsoft Azure
+[Notas personales](#notas-personales)
 
 >[Enlace al examen y las rutas de aprendizaje](https://docs.microsoft.com/en-us/learn/certifications/exams/az-204)
 
@@ -789,11 +790,8 @@ Los **archivos** que se encuentran en el **nivel archivo o arquive** (el nivel m
 ---
 ---
 
-
+# Notas personales:
 ```
-
-Notas personales:
-
 Módulo2:
 - Añadir ejemplos de decoración de Azure Functions
 
@@ -802,5 +800,7 @@ Módulo2:
 - Añadir ?name=nombre a la url de la function, añade el nombre a la queue
 
 - Diferencia visual entre blinding y triggered en el código
+
+- Desarrollar el apartado "examinando código"
 
 ```
