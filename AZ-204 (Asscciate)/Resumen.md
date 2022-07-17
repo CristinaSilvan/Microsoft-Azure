@@ -140,20 +140,41 @@ Un **Azure App Service Plan** es un conjunto de recursos necesarios para tener u
 ## Tarifas o planes
 
 - Los **App Service Plan** deben tener una tarifa en función de la cual se desplegará la **Web App** y que especifica la cantidad de tiempo/peticiones que puede alcanzar. Los distintos planes se serparan según la utilidad que tenga la aplicación web:
-    - Proceso compartido
-    - Proceso dedicado
-    - Aislado
-    - Consumo
+    - **Proceso compartido**: tanto **Gratis** como **Compartido** comparten grupos de recursos de sus aplicaciones con las aplicaciones de otros clientes. Estos planes asignan cuotas de CPU a cada aplicación que se ejecuta en los recursos compartidos, y los recursos **no se pueden escalar horizontalmente**
+
+    - **Proceso dedicado (Dedicated compute)**: Los planes **Básico, Estándar, Premium, PremiumV2 y PremiumV3** ejecutan aplicaciones en VM de Azure dedicadas. Solo las aplicaciones del mismo plan de App Service comparten los mismos recursos de proceso. Cuanto mayor sea el plan, más instancias de VM estarán **disponibles para la escalabilidad horizontal**
+
+    - **Aislado**: Este nivel ejecuta máquinas virtuales de Azure dedicadas en instancias de Microsoft Azure Virtual Network. **Proporciona aislamiento de red, además de aislamiento de proceso a sus aplicaciones**. Proporciona **las máximas posibilidades de escalabilidad horizontal**
+
+    - **Consumo**: este plan solo está disponible para **Function Apps**. Escala las funciones de manera dinámica según la carga de trabajo
 
 (Los planes pueden ser modificados en cualquier momento según los requerimientos, ya que una vez consumido su límite, la aplicación deja de funcionar)
 
+## Razones por las que cambiar de tarifa
+
+- La aplicación **consume muchos recursos**
+
+- Quiere **escalar la aplicación** independientemente de las demás aplicaciones del plan existente
+
+- La aplicación **necesita recursos de una región geográfica diferente**
+
 ![7](img/7.png)
 
-Muchos **Web Apps** pueden estar contenidos dentro de un mismo **App Service Plan**, aunque puede haber problemas si abusamos
+Muchos **Web Apps** pueden estar contenidos dentro de un mismo **App Service Plan**, aunque puede haber problemas si abusamos. Lo mismo con las **Azure Function**
+
+Un plan de **App Service define un conjunto de recursos de proceso para que una aplicación web se ejecute**
+
+Cuando se crea un plan de App Service **en una región determinada**, se crea un conjunto de **recursos de proceso para ese plan en dicha región**. Todas las aplicaciones que coloque en este plan de App Service se ejecutan en estos recursos de proceso según lo definido por el plan de App Service
+
+## Cada plan de App Service define:
+- Región (oeste de EE. UU., este de EE. UU., etc.)
+- Número de instancias de VM
+- Tamaño de las instancias de VM (pequeño, mediano, grande)
+- Plan de tarifa (Gratis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
 
 ![8](img/8.png)
 
-## El SDLA de nuestra solución
+## El SDLA de nuestra solución (IMPLEMENTACIÓN)
 
 Hay varios "caminos" para compilar el código del repositorio y llevarlo a mi App Service, aunque lo lógico es **hacerlo de una forma automatizada**. Lo ideal es que sea compilado en la nube con herramientas como **Azure DevOps** y demás antes mencionados para verificar que puede ser compilado en cualquier ordenador al margen del equipo o máquina que use el desarrollador (**que pueda tener instalados paquetes que el resto de usuarios finales no**)
 
@@ -162,6 +183,8 @@ También llamado **CI CD (Contincontinuous integration and continuous delivery)*
 ## Ranuras de implementación
 
 El uso de **ranuras de implementación** permite que los usuarios sigan utilizando la solución sin interrupciones de actualización exponiendo un **duplicado temporal de la solución** durante el transcurso de la actualización para que sea consumida en su lugar
+
+Siempre que sea posible, use ranuras de implementación al implementar una nueva compilación de producción. Cuando se usa un nivel de plan de App Service Estándar o superior, puede implementar la aplicación en un entorno de ensayo y, a continuación, intercambiar los espacios de ensayo y producción. La operación de intercambio prepara las instancias de trabajo necesarias para que coincidan con la escala de producción, lo que elimina el tiempo de inactividad.
 
 ![9](img/9.png)
 
@@ -175,10 +198,21 @@ También se puede especificar un comportamiento de **autorización** para otorga
 **Azure tiene autenticaciones integradas** que sin necesidad de que nosotros administremos, se comunican con los **proveedores**
 
 - Proveedores que se encuentran de **forma predeterminada** en la plataforma:
-    - Microsoft
-    - Facebook
-    - Google
-    - Twitter
+    - **Plataforma - Punto de conexión**
+    - Microsoft - `/.auth/login/aad`
+    - Facebook - `/.auth/login/facebook`
+    - Google - `/.auth/login/google`
+    - Twitter - `/.auth/login/twitter`
+
+(Cuando habilita la autenticación y autorización con uno de estos proveedores, **su punto de conexión de inicio de sesión está disponible** para la autenticación de usuarios y para la validación de tokens de autenticación del proveedor. Se puede proporcionar a los usuarios cualquier número de estas opciones de inicio de sesión)
+
+## Porqué usar la autenticación integrada
+
+La característica de autenticación integrada para App Service y Azure Functions **puede ahorrar tiempo y esfuerzo**, ya que proporciona autenticación integrada con **proveedores de identidades federados**, lo que le permite centrarse en el resto de la aplicación
+
+- Azure App Service le permite integrar numerosas funcionalidades de autenticación en su aplicación web o API sin implementarlas usted mismo
+
+- Está integrado directamente en la plataforma y **no requiere ningún idioma, SDK, experiencia en seguridad** ni ningún código en particular
 
 (Existen otros con los que podemos autenticar y que también se basan en **OAuth o Open Authoritation**, que es un **estándar abierto** que define cómo, de forma segura, se debe realizarse la autorización de una API para aplicaciones web, móviles o de escritorio)
 
@@ -504,16 +538,16 @@ El orquestador genera un mensaje dentro del tiempo que queramos, que reactive la
 
 ![50](img/50.png)
 
-Cómo se lleva a cabo dicha espera:
+## Cómo se lleva a cabo dicha espera:
 
 ![51](img/51.png)
 ![52](img/52.png)
 
-Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, espere una aprobación:
+## Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, espere una aprobación:
 
 ![53](img/53.png)
 
-Esperar a eventos externos:
+## Esperar a eventos externos:
 ![54](img/54.png)
 
 >> [Vuelve al Índice o date una ducha fría](#índice)😎
@@ -524,7 +558,17 @@ Esperar a eventos externos:
 
 # Módulo 3: 
 # (Desarrollo de soluciones que usan Blob Storage)
->>`<Clase del 02/07/2022 NO DISPONIBLE>`
+>>`<Clase del 04/07/2022>`
+
+![55](img/55.png)
+
+Las cuentas **Azure Storage** internamente tienen una serie de **subservicios**:
+- Archivos **(File Storage)**
+- **Blob Storage**
+- Tablas **(Table Storage)**
+- Colas **(Queue Storage)**
+
+Hay otro **Servicio de almacenamiento llamado Discos**, pero hacen referencia a los discos que utilizamos para levantar máquinas virtuales
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
@@ -534,7 +578,6 @@ Esperar a eventos externos:
 
 # Módulo 4: 
 # (Desarrollo de soluciones que usan Azure Cosmos DB)
->>`<Clase del 03/07/2022 NO DISPONIBLE>`
 
 >> [Vuelve al Índice o descansa un rato la vista](#índice)😎
 
@@ -544,7 +587,6 @@ Esperar a eventos externos:
 
 # Módulo 5: 
 # (Implementación de soluciones de infraestructura como servicio)
->>`<Clase del 04/07/2022>`
 
 >> [Vuelve al Índice o sal con los amigos un rato](#índice)😎
 
