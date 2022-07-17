@@ -570,6 +570,34 @@ Las cuentas **Azure Storage** internamente tienen una serie de **subservicios**:
 
 Hay otro **Servicio de almacenamiento llamado Discos**, pero hacen referencia a los discos que utilizamos para levantar máquinas virtuales
 
+## Tipos de Blob
+
+- Basados en **bloque** (Block Blob)
+- Basados en **páginas** (Page Blob)
+- Basados en **anexos**
+
+## Tarifas de las Azure Storage
+
+![56](img/56.png)
+
+## Esquema de un Azure Storage (para los sistemas BLOB)
+
+![57](img/57.png)
+
+## Seguridad en un Azure Storage 
+
+![58](img/58.png)
+
+La seguridad a **nivel global** en Azure está basada en **Azure Active Directory (AD)**, que se encarga de comprobar los permisos mediante **Control de Acceso Basado en roles (RBAC)**
+
+Dado que mediante el uso de Azure Storage, se produce **tránsito de datos (descarga o subida)**, estos se protegen mediante **cifrado**
+
+El **cifrado** no se puede desactivar y está activo para **todos los datos independientemente del plan de servicios**
+
+## Redundancia en Azure Storage
+
+![58](img/58.png)
+
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
 ---
