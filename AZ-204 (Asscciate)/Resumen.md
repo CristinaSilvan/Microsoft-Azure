@@ -503,6 +503,9 @@ Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, 
 
 ![53](img/53.png)
 
+Esperar a eventos externos:
+![54](img/54.png)
+
 >> [Vuelve al Índice o date una ducha fría](#índice)😎
 
 ---
@@ -510,7 +513,7 @@ Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, 
 ---
 
 # Módulo 3: 
-
+>>`<Clase del 02/07/2022 NO DISPONIBLE>`
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
@@ -519,6 +522,7 @@ Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, 
 ---
 
 # Módulo 4: 
+>>`<Clase del 03/07/2022 NO DISPONIBLE>`
 
 >> [Vuelve al Índice o descansa un rato la vista](#índice)😎
 
@@ -527,6 +531,7 @@ Otro ejemplo sería que en lugar de esperar un tiempo o que termine un trabajo, 
 ---
 
 # Módulo 5: 
+>>`<Clase del 04/07/2022>`
 
 >> [Vuelve al Índice o sal con los amigos un rato](#índice)😎
 
