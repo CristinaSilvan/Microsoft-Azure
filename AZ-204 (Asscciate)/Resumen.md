@@ -107,21 +107,31 @@
 
 ![10](img/10.png)
 
-Servicio **basado HTTP** (Protocolo de transferencia de datos a través de internet, *Hypertext Transfer Protocol*); define la sintáxis y semántica de la **comunicación entre aplicaciones web**
+Servicio **basado HTTP** (Protocolo de transferencia de datos a través de internet, *Hypertext Transfer Protocol*); define la sintáxis y semántica de la **comunicación entre aplicaciones web**. Puede desarrollarlo en su lenguaje preferido, ya sea. NET, .NET Core, Java, Ruby, Node.js, PHP o Python. Las aplicaciones se ejecutan y escalan fácilmente en los entornos Windows y Linux.
+
+## Compatibilidad integrada con el escalado automático
 
 Permite **hospedar aplicaciones web, API de Rest y back-ends para dispositivos móviles**
 
 Alojar mi solución en una **Azure App Web** permite el **escalado de recursos** de forma manual o automática
 
+Azure Portal proporciona **integración e implementación** continuas listas para usar con A**zure DevOps, GitHub, Bitbucket, FTP o un repositorio de GIT local** en el equipo de desarrollo
+
 El **back-end** de la solución normalmente se encuentra alojado en un repositorio de código (**Azure App Service me permite hacerlo de forma nativa ya que se encuentra vínculado a Azure DevOps y aparte es compatible con GitHub y BitBucked**)
 
 En el repositorio es donde se lleva a cabo el **ciclo de vida** (SDLC, *software development life cycle*)
+
+## Ranuras de implementación 
+
+Las ranuras de implementación son a**plicaciones activas con sus propios nombres de host**. Los elementos de contenido y configuraciones de aplicaciones se pueden intercambiar entre dos ranuras de implementación, incluida la ranura de producción.
 
 Las **Ranuras de implementación** permiten gestionar de una forma más efectiva las subidas de versiones al entorno de producción. Cada vez que actualizamos la web, hacen falta una serie de procesos que pueden hacer que nuestro servicio dejen de funcionar durante dicha actualización. Debido al **SLA de Windows (Service Level Agreement)**, es necesario asegurar la alta disponibilidad del servicio
 
 Para poder tener un **App Service** es indispensable tener un **App Service Plan** del que colgará mi App; Al igual que los recursos deben estar vinculados a un **resource group**
 
 Un **Azure App Service Plan** es un conjunto de recursos necesarios para tener una aplicación web (es como una máquina de la que tira mi app web pero más complejo)
+
+**No se pueden mezclar las aplicaciones Windows y Linux** en el mismo plan de App Service, sin embargo **sí en el mismo grupo de recursos**
 
 ![6](img/6.png)
 
@@ -513,6 +523,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 3: 
+# (Desarrollo de soluciones que usan Blob Storage)
 >>`<Clase del 02/07/2022 NO DISPONIBLE>`
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
@@ -522,6 +533,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 4: 
+# (Desarrollo de soluciones que usan Azure Cosmos DB)
 >>`<Clase del 03/07/2022 NO DISPONIBLE>`
 
 >> [Vuelve al Índice o descansa un rato la vista](#índice)😎
@@ -531,6 +543,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 5: 
+# (Implementación de soluciones de infraestructura como servicio)
 >>`<Clase del 04/07/2022>`
 
 >> [Vuelve al Índice o sal con los amigos un rato](#índice)😎
@@ -540,6 +553,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 6: 
+# (Implementación de la autenticación y autorización de usuarios)
 
 >> [Vuelve al Índice o haz una maratón de una serie](#índice)😎
 
@@ -549,6 +563,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 7: 
+# (Implementación de soluciones en la nube seguras)
 
 >> [Vuelve al Índice o date un chapuzón si tienes piscina](#índice)😎
 
@@ -557,6 +572,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 8: 
+# (Implementación de API Management)
 
 >> [Vuelve al Índice o échate una siesta](#índice)😎
 
@@ -565,6 +581,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 9: 
+# (Desarrollo de soluciones basadas en eventos)
 
 >> [Vuelve al Índice o date una vuelta en moto](#índice)😎
 
@@ -573,6 +590,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 10: 
+# (Desarrollo de soluciones basadas en mensajes)
 
 >> [Vuelve al Índice o dale caña a la play](#índice)😎
 
@@ -582,6 +600,7 @@ Esperar a eventos externos:
 ---
 
 # Módulo 11: 
+# (Instrumentación de soluciones para admitir la supervisión y el registro)
 
 >> [Vuelve al Índice o vete a la playa a echar la tarde](#índice)😎
 
@@ -591,6 +610,8 @@ Esperar a eventos externos:
 ---
 
 # Módulo 12: 
+# (Integración de almacenamiento en caché y entrega de contenido en las soluciones)
+
 
 >> [Vuelve al Índice o date un respiro por haber llegado al final](#índice)😎
 

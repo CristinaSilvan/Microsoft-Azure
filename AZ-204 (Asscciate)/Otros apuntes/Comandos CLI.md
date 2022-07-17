@@ -30,3 +30,13 @@ Indica que queremos especificar la forma en la que se imprime la información
 - `tsv` ->  formato tabular
 - `table` -> formato tabla
 - `list` -> formato lista
+
+---
+---
+---
+
+## Consulta de Runtime
+
+`az webapp list-runtimes --os-type <sistema operativo>`
+
+> NOTA: Runtime es el conjunto de lenguajes y frameworks compatibles con el sistema operativo
