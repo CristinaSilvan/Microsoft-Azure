@@ -601,17 +601,55 @@ Redundancia primaria:
 - Reduncia de zona **ZRS**: Replica de los datos en **las otras zonas disponibles de la región**
 
 Redundancia secundaria:
-- Redundancia geográfica **GRS**: Replica de los datos en **otra geografía**
-- Redundancia de zona geográfica **GZRS**: Replica de los datos **en otras zonas disponibles de la región, además una réplica extra en otra geografía**
+- Redundancia geográfica **GRS**: Replica **LRS** de los datos en **otra geografía**
+- Redundancia de zona geográfica **GZRS**: Replica **LRS** de los datos **en otras zonas disponibles de la región, además una réplica extra en otra geografía**
+
+> NOTA: Las **redundancias secundarias** SOLO PERMITEN LEER, **no escribir** (Si mi sistema principal cae o es destruido, puedo recuperar los datos de la redundancia secundaria, pero no podría modificar los datos de allí)
 
 ![60](img/60.png)
 ![61](img/61.png)
 ![62](img/62.png)
 ![63](img/63.png)
 
+[Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/storage/common/storage-redundancy)
+
 ![59](img/59.png)
 
+## Exploración del ciclo de vida
 
+![64](img/64.png)
+
+Dependiendo de **la frecuencia con la que se accede a los datos**, elegimos diferentes **niveles de acceso** para nuestro Blob Storage que difieren en **latencia y costo**
+
+![65](img/65.png)
+
+Las **directivas de administración del ciclo de vida** son en definitiva:
+- La elección del tipo de **nivel** (**frecuente, esporádico o de archivo**) y el **intercambio entre estos** según vaya necesitando el almacenamiento (según cambie la frecuencia de uso)
+
+- La eliminación del almacenamiento al final de su ciclo de vida o uso (**muere**)
+
+- Definir una **serie de reglas** que se ejecutan **una vez al día como mínimo** y que decicen lo mejor para el uso de dichos ficheros
+(ejemplo, si tengo un servicio cuyo acceso a ciertos archivos crece de pronto, una regla detectará esta anomalía y cambiará de nivel el almacenamiento para que los usuarios reciban los datos con mayor rapidez)
+
+
+> NOTA: Por defecto, el almacenamiento se encuentra en el nivel **frecuente**
+> NOTA: Puede realizarse la transición de información entre niveles en cualquier momento como si de un escalado de recursos se tratase
+
+![66](img/66.png)
+
+## Directivas
+
+![67](img/67.png)
+
+Una **directiva es un conjunto de reglas** y cada una de estas tiene a su vez **un conjunto de filtros y acciones**
+
+Una **ruta** es la **url con la que accedo a la información en almacenamiento**
+(ejemplo, https://cuentadealmacenamiento.blob.core.windows.net/carpeta/imagenes/ficheroenelblob.png)
+
+Un **Filtro** define la ruta a la cual afecta **una determinada regla**
+(ejemplo, en la ruta anterior, puedo ordenar mediante el filtro que la regla afecte al contenido que se encuentre dentro de la **carpeta**; es decir, a todos los ficheros que se encuentren dentro de la ruta https://cuentadealmacenamiento.blob.core.windows.net/carpeta/...)
+
+Las **acciones se aplican al conjunto filtrado de archivos o ficheros** antes mencionado
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
