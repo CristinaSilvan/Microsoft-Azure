@@ -625,7 +625,7 @@ Dependiendo de **la frecuencia con la que se accede a los datos**, elegimos dife
 ![65](img/65.png)
 
 Las **directivas de administración del ciclo de vida** son en definitiva:
-- La elección del tipo de **nivel** (**frecuente (HOT), esporádico (COLD) o de archivo (ARCHIVE)**) y el **intercambio entre estos** según vaya necesitando el almacenamiento (según cambie la frecuencia de uso)
+- La elección del tipo de **nivel** (**frecuente (HOT), esporádico (Cool) o de archivo (ARCHIVE)**) y el **intercambio entre estos** según vaya necesitando el almacenamiento (según cambie la frecuencia de uso)
 
 - La eliminación del almacenamiento al final de su ciclo de vida o uso (**muere**)
 
@@ -675,7 +675,13 @@ Los **archivos** que se encuentran en el **nivel archivo o arquive** (el nivel m
 
 ## Bibliotecas de Azure Storage
 
+Las **clases de .NET** para interactuar de una forma más fácil con el Azure Blob Storage
+
 ![71](img/71.png)
+![72](img/72.png)
+![73](img/73.png)
+
+> NOTA: Las propiedades se pueden recuperar mediante el uri solo si el contenedor es público
 
 >> [Vuelve al Índice o tómate un café por dios](#índice)😎
 
