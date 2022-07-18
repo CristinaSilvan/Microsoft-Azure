@@ -27,7 +27,8 @@
 
 ✖ True
 
-> NOTA: Los datos están encriptados en reposo, pero para estar encriptados en tránsito tenemos que utilizar HTTPS. SSL es un sistema de encriptación HTTPS. 
+> NOTA: Los datos están encriptados en reposo, pero para estar encriptados en tránsito tenemos que utilizar HTTPS. 
+> SSL es un sistema de encriptación HTTPS. 
 
 > NOTA: La pregunta hace referencia a todos los datos tanto en reposo como en tránsito, por tanto es falso
 
