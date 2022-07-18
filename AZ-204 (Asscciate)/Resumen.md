@@ -392,7 +392,7 @@ La vinculación puede ser de **entrada, salida o ambas** (in, out o inout)
 
 Este es un ejemplo de uso disparador/enlace (aquí vemos un JSON)
 
-En el caso de la imagen **Azure Queue Storage** es el desencadenador y **Azure Table Storage** el enlace o blinding, lo que significa que cada vez que alguien introduzca información en la **Queu Storage**, va a añadirse una fila en la **Table Storage**
+En el caso de la imagen **Azure Queue Storage** es el desencadenador y **Azure Table Storage** el enlace o binding, lo que significa que cada vez que alguien introduzca información en la **Queu Storage**, va a añadirse una fila en la **Table Storage**
 
 **Azure Table Storage** es un servicio que nos permite guardar información de forma **tabular** (como una hoja de excel)
 
@@ -790,6 +790,7 @@ Los **archivos** que se encuentran en el **nivel archivo o arquive** (el nivel m
 ---
 ---
 
+
 # Notas personales:
 ```
 Módulo2:
@@ -799,7 +800,7 @@ Módulo2:
 
 - Añadir ?name=nombre a la url de la function, añade el nombre a la queue
 
-- Diferencia visual entre blinding y triggered en el código
+- Diferencia visual entre binding y triggered en el código
 
 - Desarrollar el apartado "examinando código"
 
