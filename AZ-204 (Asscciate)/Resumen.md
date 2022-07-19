@@ -25,6 +25,8 @@
 
 - *Instancias en Azure Functions*: llamadas o solicitudes mediante protocolo hacia un servicio
 
+- *SDK o Software Development Kit*: es un grupo de herramientas que permiten a la programación de aplicaciones
+
 >> NOTA: Es necesario conocer los distintos planes según lo que ofrecen **(Free (F), Basic (B), Standar (S))**
 
 >> (El plan **Free** no contiene escalado automático)
@@ -206,6 +208,30 @@ También se puede especificar un comportamiento de **autorización** para otorga
     - Twitter - `/.auth/login/twitter`
 
 (Cuando habilita la autenticación y autorización con uno de estos proveedores, **su punto de conexión de inicio de sesión está disponible** para la autenticación de usuarios y para la validación de tokens de autenticación del proveedor. Se puede proporcionar a los usuarios cualquier número de estas opciones de inicio de sesión)
+
+## Funcionamiento
+
+El módulo de autenticación y autorización se ejecuta **en el mismo espacio aislado que el código de la aplicación**
+
+Cuando está habilitado, **cada solicitud HTTP entrante** pasa a través de él **antes de que el código de la aplicación lo controle**
+
+Este módulo **controla varios aspectos de la aplicación**:
+
+- Autentica a los ususarios con el proveedor especificado
+
+- Valida, almacena y actualida los tokens
+
+- Administra la sesión autenticada
+
+- Inyecta información de identidad en los encabezados de la solicitud
+
+> NOTA: el módulo **se ejecuta por separado del código** de la aplicación y se configura mediante **parámetros de la aplicación. **No se necesitan SDK, idiomas específicos o cambios en el código**
+
+> NOTA: En **linux y los contenedores**, el módulo de autenticación y autorización se ejecuta en un **contenedor independiente** aislado de la aplicación. Puesto que no se ejecuta en proceso, **no es posible la integración directa con plataformas de lenguajes específicas**
+
+## Flujo de autenticación
+
+Es el mismo **para todos los proveedores**, pero varía en dunción de si queremos **iniciar sesión con el SDK del proveedor**
 
 ## Porqué usar la autenticación integrada
 
@@ -575,7 +601,7 @@ Hay otro **Servicio de almacenamiento llamado Discos**, pero hacen referencia a 
 
 - Basados en **bloque** (Block Blob)
 - Basados en **páginas** (Page Blob)
-- Basados en **anexos**
+- Basados en **anexos** (Append Blob)
 
 ## Tarifas de las Azure Storage
 
@@ -621,6 +647,13 @@ Redundancia secundaria:
 ![64](img/64.png)
 
 Dependiendo de **la frecuencia con la que se accede a los datos**, elegimos diferentes **niveles de acceso** para nuestro Blob Storage que difieren en **latencia y costo**
+
+Estos niveles o **lyfe cycle policies** son:
+- Frecuente (HOT)
+- Esporádico (Cool)
+- De Archivo (Archive)
+
+> NOTA: solo las cuentas de **propósito general v2 (GENERAL PURPOSE V2)** soportan las políticas del ciclo de vida
 
 ![65](img/65.png)
 
@@ -691,7 +724,71 @@ Las **clases de .NET** para interactuar de una forma más fácil con el Azure Bl
 
 # Módulo 4: 
 # (Desarrollo de soluciones que usan Azure Cosmos DB)
->>`<Clase del x/07/2022>`
+>>`<Clase del 05/07/2022>`
+
+## Principales ventajas de Azure CosmoDB
+
+![74](img/74.png)
+Pretende dar solución a la necesidad de bases de dato **NoSQL** (no sequencial), ya que dentro del porfolio de recursos que ofrece Azure, ya están cubiertas las bases de datos **SQL** mediante otros servicios
+
+**Azure CosmosDB** es una marca en la cual se engloba **tecnología NoSQL** que comparten ciertas características:
+- **Replica Global automática** en varias regiones en Azure (en caso de error de cualquier tipo, podemos programar manual o automáticamente que se produzca una conmutación, es decir, que el sistema salte automáticamente a otra región para que no se produzca interrupción en mi servicio)
+- **Niveles de coherencia variados**, dado que los datos se encuentran replicados como se menciona anteriormente, deben estar todos actualizados para poder ver la misma información. Esto es denominado **coherencia** en cuanto a bases de datos y podemos elegir **el nivel** que 
+
+- **Baja latencia** asegurada, medida de tal forma que las solicitudes de **lectura y escritura de información, son inferiores a 10ms**
+
+- **Escalabilidad horizontal elástica** al igual que en otros servicios, automáticamente me concede más potencia si lo necesitamos
+
+## Jerarquía de recursos de CosmosDB
+
+![75](img/75.png)
+
+1. Primero es necesario tener **una cuenta de Azure Cosmos**
+- **Azure Cosmos es el servicio como tal** y nos va a permitir establecer una configuración que especifique la forma de uso que vamos a hacer de este
+
+2. Es posible crear **una o varias bases de datos** en la cuenta de **Azure Cosmos** (una analogía de un **namespace** y una **unidad de administración para todos los contenedores desplegados dentro de esa base de datos**)
+
+3. Varios servicios en Azure se denominan **Contenedores**, pero estos son diferentes unos de otros. En este caso son **Contenedores de Azure CosmoDB**, la **unidad de escalabilidad, del rendimiento** y del  **almacenamiento** (a raís de ellos vamos a poder medir el rendimiento de Azure CosmosDB y va a significar el coste de lo que aprovisionemos; Si queremos más potencia, **aumentamos el rendimiento DEL CONTENEDOR**)
+
+4. En **función de la API** que se use (la tecnología con la que despleguemos la cuenta), **los elementos de Azure Cosmos** pueden ser **documentos** en una colección, **filas** en una tabla, un **nodo** o un **borde en un grafo** (dicha tecnología no puede ser modificada una vez creada, pero sí podemos crear otras cuentas de **Azure Cosmos** con otras distintas)
+
+![76](img/76.png)
+
+```
+     Cuenta de Azure Cosmos
+               |
+         Base de Datos
+               |
+           Contenedor
+               |
+  Colección, tabla, grafo, ...
+               |
+Elementos (documentos, filas, ...)
+```
+
+**Adicionalmente** el container almacena otros datos como **procedimientos almacenados, funciones definidas por el usuario, desencadenadores, conflictos y demás** pero que no entran dentro de esta certificación conocerlos
+
+## Exploración de niveles de coherencia
+
+![77](img/77.png)
+
+La coherencia entonces hace referencia a **la sincronización de información entre los distintos accesos**
+
+La **Coherencia** dentro de CosmosDB se miden en 5 niveles de **mayor a menor coherencia**:
+
+- **Alta o Fuerte** (Strong): Cuando una operación de escritura se realiza en la base de datos principal, se replica en los instancias de réplica. La operación de escritura no se confirma (y está visible) en la base de datos principal hasta que todas las réplicas han confirmado
+
+- **Obsolescencia limitada** (Bounded stanless): Este nivel es similar al anterior. Su principal diferencia es que se puede configurar cómo pueden estar los documentos obsoletos dentro de las réplicas. El término obsolescencia significa la cantidad de tiempo (o el número de versiones) que un documento de una réplica puede estar detrás del documento principal
+
+- **Sesión** (Session): Este nivel garantiza que una sesión de usuario todas las operaciones de lectura y escritura son coherentes. En la sesión de usuario, todas las operaciones de lectura y escritura son monotónicas y está garantizado que son coherentes en las instancias principal y de la réplica
+
+- **Prefijo coherente** (Consistent prefix): Este nivel tiene una coherencia flexible, pero garantiza que cuando las actualizaciones se muestren en las réplicas, lo harán en el orden correcto (es decir, como prefijos de otras actualizaciones) y sin espacios
+
+- **Ocasional** (Eventual): Este nivel tiene la coherencia más flexible y esencialmente confirma de inmediato todas las operaciones de escritura que se realicen en la base de datos principal. Las transacciones de réplica se controlan de forma asincrónica y, eventualmente (con el tiempo), serán coherentes con la base de datos principal. Este nivel es el que tiene el mejor rendimiento, ya que la base de datos principal no necesita esperar hasta que se confirmen las réplicas para finalizar sus transacciones
+
+> NOTA: Cuánto **menor coherencia**, mayor la **disponibilidad**, menor la **latencia** y **rendimiento** más alto
+
+![78](img/78.png)
 
 >> [Vuelve al Índice o descansa un rato la vista](#índice)😎
 

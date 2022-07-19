@@ -49,6 +49,8 @@
 
 ✖ Hot
 
+> NOTA: para poder ser leidos o modificados previamente han de ser hidratados
+
 ## 6. Which of the following storage account types supports lifecycle policies?
 
 ✔ **General Purpose v2**
