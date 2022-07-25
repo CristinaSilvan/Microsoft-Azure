@@ -100,7 +100,7 @@
 
 # Módulo 1
 # (Creación de aplicaciones web)
->>`<Clase del 01/07/2022>`
+>>`<Clase del 30/06/2022>`
 
 [Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/)
 
