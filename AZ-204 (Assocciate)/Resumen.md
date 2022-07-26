@@ -216,3 +216,43 @@ Características de entrada:
 ---
 ---
 ## Configuración de la aplicación
+
+En App Service las configuraciones de aplicaciones son **variables** que se pasan como **variables de entorno al código** de la aplicación
+
+Para agregar o editar la configuración de la aplicación **de forma masiva**, se agrega dicha configuración en **formato JSON** de la siguiente forma:
+
+```
+[
+  {
+    "name": "<key-1>",
+    "value": "<value-1>",
+    "slotSetting": false
+  },
+  {
+    "name": "<key-2>",
+    "value": "<value-2>",
+    "slotSetting": false
+  },
+  ...
+]
+```
+
+La adición y edición de **cadenas de conexión** sigue los mismos principios
+
+```
+[
+  {
+    "name": "name-1",
+    "value": "conn-string-1",
+    "type": "SQLServer",
+    "slotSetting": false
+  },
+  {
+    "name": "name-2",
+    "value": "conn-string-2",
+    "type": "PostgreSQL",
+    "slotSetting": false
+  },
+  ...
+]
+```

@@ -367,17 +367,179 @@ Hay diagnósticos integrados que ayudan a depurar una aplicación de App Service
 
 Tipos de registro:
     - Registro de aplicaciones (Windows, Linux)
-    - Registro del servidor web (Windows)
-    - Registro del servidor web (Windows)
-    - Seguimiento de solicitudes con error (Windows)
-    - Registro de implementación (Windows, Linux)
+      - Registra los mensajes generados por el código de aplicación. Los mensajes se pueden generar en el marco web que elija o directamente desde el código de aplicación mediante el patrón de registro estándar del lenguaje. A cada mensaje se le asigna una de las siguientes categorías: Crítico, Error, Advertencia, Información, Depuración y Seguimiento
 
-[Más cosas sobre registros](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/5-enable-diagnostic-logging)
+    - Registro del servidor web (Windows)
+      - Datos de solicitud HTTP sin procesar en el formato de archivo de registro extendido W3C. Cada mensaje de registro incluye datos como el método HTTP, el URI de recurso, la dirección IP del cliente, el puerto de cliente, el agente de usuario, el código de respuesta, etc
+
+    - Registro del servidor web (Windows)
+      - Copias de las páginas de error .htm que se habrían enviado al explorador del cliente. Por motivos de seguridad, no se deben enviar páginas de error detalladas a los clientes en producción, pero App Service puede guardar la página de error cada vez que se produzca un error de aplicación que tenga el código HTTP 400 o superior
+
+    - Seguimiento de solicitudes con error (Windows)
+      - Información de seguimiento detallada sobre las solicitudes con error, lo que incluye un seguimiento de los componentes de IIS usados para procesar la solicitud y el tiempo dedicado a cada componente. Se genera una carpeta para cada solicitud con error, que contiene el archivo de registro XML y la hoja de estilos XSL con la que ver el archivo de registro
+
+    - Registro de implementación (Windows, Linux)
+      - Ayuda a determinar por qué se ha producido un error en la implementación. El registro de implementación tiene lugar automáticamente, no hay valores configurables
+
+[Enlace sobre configuración de registros](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/5-enable-diagnostic-logging)
+
 
 # Configuración de certificados de seguridad
-[enlace](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/6-configure-security-certificates)
+
+El certificado de seguridad es una medida de confianza que permite la protección de la confidencialidad de los datos que se transmiten mediante la red. De este modo, se evita que la información se exponga de manera pública y pueda ser utilizada para ciberdelitos y usos fraudulentos
+
+Azure App Service tiene herramientas que le permiten crear, cargar o importar un certificado privado o un certificado público en App Service
+
+Los certificados cargados en una aplicación se almacenan en una unidad de implementación enlazada a la combinación de región y grupo de recursos del plan de App Service (que internamente se denomina espacio web). De esta manera, los certificados son accesible para otras aplicaciones de la misma combinación de región y grupo de recursos
+
+Opciones para agregar certificados:
+  - Crear un certificado administrado de App Service gratuito
+    - Certificado privado que es gratuito y fácil de usar si solo necesita proteger el dominio personalizado en App Service
+
+  - Compra de un certificado de App Service
+    - Es un certificado privado administrado por Azure. Combina la simplicidad de la administración automatizada de certificados con la flexibilidad de las opciones de renovación y exportación
+
+  - Importación de un certificado de Key Vault
+    - Resulta útil si usa Azure Key Vault para administrar los certificados
+
+  - Carga de un certificado privado
+    - Si ya tiene un certificado privado de un proveedor de terceros, puede cargarlo
+
+  - Carga de un certificado público
+    - Los certificados públicos no se usan para proteger los dominios personalizados, pero se pueden cargar en el código si se necesitan para acceder a recursos remotos
+
+# Requisitos de certificados privados
+
+El certificado administrado de App Service gratuito y el certificado de App Service ya cumplen los requisitos de App Service. Si quiere usar un certificado privado en App Service, el certificado debe cumplir los siguientes requisitos:
+
+- Se exporta como un archivo PFX protegido por contraseña, que está cifrado con Triple DES.
+
+- Contener una clave privada con una longitud de al menos 2048 bits
+
+- Contener todos los certificados intermedios de la cadena de certificados
+
+Para proteger un dominio personalizado en un enlace TLS, el certificado debe cumplir otros requisitos:
+
+  - Contener un uso mejorado de clave para la autenticación de servidor (OID = 1.3.6.1.5.5.7.3.1)
+
+  - Estar firmado por una entidad de certificación de confianza
+
+# Creación de un certificado administrado gratuito
+
+El certificado administrado de App Service gratuito es una solución inmediata para proteger el nombre DNS personalizado en App Service
+
+Se trata de un certificado de servidor TLS/SSL totalmente administrado por App Service y que se renueva de manera continua y automática en incrementos de seis meses, 45 días antes de la expiración. Usted crea el certificado y lo enlaza a un dominio personalizado, y deja que App Service se encargue del resto
+
+El certificado gratuito presenta las siguientes limitaciones:
+
+  - No admite certificados comodín
+
+  - No admite el uso como certificado de cliente mediante la huella digital de certificado
+
+  - No se puede exportar
+
+  - No puede utilizarse en App Service Environment (ASE)
+
+  - No es compatible con los dominios raíz que se integran con Traffic Manager
+
+  - Si un certificado es para un dominio asignado por CNAME, el CNAME debe asignarse directamente a ```app-name.azurewebsites.net```
+
+[Enlace sobre certificados](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/6-configure-security-certificates)
 
 # Administración de las características de la aplicación
-[enlace](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/7-manage-app-features)
+
+La administración de características es una práctica moderna de desarrollo de software que separa el lanzamiento de las características de la implementación del código y permite hacer cambios rápidos relacionados con la disponibilidad de las características a petición
+
+Usa una técnica denominada marcas de características (también conocida como activación/desactivación de funcionalidad o modificador de características, entre otros) para administrar el ciclo de vida de una característica dinámicamente
+
+- Marca de característica: una marca de características es una variable con un estado binario de activado o desactivado. La marca de características también tiene un bloque de código asociado. El estado de la marca de características se desencadena tanto si el bloque de código se ejecuta como si no
+
+- Administrador de características: un administrador de características es un paquete de aplicación que controla el ciclo de vida de todas las marcas de características de una aplicación. El administrador de características normalmente proporciona funcionalidad adicional, como el almacenamiento en caché de las marcas de características y la actualización de sus estados
+
+- Filtro: Un filtro es una regla para evaluar el estado de una marca de características. Un grupo de usuarios, un tipo de explorador o dispositivo, una ubicación geográfica y un período de tiempo son todos ellos ejemplos de lo que puede representar un filtro
+
+Una implementación eficaz de la administración de características consta de al menos dos componentes que funcionan conjuntamente:
+  - Una aplicación que hace uso de las marcas de características
+  - Un repositorio independiente que almacena las marcas de características y sus estados actuales
+
+[Enlace sobre características](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/7-manage-app-features)
+
+# Declaración de la marca de características
+
+Cada marca de características tiene dos partes: un nombre y una lista de uno o varios filtros que se utilizan para evaluar si el estado de la característica está activo
+
+Un filtro define un caso de uso en el que debe activarse una característica
+
+Cuando una marca de características tiene varios filtros, la lista de filtros se recorre en orden hasta que uno de los filtros determina que se debe habilitar la característica. En ese momento, la marca de característica está activa y se omiten los resultados del filtro restantes
+
+Si ningún filtro indica que se debe habilitar la característica, la marca de características está desactivada
+
+El ejemplo siguiente muestra cómo establecer las marcas de características en un archivo JSON:
+
+```
+"FeatureManagement": {
+    "FeatureA": true, // Feature flag set to on
+    "FeatureB": false, // Feature flag set to off
+    "FeatureC": {
+        "EnabledFor": [
+            {
+                "Name": "Percentage",
+                "Parameters": {
+                    "Value": 50
+                }
+            }
+        ]
+    }
+}
+```
+
+# Repositorio de marcas de características
+
+Para usar marcas de características de forma eficaz, debe externalizar todas las marcas de características usadas en una aplicación
+
+Ese enfoque le permite cambiar los estados de las marcas de características sin modificar y volver a implementar la propia aplicación
+
+Azure App Configuration está diseñado para ser un repositorio centralizado para las marcas de características. Puede usarla para definir distintos tipos de marcas de características y manipular sus estados con rapidez y confianza
+
+Luego, puede usar las bibliotecas de App Configuration con diversos marcos de lenguajes de programación para acceder fácilmente a estas marcas de características desde su aplicación
 
 # Escalado de aplicaciones
+
+El escalado automático requiere que se configuren reglas de escalabilidad automática que especifiquen las condiciones bajo las que se agregan o se quitan los recursos
+
+Una regla especifica el umbral para una métrica y desencadena un evento de escalabilidad automática cuando se sobrepasa este umbral
+
+Al hospedar una aplicación, es una solución adecuada cuando no se puede predecir con facilidad la carga de trabajo por adelantado, o bien cuando es probable que la carga de trabajo varíe en función de la fecha o la hora
+
+El escalado automático mejora la disponibilidad y la tolerancia a errores. Puede ayudar a garantizar que las solicitudes cliente a un servicio no se denieguen porque una instancia no sea capaz de reconocer la solicitud de manera oportuna, o bien porque una instancia sobrecargada se haya bloqueado
+
+El escalado automático funciona mediante la adición o eliminación de servidores web. Si las aplicaciones web realizan procesamientos que consumen muchos recursos como parte de cada solicitud, es posible que el escalado automático no sea un procedimiento eficaz
+
+En estas situaciones, puede ser necesario el escalado manual ya que el escalamiento automático se produce de forma horizontal y puede ser necesario un escalamiento vertical
+
+El escalado automático no es el enfoque óptimo para controlar el crecimiento a largo plazo
+
+Para evitar el escalado automático descontrolado, el plan de App Service tiene un límite de instancias. Los planes de los planes de tarifa más caros tienen un límite mayor. El escalado automático no puede crear más instancias que las especificadas por este límite
+
+>NOTA: No todos los planes de tarifa de plan de App Service admiten el escalado automático. Los planes de tarifa de desarrollo se limitan a una única instancia (los planes F1 y D1), o bien solo proporcionan escalado manual (el plan B1). Si ha seleccionado uno de estos planes, primero debe escalar verticalmente hasta S1 o cualquiera de los planes de producción del nivel P
+
+[Enlace sobre escalado de aplicaciones](https://docs.microsoft.com/es-es/learn/modules/scale-apps-app-service/2-autoscale-factors)
+
+# Ranuras de implementación 
+
+Puede usar una ranura de implementación independiente en lugar del espacio de producción predeterminado si realiza la ejecución en el nivel de plan Estándar, Premium o Aislado de App Service
+
+La implementación de la aplicación en un espacio que no sea de producción ofrece las siguientes ventajas:
+  - Puede validar los cambios en la aplicación en una ranura de implementación de ensayo antes de intercambiarla con la ranura de producción
+
+  - La implementación de una aplicación en un espacio y su posterior paso a producción garantiza que todas las instancias del espacio están preparadas antes de dicho paso a producción. Esto elimina tiempos de inactividad a la hora de implementar la aplicación. El redireccionamiento del tráfico es perfecta y no se pierde ninguna solicitud en las operaciones de intercambio. Todo este flujo de trabajo se puede automatizar mediante la configuración del intercambio automático cuando no sea necesario realizar ninguna validación antes del intercambio
+
+  - Después del intercambio, la ranura con la aplicación de ensayo anterior ahora ocupa la aplicación de producción anterior. Si las modificaciones que se han intercambiado en el espacio de producción no son los que esperaba, puede volver a realizar un intercambio inmediatamente para tener el "último sitio que sabe que funciona correctamente"
+
+Cada nivel del plan de App Service admite un número distinto de ranuras de implementación
+
+El uso de las ranuras de implementación no tiene costo adicional
+
+Para escalar la aplicación a un nivel diferente, asegúrese de que el nivel de destino admite el número de ranuras que la aplicación ya usa, ya que si la aplicación usa más ranuras que el plan al que quiere reducir, no podrá
+
+[Enlace sobre ranuras de implementación](https://docs.microsoft.com/es-es/learn/modules/understand-app-service-deployment-slots/3-app-service-slot-swapping)
