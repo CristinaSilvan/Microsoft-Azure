@@ -62,13 +62,13 @@
     - El App Service Plan determina qué características la aplicación obtendrá y cuánto pagar por ello
 
 - Tipos de planes:
-        - Proceso compartido: tanto el gratis como el compartido comparten grupos de recursos de sus aplicaciones con aplicaciones de otros clientes. Estos planes asignan cuotas de CPU a cada aplicación que se ejecuta en los recursos compartidos y estos no pueden escalar horizontalmente
+  - Proceso compartido: tanto el gratis como el compartido comparten grupos de recursos de sus aplicaciones con aplicaciones de otros clientes. Estos planes asignan cuotas de CPU a cada aplicación que se ejecuta en los recursos compartidos y estos no pueden escalar horizontalmente
 
-        - Dedicated Compute o Proceso dedicado: Los planes Básico, Estándar, Premium, PremiumV2 y PremiunV3 ejecutan aplicaciones en VM. Solo las aplicaciones del mismo plan comparten los mismos recursos de proceso. Cuanto mayor sea el plan, más instancias de VM estarán disponibles para la escalabilidad horizontal
+  - Dedicated Compute o Proceso dedicado: Los planes Básico, Estándar, Premium, PremiumV2 y PremiunV3 ejecutan aplicaciones en VM. Solo las aplicaciones del mismo plan comparten los mismos recursos de proceso. Cuanto mayor sea el plan, más instancias de VM estarán disponibles para la escalabilidad horizontal
 
-        - Aislado: Este nivel ejecuta máquinas virtuales de Azure en instancias de Microsoft Azure Virtual Network. Proporciona aislamiento de red, además de aislamiento de proceso a las aplicaciones. Proporciona las máximas posibilidades de escalabilidad horizontal
+  - Aislado: Este nivel ejecuta máquinas virtuales de Azure en instancias de Microsoft Azure Virtual Network. Proporciona aislamiento de red, además de aislamiento de proceso a las aplicaciones. Proporciona las máximas posibilidades de escalabilidad horizontal
 
-        - Consumo: este plan está solo disponible para las App Functions. Escala las funciones de manera dinámica según la carga de trabajo
+  - Consumo: este plan está solo disponible para las App Functions. Escala las funciones de manera dinámica según la carga de trabajo
 
 >NOTA: los planes gratis y compartido corresponden a niveles básicos los cuales se ejecutan en la misma VM que otras aplicaciones. Es posible que algunas de estas pertenezcan a otros clientes. Por ello, estos niveles están pensados exclusivamente para el desarrollo y pruebas
 
