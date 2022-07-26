@@ -1,0 +1,53 @@
+# Índice
+
+---
+---
+---
+
+# App Service
+
+## Descripción
+
+Servicio basado en HTTP para hospedar aplicaciones web, API de REST y back-ends para móviles
+
+Puede ser desarrollada en .NET, .NET Core, Java, Ruby, Node.js, PHP o Python
+
+Las aplicaciones se ejecutan y escalan en los entornos de Windows y Linux
+
+## App Service Plan
+
+Las App Service y las Azure functions siempre se ejecutan dentro de un plan 
+
+Un App Service Plan es un conjunto de recursos de proceso para que una aplicación web se ejecute
+
+Pueden configurarse una o varias aplicaciones dentro del plan para que se ejecuten en los mismos recursos informáticos
+
+Cada App Service Plan define:
+    - Región
+    - Número de instancias de VM
+    - Tamaño de instancias de VM
+    - Plan de tarifa (Gratis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
+
+## Escalado
+
+Los recursos pueden ser escalados de forma automática (horizontalmente) o manual (horizontal o vertical)
+
+El escalado automático requiere que se configuren reglas de escalabilidad automática que especifiquen las condiciones
+
+Una regla especifica el umbral para una métrica y desencadena un evento de escalabilidad automática cuando se sobrepasa este umbral
+
+Al hospedar una aplicación, es una solución adecuada cuando no se puede predecir con facilidad la carga de trabajo por adelantado
+
+Aunque el escalado automático no es el enfoque óptimo para controlar el crecimiento a largo plazo
+
+En caso de que los procesos que realiza la aplicación web consuman muchos recursos, puede ser necesario el escalado manual ya puede escalarse verticalmente
+
+Para evitar el escalado automático descontrolado, el plan de App Service tiene un límite de instancias
+
+Los planes de los planes de tarifa más caros tienen un límite mayor
+
+No todos los planes de tarifa de plan de App Service admiten el escalado automático
+
+Los planes de tarifa de desarrollo se limitan a una única instancia (los planes F1 y D1), o bien solo proporcionan escalado manual (el plan B1). Si ha seleccionado uno de estos planes, primero debe escalar verticalmente hasta S1 o cualquiera de los planes de producción del nivel P
+
+## Ranuras de implementación

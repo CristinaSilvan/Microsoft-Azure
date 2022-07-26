@@ -10,7 +10,7 @@
 # Descripción
 - Azure App Service es un servicio basado en HTTP para hospedar aplicaciones web, API de REST y back-ends para dispositivos móviles.
 
-- Puede ser desarrollada en .NET, .NET Core, Java, Ruby, Node.js, PHP o PYthon
+- Puede ser desarrollado en .NET, .NET Core, Java, Ruby, Node.js, PHP o Python
 
 - Las aplicaciones se ejecutan y escalan en los entornos de Windows y Linux
 
@@ -19,6 +19,8 @@
 
 >NOTA: El escalado horizontal es la capacidad de aumentar o disminuir el número de instancias de máquinas que ejecutan la aplicación
 
+>NOTA: más información sobre el escalado de App Service más adelante
+
 # Integrado y escalado
 - Azure Portal proporciona integración e implementación continuas listas para usar con Azure DevOps, GitHub, Bitbucket, FTP o un repositorio de GIT local
 
@@ -26,7 +28,7 @@
 
 - La aplicación web puede ser implementada en una ranura de implementación independiente en lugar de en la ranura de producción predeterminada si realiza la ejecución en el nivel de plan Estándar, Premium o Aislado de la App Service
 
-- Lasranuras de implementación son aplicaciones activas con sus propior nombres de host
+- Las ranuras de implementación son aplicaciones activas con sus propior nombres de host
 
 - Los elementos de contenido y configuraciones de aplicaciones se pueden intercambiar entre dos ranuras de implementación, incluida la ranura de producción
 
@@ -41,38 +43,38 @@
 
 # App Service Plan
 
-- Las App service, una aplicación web, siempre se ejecuta en un App Service Plan
+- Las App service siempre se ejecuta en un App Service Plan
 
-- Un App Service Plan es un conjunto de recursos de proceso para que una web se ejecute
+- Un App Service Plan es un conjunto de recursos de proceso necesarios para que una web se ejecute
 
 - Pueden configurarse una o varias aplicaciones dentro del plan para que se ejecuten en los mismos recursos informáticos
 
-- LAs Azure Functions también se pueden ejecutar en un App Service Plan
+- Las Azure Functions también se pueden ejecutar en un App Service Plan (únicamente en el plan de consumo)
 
-- Cuando se crea un App Service Plan en una región determinada, se crea un conjunto de recursos de proceso para ese plan en dicha región. Todas las aplicaciones que se coloquen en este planm se ejecutan en estos recursos según lo definido por el plan
+- Cuando se crea un App Service Plan en una región determinada, se crea un conjunto de recursos de proceso para ese plan en dicha región. Todas las aplicaciones que se coloquen en este plan se ejecutan en estos recursos según lo definido
 
 - Cada App Service Plan define:
     - Región
     - Número de instancias de VM
     - Tamaño de instancias de VM
-    - Plan de tarifa (GRatis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
+    - Plan de tarifa (Gratis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
 
     - El App Service Plan determina qué características la aplicación obtendrá y cuánto pagar por ello
 
-    Tipos de planes:
-        - Proceso compartido: tanto el gratis como el compartido comparten grupos de recursos de sus aplicaciones con aplicaciones de otros clientes. Estos planes asignan cuotas de CPU a cada aplicación que se ejecuta en los recursos compartidos y esos no pueden escalar horizontalmente
+- Tipos de planes:
+        - Proceso compartido: tanto el gratis como el compartido comparten grupos de recursos de sus aplicaciones con aplicaciones de otros clientes. Estos planes asignan cuotas de CPU a cada aplicación que se ejecuta en los recursos compartidos y estos no pueden escalar horizontalmente
 
-        - Dedicated Compute o Proceso dedicado: LOs planes Básico, Estándar, Premium, PremiumV2 y PremiunV3 ejecutan aplicaciones en VM. Solo as aplicaciones del mismo plan comparten los mismos recursos de proceso. Cuanto mayor sea el plan, más instancias de VM estarán disponibles para la escalabilidad horizontal
+        - Dedicated Compute o Proceso dedicado: Los planes Básico, Estándar, Premium, PremiumV2 y PremiunV3 ejecutan aplicaciones en VM. Solo las aplicaciones del mismo plan comparten los mismos recursos de proceso. Cuanto mayor sea el plan, más instancias de VM estarán disponibles para la escalabilidad horizontal
 
         - Aislado: Este nivel ejecuta máquinas virtuales de Azure en instancias de Microsoft Azure Virtual Network. Proporciona aislamiento de red, además de aislamiento de proceso a las aplicaciones. Proporciona las máximas posibilidades de escalabilidad horizontal
 
         - Consumo: este plan está solo disponible para las App Functions. Escala las funciones de manera dinámica según la carga de trabajo
 
->NOTA: los planis gratis y compartido corresponden a niveles básidoc los cuales se ejecutan en la misma VM que otras aplicaciones. Es posible que algunas de estas pertenezcan a otros clientes. Por ello, estos niveles están pensados para exclusivamente para el desarrollo y pruebas
+>NOTA: los planes gratis y compartido corresponden a niveles básicos los cuales se ejecutan en la misma VM que otras aplicaciones. Es posible que algunas de estas pertenezcan a otros clientes. Por ello, estos niveles están pensados exclusivamente para el desarrollo y pruebas
 
 # Cómo se escala mi aplicación
 
-- En los planes Gratis y Compartido, una aplicación se hospeda en una VM compartida y no se puede escalas horizontalmente
+- En los planes Gratis y Compartido, una aplicación se hospeda en una VM compartida y no se puede escalar horizontalmente
 
 - En los demás planes:
     - Una aplicación se ejecuta en todas las instancias de la VM configuradas en el App Service
