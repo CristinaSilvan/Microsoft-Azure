@@ -16,17 +16,16 @@ Un Azure App Service Plan es un **conjunto de recursos necesarios para tener una
 
 - Cada plan de App Service define:
 
-    - Región (oeste de EE. UU., este de EE. UU., etc.)
-    - Número de instancias de VM
-    - Tamaño de las instancias de VM (pequeño, mediano, grande)
-    - Plan de tarifa (Gratis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
-
-## Escalado
-
-Permite el **escalado de recursos de forma manual o autmoática**
+    - **Región** (oeste de EE. UU., este de EE. UU., etc.)
+    - **Número de instancias de VM**
+    - **Tamaño de las instancias de VM** (pequeño, mediano, grande)
+    - **Plan de tarifa** (Gratis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
 
 **Muchos Web Apps pueden estar contenidos dentro de un mismo App Service Plan**. Lo mismo con las Azure Function
 
+## Escalado
+
+Permite el **escalado de recursos de forma manual o autoomática**
 
 
 ## Integración e implementación
@@ -37,11 +36,13 @@ Permite el **escalado de recursos de forma manual o autmoática**
 
 Las ranuras de implementación son **aplicaciones activas con sus propios nombres de host**
 
-Existen dos tipos:
+- Existen dos tipos:
     - **Ranuras de implementación** (entorno de ensayo)
     - **Ranuras de producción** (entorno final)
 
 Estas permiten **gestionar de una forma más efectiva las subidas de versiones al entorno de producción** ya que cada vez que actualizamos la web, hacen falta una serie de procesos que pueden hacer que nuestro servicio dejen de funcionar durante dicha actualización
+
+Estás se **intercambian** para poder **reducir o eliminar el tiempo en el que deja de estar disponible el servicio**
 
 ## Tarifas o planes
 
