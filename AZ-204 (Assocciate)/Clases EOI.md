@@ -14,7 +14,7 @@
 
 >[Respuestas Exámenes](https://github.com/CristinaSilvan/Microsoft-Azure/blob/main/AZ-204%20(Asscciate)/Otros%20apuntes/Respuestas%20Ex%C3%A1menes.md)
 
->[RESUMEN]()
+>[RESUMEN](https://github.com/CristinaSilvan/Microsoft-Azure/blob/main/AZ-204%20(Assocciate)/Resumen.md)
 
 **Conceptos importantes**:
 - *Software escalable*: applicación utilizada por infinidad de usuarios (lo opuesto a un software usado por uno o pocos miembros dentro de una misma organización)
@@ -100,7 +100,7 @@
 
 # Módulo 1
 # (Creación de aplicaciones web)
->>`<Clase del 30/06/2022>`
+>>`<Clase del 29/06/2022>`
 
 [Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/)
 
