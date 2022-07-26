@@ -14,7 +14,8 @@ Un Azure App Service Plan es un **conjunto de recursos necesarios para tener una
 
 **No se pueden mezclar las aplicaciones Windows y Linux en el mismo plan de App Service**, sin embargo sí en el mismo grupo de recursos
 
-Cada plan de App Service define:
+- Cada plan de App Service define:
+
     - Región (oeste de EE. UU., este de EE. UU., etc.)
     - Número de instancias de VM
     - Tamaño de las instancias de VM (pequeño, mediano, grande)
@@ -57,3 +58,8 @@ Los App Service Plan **deben tener una tarifa** en función de la cual se desple
 Los planes pueden ser **modificados en cualquier momento** según los requerimientos, ya que **una vez consumido su límite, la aplicación deja de funcionar**
 
 ## Autenticación y proveedores
+
+
+---
+---
+---
