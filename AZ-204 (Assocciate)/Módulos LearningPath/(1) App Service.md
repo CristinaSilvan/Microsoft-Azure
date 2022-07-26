@@ -116,7 +116,7 @@ App Service usa la identidad federada, en la cual un proveedor de identidades de
 
 - Facebook /.auth/login/facebook
 
-- GOogle /.auth/login/google
+- Google /.auth/login/google
 
 - Twitter /.auth/login/twitter
 
@@ -245,3 +245,139 @@ az webapp show \
 ```
 
 [Ejercicio: Creación de una aplicación web HTML estática mediante Azure Cloud Shell](https://docs.microsoft.com/es-es/learn/modules/introduction-to-azure-app-service/7-create-html-web-app)
+
+# Configuración de la aplicación 
+
+En App Service, las configuraciones de aplicaciones son variables que se pasan como variables de entorno al código de la aplicación
+
+En el caso de las aplicaciones Linux y de los contenedores personalizados, App Service pasa la configuración de la aplicación al contenedor mediante la marca --env para establecer la variable de entorno en el contenedor
+
+Para los desarrolladores de ASP.NET y ASP.NET Core, la configuración de las opciones de aplicación en App Service es como configurarlas en appSettings en Web.config o appsettings.json, pero los valores de App Service reemplazan a los de Web.config o appsettings.json. Puede mantener segura la configuración de desarrollo (por ejemplo, la contraseña de MySQL local) en Web.config o appsettings.json, excepto los secretos de producción (por ejemplo, la contraseña de base de datos de Azure MySQL) en App Service. El mismo código usa la configuración de desarrollo cuando se depura localmente, y utiliza los secretos de producción cuando se implementa en Azure
+
+# Edición masiva de la configuración
+
+Para agregar o editar la configuración de la aplicación de forma masiva, se agrega dicha configuración en formato JSON 
+
+La configuración de la aplicación tiene el formato JSON siguiente:
+```
+[
+  {
+    "name": "<key-1>",
+    "value": "<value-1>",
+    "slotSetting": false
+  },
+  {
+    "name": "<key-2>",
+    "value": "<value-2>",
+    "slotSetting": false
+  },
+  ...
+]
+```
+
+# Configurar cadenas de conexión
+
+Para los desarrolladores de ASP.NET y ASP.NET Core, los valores establecidos en App Service invalidan los de Web.config. Para otras pilas de lenguaje, es mejor usar la configuración de la aplicación en su lugar, ya que las cadenas de conexión requieren un formato especial en las claves de variable para poder acceder a los valores. Las cadenas de conexión siempre se cifran cuando se almacenan (cifrado en reposo)
+
+>NOTA: Hay un caso en el que puede que quiera usar cadenas de conexión en lugar de la configuración de la aplicación para los lenguajes que no son .NET: la copia de seguridad de determinados tipos de bases de datos de Azure se realiza junto con la aplicación solo si se configura una cadena de conexión para la base de datos en la aplicación de App Service
+
+La adición y edición de cadenas de conexión sigue los mismos principios que otras configuraciones de la aplicación y también se puede vincular a ranuras de implementación. A continuación se muestra un ejemplo de cadenas de conexión en formato JSON que se usaría para la adición o edición de forma masiva:
+
+```
+[
+  {
+    "name": "name-1",
+    "value": "conn-string-1",
+    "type": "SQLServer",
+    "slotSetting": false
+  },
+  {
+    "name": "name-2",
+    "value": "conn-string-2",
+    "type": "PostgreSQL",
+    "slotSetting": false
+  },
+  ...
+]
+```
+
+# Configurar las opciones generales
+
+Algunas configuraciones requieren escalar verticalmente hasta los planes de tarifa superiores
+
+A continuación se muestra una lista de las opciones disponibles actualmente:
+
+- Configuración de pila: La pila de software para ejecutar la aplicación, incluidos el lenguaje y las versiones del SDK. Para aplicaciones de Linux y aplicaciones de contenedor personalizadas, también puede establecer un archivo o un comando de inicio opcional
+
+- Configuración de plataforma: Le permite configurar opciones para la plataforma de alojamiento, incluidas:
+    - Valor de bits: 32 bits o 64 bits.
+    - Protocolo de WebSocket: para ASP.NET SignalR o socket.io, por ejemplo
+    - Always On: mantenga cargada la aplicación, incluso cuando no hay tráfico. De forma predeterminada, la opción Siempre activa no está habilitada y la aplicación se descarga tras 20 minutos sin ninguna solicitud entrante. Esto es necesario en los WebJobs continuos o WebJobs que se desencadenan mediante una expresión CRON
+    - Versión de canalización administrada: el modo de canalización de IIS. Establézcalo en Clásico si tiene una aplicación heredada que requiere una versión anterior de IIS
+    - Versión de HTTP: Establézcala en 2.0 para habilitar la compatibilidad con el protocolo HTTPS/2
+    - Afinidad ARR: en una implementación de varias instancias, asegúrese de que el cliente esté enrutado a la misma instancia de la vida de la sesión. Puede establecer esta opción en Desactivada para las aplicaciones sin estado
+
+- Depuración: habilite la depuración remota para las aplicaciones de ASP.NET, ASP.NET Core o Node.js. Esta opción se desactiva automáticamente después de 48 horas
+
+- Certificados de cliente entrantes: requieren certificados de cliente en la autenticación mutua. La autenticación mutua TLS se usa para restringir el acceso a la aplicación mediante la habilitación de diferentes tipos de autenticación
+
+# Configurar asignaciones de ruta de acceso
+
+Puede configurar asignaciones de controladores y asignaciones de directorios y aplicaciones virtuales. La página Asignaciones de ruta mostrará distintas opciones según el tipo de sistema operativo
+
+# Aplicaciones de WIndows (sin contenedor)
+
+Para aplicaciones de Windows, puede personalizar las asignaciones de controlador de IIS, así como las aplicaciones y directorios virtuales.
+
+Las asignaciones de controlador permiten agregar procesadores de script personalizados para controlar solicitudes de extensiones de archivo específicas. Para agregar un controlador personalizado, seleccione Nuevo controlador. Configure el controlador de la manera siguiente:
+
+- Extensión: la extensión de archivo que quiere controlar, como *.php o handler.fcgi
+
+- Procesador de scripts: la ruta de acceso absoluta del procesador de scripts. El procesador de script procesa las solicitudes a archivos que coincidan con esta extensión de archivo. Utilice la ruta de acceso D:\home\site\wwwroot para hacer referencia al directorio raíz de la aplicación
+
+- Argumentos: argumentos de línea de comandos opcionales para el procesador de scripts
+
+Cada aplicación tiene la ruta de acceso de la raíz predeterminada (/) asignada a D:\home\site\wwwroot, donde el código se implementa de forma predeterminada. Si la raíz de la aplicación está en una carpeta diferente o si el repositorio tiene más de una aplicación, puede editar o agregar directorios y aplicaciones virtuales
+
+Puede configurar directorios y aplicaciones virtuales especificando cada directorio virtual y su ruta de acceso física correspondiente en relación con la raíz del sitio web (D:\home). Para marcar un directorio virtual como aplicación web, desactive la casilla Directorio
+
+# Aplicaciones Linux y en contenedor
+
+También puede agregar almacenamiento personalizado para la aplicación en contenedor. Las aplicaciones en contenedores incluyen todas las aplicaciones de Linux y también los contenedores personalizados de Windows y Linux que se ejecutan en App Service. Haga clic en Nuevo montaje de Azure Storage y configure el almacenamiento personalizado como sigue:
+
+- Name: El nombre para mostrar
+
+- Opciones de configuración: básica o avanzada
+
+- Cuentas de almacenamiento: cuenta de almacenamiento con el contenedor que quiere
+
+- Storage type (Tipo de almacenamiento): Azure Blobs o Azure Files Las aplicaciones de contenedor de Windows solo admiten Azure Files
+
+- Contenedor de almacenamiento: para la configuración básica, el contenedor que quiera
+
+- Nombre del recurso compartido: para la configuración avanzada, el nombre del recurso compartido
+
+- Clave de acceso: para la configuración avanzada, la clave de acceso
+
+- Ruta de acceso de montaje: La ruta de acceso absoluta en el contenedor para montar el almacenamiento personalizado
+
+# Activación del registro de diagnóstico
+
+Hay diagnósticos integrados que ayudan a depurar una aplicación de App Service. En esta unidad, aprenderá a habilitar el registro de diagnóstico y a agregar instrumentación a la aplicación, así como a acceder a la información que registra Azure
+
+Tipos de registro:
+    - Registro de aplicaciones (Windows, Linux)
+    - Registro del servidor web (Windows)
+    - Registro del servidor web (Windows)
+    - Seguimiento de solicitudes con error (Windows)
+    - Registro de implementación (Windows, Linux)
+
+[Más cosas sobre registros](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/5-enable-diagnostic-logging)
+
+# Configuración de certificados de seguridad
+[enlace](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/6-configure-security-certificates)
+
+# Administración de las características de la aplicación
+[enlace](https://docs.microsoft.com/es-es/learn/modules/configure-web-app-settings/7-manage-app-features)
+
+# Escalado de aplicaciones
