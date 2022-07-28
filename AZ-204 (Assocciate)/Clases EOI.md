@@ -47,7 +47,9 @@
 ---
 ---
 
-## [Módulo 1: Creación de aplicaciones web](#módulo-1)
+## [Módulo 1: Creación de aplicaciones web (parte I)](#creación-de-aplicaciones-web-parte-i)
+
+## [Módulo 1: Creación de aplicaciones web (parte II)](#creación-de-aplicaciones-web-parte-ii)
 
 ## [Módulo 2: Implementación de Azure Functions](#módulo-2)
 
@@ -99,7 +101,7 @@
 ---
 
 # Módulo 1
-# (Creación de aplicaciones web)
+# (Creación de aplicaciones web (PARTE I))
 >>`<Clase del 29/06/2022>`
 
 [Enlace a documentación Microsoft](https://docs.microsoft.com/es-es/azure/app-service/)
@@ -161,7 +163,7 @@ Un **Azure App Service Plan** es un conjunto de recursos necesarios para tener u
 
 >NOTA: el gratis es el único plan que no nos permite establecer un dominio propio (un link personalizado)
 
->NOTA: Se puede escalar manualmente a partir del Basic (cada tarifa tiene su máximo de instancias)
+>NOTA: En el gratis y el compartido, no se puede escalar. Se puede escalar manualmente a partir del Basic (cada tarifa tiene su máximo de instancias) y automáticamente a partir del Estándar
 
 ## Razones por las que cambiar de tarifa
 
@@ -271,6 +273,80 @@ En la App Service se puede controlar el acceso **mediante determinadas APIs o VP
 **salidas de datos** de mi aplicación
 
 ![12](img/12.png)
+
+>> [Vuelve al Índice o vete a dar una vuelta](#índice)😎
+
+# Módulo 1
+
+# (Creación de aplicaciones web (PARTE II))
+
+>>`<Clase del 30/06/2022>`
+
+La facturación no depende del **App Service**, sino del **App Service Plan**
+
+Esta depende del **tiempo que yo tenga activo el App Service Plan**, que significa **el tiempo que el o los App Services se encuentran trabajando en peticiones**
+
+## Configuración de la aplicación
+
+![79](img/79.png)
+
+El que las **configuraciones de las aplicaciones** se pasen como **variables de entorno al código de la aplicación**, ayuda a que los cambios sean más **sencillos** además de **generales**
+
+Los **valores pueden ser modificados facilmente desde el Azure Portal** y que dichos cambios afecten directamente en **el código de la aplicación asociado** y con él su comportamiento
+
+Esto también ayuda a que **los valores estén protegidos** ya que no se muestran en el código sino que son referenciados
+
+>NOTA: los entornos en este contexto hacen referencia al entorno de desarrollo y de producción; una variable solo puede ser accedida en el contexto de su entorno
+
+>NOTA: por otra parte, puedo tener una variable en cada entorno con el mismo identificador pero distintos valores
+
+## Cadenas de conexión
+
+Es una **cadena que contiene información cifrada acerca de una fuente de datos** (generalmente un motor de base de datos), además de incluir la información necesaria para **conectarse a la misma**
+
+## Edición de la configuración de forma masiva
+
+La **configuración de la aplicación** también puede realizarse directamente mediante **formato JSON**, especificando todas las variables de una sola sentada, ya que internamente la configuración se registra en este mismo formato
+
+![80](img/80.png)
+
+## Otras configuraciones
+
+Otras posibles configuraciones serían:
+
+- **La pila**: la tecnología o framework que usa internamente la aplicación (pila de software). Podemos definir el lenguaje que queremos usar y la versión del SDK
+
+- **La plataforma**: la arquitectura del sistema en el que quiero que se ejecute mi aplicación, el protocolo de Websocket, si queremos que el "Always On" esté o no activo, ...
+
+- **La depuración**: habilitar o no la depuración remota, es decir, la depuración desde un herramienta de desarrollo (como Visual Studio) en un equipo local (en un entorno de producción, es peligroso tenerlo habilitado porque puede causar problemas)
+
+- **Certificados de clientes**: podemos exigir que las peticiones vayan acompañadas de un certificado para verificar al usuario o servicio que la solicita (una forma de asegurar la autenticación)
+
+>NOTA: Un certificado SSL es un certificado digital que autentica la identidad de un sitio web y habilita una conexión cifrada. La sigla SSL significa Secure Sockets Layer (Capa de sockets seguros), un protocolo de seguridad que crea un enlace cifrado entre un servidor web y un navegador web
+
+![81](img/81.png)
+
+Si no tenemos el **"Always On" activo**, cada vez que resuelve una petición, **se desactiva** la aplicación web lo que hace que al recibir una nueva petición, **tarde un poco más** en volverse a activar antes de resolverla
+
+>NOTA: lógicamente el "Always On" hace que la facturación se incremente y en planes como el gratis no tiene sentido activarlo, pero en aplicaciones de producción es recomendable ya que otorga al servicio o usuario que realiza la petición, la respuesta que necesita inmediatamente
+
+## Configuración de las rutas de acceso (url)
+
+![82](img/82.png)
+
+## Habilitar registros de diagnóstico
+
+Un **registro de diagnóstico** hace referencia a un fichero (**log**) que registra **todo lo que ocurre en nuestra aplicación** (peticiones atentidas correctamente, peticiones falladas, peticiones de recursos inexistentes, ...)
+
+Este **log** nos permite comprobar el **funcionamiento de nuestra aplicación e incluso ayudar a solucionar un determinado problema**
+
+![83](img/83.png)
+
+>NOTA: la diferencia entre un resgistro de aplicación y web es que este último registra todo referente al tráfico web, mientras que la aplicación todo lo referente a esta internamente (se ha creado un pedido, se ha modificado el script, se ha creado una nueva función, ...)
+
+```
+continuación min 46:42:00
+```
 
 >> [Vuelve al Índice o descansa y tómate un algo](#índice)😎
 
