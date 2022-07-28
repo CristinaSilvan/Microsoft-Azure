@@ -26,7 +26,12 @@ Cada App Service Plan define:
     - Región
     - Número de instancias de VM
     - Tamaño de instancias de VM
-    - Plan de tarifa (Gratis, Compartido, Básico, Estándar, Premium, PremiumV2, PremiumV3 y Aislado)
+    - Plan de tarifa (Gratis (F), Compartido (D), Básico (B), Estándar (S), Premium (P), PremiumV2, PremiumV3, Aislado y AisladoV2)
+
+[enlace documentación](https://docs.microsoft.com/es-es/azure/app-service/overview-hosting-plans)
+
+Tipos de planes:
+    - 
 
 ## Escalado
 

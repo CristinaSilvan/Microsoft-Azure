@@ -29,7 +29,7 @@
 
 - *SDK o Software Development Kit*: es un grupo de herramientas que permiten a la programación de aplicaciones
 
->> NOTA: Es necesario conocer los distintos planes según lo que ofrecen **(Free (F), Basic (B), Standar (S))**
+>> NOTA: Es necesario conocer los distintos planes según lo que ofrecen **(Free (F), Shared (D), Basic (B), Standar (S),)**
 
 >> (El plan **Free** no contiene escalado automático)
 
@@ -112,15 +112,19 @@
 
 ![10](img/10.png)
 
-Servicio **basado HTTP** (Protocolo de transferencia de datos a través de internet, *Hypertext Transfer Protocol*); define la sintáxis y semántica de la **comunicación entre aplicaciones web**. Puede desarrollarlo en su lenguaje preferido, ya sea. NET, .NET Core, Java, Ruby, Node.js, PHP o Python. Las aplicaciones se ejecutan y escalan fácilmente en los entornos Windows y Linux.
+Servicio **basado HTTP** (Protocolo de transferencia de datos a través de internet, *Hypertext Transfer Protocol*); define la sintáxis y semántica de la **comunicación entre aplicaciones web** (Se basa en el protocolo TCP). Puede desarrollarlo en su lenguaje preferido, ya sea. NET, .NET Core, Java, Ruby, Node.js, PHP o Python. Las aplicaciones se ejecutan y escalan fácilmente en los entornos Windows y Linux.
 
 ## Compatibilidad integrada con el escalado automático
 
-Permite **hospedar aplicaciones web, API de Rest y back-ends para dispositivos móviles**
+Permite **hospedar aplicaciones web, API de Rest y back-ends para dispositivos móviles** (es decir, la comunicación de un dispositivo móvil con un servicio web para completar el funcionamiento de una aplicación móvil)
 
 Alojar mi solución en una **Azure App Web** permite el **escalado de recursos** de forma manual o automática
 
-Azure Portal proporciona **integración e implementación** continuas listas para usar con A**zure DevOps, GitHub, Bitbucket, FTP o un repositorio de GIT local** en el equipo de desarrollo
+Este escalado puede ser **horizontal o vertical**, siendo el escalado automático solo horizontal
+
+>NOTA: horizontal (aumentar el número de máquinas que ejecutan mi aplicación); vertical (aumentar la potencia de dichas máquinas)
+
+Azure Portal proporciona **integración e implementación** continuas listas para usar con **Azure DevOps, GitHub, Bitbucket, FTP o un repositorio de GIT local** en el equipo de desarrollo
 
 El **back-end** de la solución normalmente se encuentra alojado en un repositorio de código (**Azure App Service me permite hacerlo de forma nativa ya que se encuentra vínculado a Azure DevOps y aparte es compatible con GitHub y BitBucked**)
 
@@ -153,7 +157,11 @@ Un **Azure App Service Plan** es un conjunto de recursos necesarios para tener u
 
     - **Consumo**: este plan solo está disponible para **Function Apps**. Escala las funciones de manera dinámica según la carga de trabajo
 
-(Los planes pueden ser modificados en cualquier momento según los requerimientos, ya que una vez consumido su límite, la aplicación deja de funcionar)
+>NOTA: Los planes pueden ser modificados en cualquier momento según los requerimientos, ya que una vez consumido su límite, la aplicación deja de funcionar
+
+>NOTA: el gratis es el único plan que no nos permite establecer un dominio propio (un link personalizado)
+
+>NOTA: Se puede escalar manualmente a partir del Basic (cada tarifa tiene su máximo de instancias)
 
 ## Razones por las que cambiar de tarifa
 
@@ -254,6 +262,10 @@ La autenticación se lleva a cabo **mediante cookies** que transmiten la informa
 ![11](img/11.png)
 
 Las **conexiones híbridas** permiten a nuestra aplicación web trabajar con **bases de datos que por motivos de seguridad, políticas u otros se encuentren On-premise** (No está disponible en todos los **planes de SKU**)
+
+Las **conexiones híbridas** hacen de nuestra aplicación **multiinquilino**
+
+Son **similares a las Data Gateway de PowerPLatform** con la principal diferencia de que estas se conectan mediante **conectores ya existentes y definidos**, mientras que las conexiones híbridas **nos permiten definir de qué forma conectar la aplicación a la base de datos On-premise**
 
 En la App Service se puede controlar el acceso **mediante determinadas APIs o VPNs (filtrándo cuáles pueden acceder)** e incluso controlar las
 **salidas de datos** de mi aplicación
