@@ -520,6 +520,26 @@ Tiene el **inconveniente** de que si esa instancia del servidor se cae, el usuar
 
 Si la opción **Auto swap** está activa, en el momento que una ranura sea actualizada y se verifique su correcto funcionamiento, se produzca **el intercambio** automáticamente sin tener nosotros que hacer nada
 
+## Creación de un perfil y un punto de conexión de Azure CDN (Content Delivery Network)
+
+[Enlace sobre CDN](https://dinahosting.com/blog/que-es-una-cdn/?pk_campaign=marzo-50-adwords&pk_source=google&pk_medium=cpc&pk_content=hosting-WP-dinamico-sep&gclid=Cj0KCQjwio6XBhCMARIsAC0u9aG5ZtHsF0wnoSNsH_IaOmUUksjC2JQWcU55r5sz1nySAfap83vwYqcaAtAnEALw_wcB)
+
+Una **red de distribución de contenidos o CDN** es una red superpuesta de computadoras que **contienen copias de datos**, **colocados en varios puntos de una red** con el fin de **maximizar el ancho de banda para el acceso a los datos de clientes** por la red (es decir, una red que ayuda a distribuir contenido a lo largo de un territorio)
+
+Estas redes sirven para **distribuir contenido estático (imágenes, JavaScript, hojas de estilo…) en diferentes servidores a lo largo del territorio**
+
+Se realizan **copias en caché de estos archivos en servidores repartidos por todo el mundo**, de manera que cuando se reciba una petición se **descargue siempre del servidor más cercano** geográficamente. Su mayor ventaja es que se **bajan los tiempos de latencia**
+**
+Un **perfil de CDN** es un **contenedor para los puntos de conexión de CDN** y especifica un plan de tarifa
+
+[Enlace sobre creación de perfiles CDN](https://docs.microsoft.com/es-es/azure/cdn/cdn-create-new-endpoint)
+
+## Tipos de CDN y comparación entre ellos
+
+![102](img/102.png)
+
+[Enlace a la comparación](https://docs.microsoft.com/es-es/azure/cdn/cdn-features)
+
 >> [Vuelve al Índice o dale de comer a tu perro](#índice)😎
 
 ---
