@@ -51,6 +51,8 @@
 
 ## [Módulo 1: Creación de aplicaciones web (parte II)](#creación-de-aplicaciones-web-parte-ii)
 
+## [Módulo 1: Creación de aplicaciones web (parte III)](#creación-de-aplicaciones-web-parte-iii)
+
 ## [Módulo 2: Implementación de Azure Functions](#módulo-2)
 
 ## [Módulo 3: Desarrollo de soluciones que usan Blob Storage](#módulo-3)
@@ -344,11 +346,50 @@ Este **log** nos permite comprobar el **funcionamiento de nuestra aplicación e 
 
 >NOTA: la diferencia entre un resgistro de aplicación y web es que este último registra todo referente al tráfico web, mientras que la aplicación todo lo referente a esta internamente (se ha creado un pedido, se ha modificado el script, se ha creado una nueva función, ...)
 
-```
-continuación min 46:42:00
-```
+Ese registro que se va **creando y guardando en el disco duro del servidor**, lo puedo trasnmitir a un **entorno más perdurable**
+
+Porque si lo guardo en el equipo donde se está ejecutando, es posible este tenga un problema, **Azure lo reinicie y se pierdan los logs**
+
+Si consideramos necesarios los logs, es **importante volcarlos en algún sitio** que nos asegure que no van a desaparecer
+
+## Configuración certificados de seguridad
+
+![84](img/84.png)
+
+Podemos utilizar el **Certificado gratuito** que nos da Azure por **defecto** o comprar otro distinto en el mismo portal o a otro proveedor e integrarlo dentro de la web app
+
+## Administración de las características
+
+![85](img/85.png)
+
+Se puede administrar la forma en la que se **comporta nuestra app** mediante **características** (ejemplo: solo se pueden crear pedidos durante el día y si se trata de crear uno por la noche, le aparece un error al ususario)
+
+Un uso bastante común de las características, es para **probar nuevos recursos o diseño de la aplicación cuyo éxito no conocemos con seguridad** (ejemplo: habilitar que solo las personas de New York puedan acceder a una parte de prueba de mi aplicación para saber si será bien recibida antes de habilitarla para el esto de países)
+
+En general el uso que se le da a las características es para **pruebas de conceptos de nuevas funcionalidades en diferentes partes del mundo**
+
+## Qué es un protocolo de enlace TSL
+
+Es un **protocolo de encriptación** diseñado para **proteger las comunicaciones en internet** 
+
+Es el protocolo en el que se basa **HTTPS** para establecer un canal de comunicación encriptado y privado entre el usuario o servicio y la aplicación web (en caso de que alguien pueda acceder a la información, no podría descifrarla)
 
 >> [Vuelve al Índice o descansa y tómate un algo](#índice)😎
+
+---
+---
+---
+
+# Módulo 1
+
+# (Creación de aplicaciones web (PARTE III))
+>>`<Clase del 30/06/2022>`
+
+## Escalado de aplicaciones
+
+
+
+>> [Vuelve al Índice o vete de fiesta un rato](#índice)😎
 
 ---
 ---
