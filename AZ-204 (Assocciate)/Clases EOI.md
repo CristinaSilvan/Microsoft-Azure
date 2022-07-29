@@ -464,11 +464,63 @@ Este proceso se llama **swap o intercambio** y resulta totalmente inmediato e in
 
 ![94](img/94.png)
 
-```
-2:18:00
-```
+Estas **Ranuras de implementación, intercambio o Slots**, pueden llegar a tener cadenas de conexión y configuraciones propias **Específicas de cada una** si fuera necesario
 
->> [Vuelve al Índice o acaricia a tu perro](#índice)😎
+Podrían tener **configuración de implementación continuas** para que cada vez que alguien publique un **commit** en el repositorio de la aplicación, **se realice un intercambio**
+
+**Cada ranura** puede tener una configuración **distinta y propia**
+
+![95](img/95.png)
+
+## Intercambio manual
+
+El intercambio puede ser **automático y configurado** o **manual**
+
+También es posible **realizar una reversión** una vez hecho el cambio (por ejemplo, al darnos cuenta que el cambio realizado provoca problemas). Por esto es importante tener mínimo **dos slots** (el de ensayo y producción), para tener la versión anterior preparada
+
+![96](img/96.png)
+
+>NOTA: las ranuras de implementación están disponibles a partir del plan **estándar** (Deployment Slots)
+
+![97](img/97.png)
+
+Al **crear un slot**, tenemos la opción de **clonar uno existente** (ejemplo, solo tengo la de producción y creo una de ensayo clonándola, por lo que tendría dos aplicaciones iguales y ya podría trabajar con intercambios)
+
+Las ranuras de ensayo, tienen una **url diferente** y al intercambiarlas por la de producción, **se produce un redireccionamiento del tráfico entre las url**
+
+Todo esto tiene **logs registrando los cambios como si de un historial se tratase**
+
+## Enrutamiento del tráfico
+
+![98](img/98.png)
+
+Se puede **repartir las peticiones** para **evaluar como se comporta la aplicación que se encuentra en la ranura de ensayo**
+
+Esto se llama **enrutamiento de tráfico** y podemos elegir el **porcentaje** de peticiones redireccionado
+
+También es posible **etiquetar las peticiones** y redireccionar solo las que queramos
+
+![99](img/99.png)
+
+Es necesario ser **minucioso con esto** ya que puede producir que un mismo usuario vea **aplicaciones webs con diferentes características** cada vez que se conecte y se produzca **descontento**
+
+Los cambios entre los slots no deben ser **gráficos ni funcionales para evitar esto**
+
+![100](img/100.png)
+
+Existe una opción **dentro de la configuración** llamada **ARR Affinity** que si está activada ayuda a resolver el problema anterior
+
+El **ARR Affinity** lo que consigue es que el **usuario que realiza la petición sea atentido por la misma instancia** de nuestra aplicación (es decir, se encontrará con la implementación de la misma ranura con la que usó la aplicación la primera vez)
+
+Tiene el **inconveniente** de que si esa instancia del servidor se cae, el usuario **no puede usar la aplicación** de dicha instancia y puede que tardemos en darnos cuenta
+
+## Intercambio automático
+
+![101](img/101.png)
+
+Si la opción **Auto swap** está activa, en el momento que una ranura sea actualizada y se verifique su correcto funcionamiento, se produzca **el intercambio** automáticamente sin tener nosotros que hacer nada
+
+>> [Vuelve al Índice o dale de comer a tu perro](#índice)😎
 
 ---
 ---
