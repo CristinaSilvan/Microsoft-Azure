@@ -53,6 +53,8 @@
 
 ## [Módulo 1: Creación de aplicaciones web (parte III)](#creación-de-aplicaciones-web-parte-iii)
 
+## [Módulo 1: Creación de aplicaciones web (parte IV)](#creación-de-aplicaciones-web-parte-iv)
+
 ## [Módulo 2: Implementación de Azure Functions](#módulo-2)
 
 ## [Módulo 3: Desarrollo de soluciones que usan Blob Storage](#módulo-3)
@@ -383,7 +385,6 @@ Es el protocolo en el que se basa **HTTPS** para establecer un canal de comunica
 ---
 
 # Módulo 1
-
 # (Creación de aplicaciones web (PARTE III))
 >>`<Clase del 30/06/2022>`
 
@@ -431,7 +432,43 @@ Estas pueden basarse en **métricas o en instancias**
 
 ![92](img/92.png)
 
+Incluso podemos **programar** rangos horarios en las que queremos que se produzca el escalado o **los días de la semana**
+
 >> [Vuelve al Índice o vete de fiesta un rato](#índice)😎
+
+---
+---
+---
+
+# Módulo 1
+# (Creación de aplicaciones web (PARTE IV))
+>>`<Clase del 30/06/2022>`
+
+**Implementación en el contexto** de las App Service, significa **llevar mi solución a la nube** (llevar al app service lo que necesita para que funcione, parte del CI/CD)
+
+Sinónimos de implementar serían **desplegar o hacer un deploy**
+
+## Ranuras de implementación
+
+![93](img/93.png)
+
+Cuando implemento los ficheros en el servidor para actualizar, tengo que **sustituir los ficheros actuales mientras está funcionando mi aplicación**, por lo que puede darse la situación de que haya un **lapso de tiempo en la que deje de funcionar** (dependiendo del tamaño de la actualización)
+
+En un sistema de **alto rendimiento y uso continuo**, esto no se puede permitir porque se puede incluso perder información de peticiones no resueltas
+
+Por esto mismo, existen los entornos **desarrollo (ensayo) y producción**
+
+La actualización se produce en **el de ensayo** y en el momento que esta finalice y se verifique que todo funciona correctamente, **se intercambia por el de producción** para eliminar dicho lapso de tiempo en el que el servicio **no estaría disponible**
+
+Este proceso se llama **swap o intercambio** y resulta totalmente inmediato e indetectable por el usuario final
+
+![94](img/94.png)
+
+```
+2:18:00
+```
+
+>> [Vuelve al Índice o acaricia a tu perro](#índice)😎
 
 ---
 ---
