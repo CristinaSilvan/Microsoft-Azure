@@ -374,6 +374,8 @@ Es un **protocolo de encriptación** diseñado para **proteger las comunicacione
 
 Es el protocolo en el que se basa **HTTPS** para establecer un canal de comunicación encriptado y privado entre el usuario o servicio y la aplicación web (en caso de que alguien pueda acceder a la información, no podría descifrarla)
 
+[Más información sobre la comunicación HTTPS](https://www.websecurity.digicert.com/es/es/security-topics/how-does-ssl-handshake-work#:~:text=funciona%20SSL%2FTLS%3F-,%C2%BFQu%C3%A9%20es%20el%20protocolo%20de%20enlace%20de%20SSL%2FTLS%3F,servidores%20o%20entre%20dos%20clientes.)
+
 >> [Vuelve al Índice o descansa y tómate un algo](#índice)😎
 
 ---
@@ -387,7 +389,47 @@ Es el protocolo en el que se basa **HTTPS** para establecer un canal de comunica
 
 ## Escalado de aplicaciones
 
+![86](img/86.png)
 
+El escalado **automático** solo permite el escalado **horizontal** en el caso de las **App Services**
+
+El escalado **manual** por el contrario, permite escalado **vertical y horizontal**
+
+El escalado automático **supervisa constantemente unas determinadas métricas** sobre nuestra aplicación web y en función de estas y **lo que hayamos configurado que haga (más la tarifa que tenga nuestro App Service Plan)**, decidirá si aumentará o disminuirá el número de instancias que ejecutan nuestro servicio
+
+El escalado **horizontal** consiste en aumentar las **instancias** o más unidades (vm) que ejecutan nuestra aplicación para atender **más peticiones**, pero no aumenta la **capacidad de CPU de la máquina subyacente o potencia (servidor), que es en resumidas cuentas escalado vertical**
+
+>NOTA: cada tarifa tiene un máximo de instancias posibles
+
+>NOTA: si se consumen todos los recursos disponibles, la App Service deja de estar disponible, por lo que es necesario aumentar la tarifa cuando sea necesario
+
+En el caso de que las aplicaciones **consuman demasiados recursos**, no serviría un escalado horizontal, sino uno vertical (**solo disponible de forma manual en el módulo de las app services**)
+
+## Identificación de factores que requieran escalado
+
+![87](img/87.png)
+
+## Configuración del escalado automático
+
+Para ello es necesario **habilitar el escalado automático en el mismo Azure Portal**
+
+![88](img/88.png)
+
+![89](img/89.png)
+
+>NOTA: es importante recordar que lo que se escala NO ES la aplicación sino el **App Service PLAN**, especialmente porque puede haber varias aplicaciones web colgando de dicho plan y puede ser necesario cambiarlas de plan (pueden verse beneficiadas o perjudicadas por el escalado si escalamos pensando únicamente en una aplicación web)
+
+>NOTA: **Scale up-down** es escalado vertical y **Scale out-in** es escalado horizontal
+
+![90](img/90.png)
+
+En el autoescalado puedo especificar **las condiciones** que produzcan dicho escalado
+
+![91](img/91.png)
+
+Estas pueden basarse en **métricas o en instancias**
+
+![92](img/92.png)
 
 >> [Vuelve al Índice o vete de fiesta un rato](#índice)😎
 
