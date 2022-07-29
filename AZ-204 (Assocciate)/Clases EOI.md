@@ -1080,7 +1080,7 @@ La **Coherencia** dentro de CosmosDB se miden en 5 niveles de **mayor a menor co
 
 # Módulo 5: 
 # (Implementación de soluciones de infraestructura como servicio)
->>`<Clase del x/07/2022>`
+>>`<Clase del 05/07/2022>`
 
 
 >> [Vuelve al Índice o sal con los amigos un rato](#índice)😎
