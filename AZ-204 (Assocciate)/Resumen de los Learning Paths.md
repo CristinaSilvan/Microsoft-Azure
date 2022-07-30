@@ -17,9 +17,8 @@
 # Escalado
 - Como la mayoría de recursos en Azure, los recursos de la máquina subyacente en la que se hospeda la aplicación web pueden ser escalados vertical u horizontalmente
 
->NOTA: El escalado horizontal es la capacidad de aumentar o disminuir el número de instancias de máquinas que ejecutan la aplicación
+- Ni las App Service ni las Azure Function se escalan, sino el plan del que cuelgan
 
->NOTA: más información sobre el escalado de App Service más adelante
 
 # Integrado y escalado
 - Azure Portal proporciona integración e implementación continuas listas para usar con Azure DevOps, GitHub, Bitbucket, FTP o un repositorio de GIT local
@@ -28,7 +27,7 @@
 
 - La aplicación web puede ser implementada en una ranura de implementación independiente en lugar de en la ranura de producción predeterminada si realiza la ejecución en el nivel de plan Estándar, Premium o Aislado de la App Service
 
-- Las ranuras de implementación son aplicaciones activas con sus propior nombres de host
+- Las ranuras de implementación son aplicaciones activas con sus propios nombres de host
 
 - Los elementos de contenido y configuraciones de aplicaciones se pueden intercambiar entre dos ranuras de implementación, incluida la ranura de producción
 
@@ -39,13 +38,13 @@
 
 - No se pueden mezclar las aplicaciones Windows y Linux en el mismo plan de App Service
 
-- Se pueden mezclar aplicaciones Windows y LInux en el mismo grupo de recursos
+- Se pueden mezclar aplicaciones Windows y Linux en el mismo grupo de recursos
 
 # App Service Plan
 
 - Las App service siempre se ejecuta en un App Service Plan
 
-- Un App Service Plan es un conjunto de recursos de proceso necesarios para que una web se ejecute
+- Un App Service Plan es un conjunto de recursos de proceso necesarios para que una aplicaicón web se ejecute
 
 - Pueden configurarse una o varias aplicaciones dentro del plan para que se ejecuten en los mismos recursos informáticos
 
