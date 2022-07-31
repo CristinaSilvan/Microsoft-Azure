@@ -1,58 +1,179 @@
-# Índice
+# ÍNDICE
+[App Service](#app-service)
+[Azure Functions](#azure-functions)
+
 
 ---
 ---
 ---
-
 # App Service
 
-## Descripción
+- PaaS
 
-Servicio basado en HTTP para hospedar aplicaciones web, API de REST y back-ends para móviles
+- Servicio basado en HTTP para aplicaciones webs, apis y back-ends de móviles
 
-Puede ser desarrollada en .NET, .NET Core, Java, Ruby, Node.js, PHP o Python
+- Necesario un App Service PLAN (recursos necesarios para la app)
 
-Las aplicaciones se ejecutan y escalan en los entornos de Windows y Linux
+- Diferentes lenguajes disponibles
 
-## App Service Plan
+- Se ejecuta en Windows y Linux
 
-Las App Service y las Azure functions siempre se ejecutan dentro de un plan 
+- No se pueden meclar aplicaciones de Linux y Windows en el mismo plan, pero sí en el grupo de recursos
 
-Un App Service Plan es un conjunto de recursos de proceso para que una aplicación web se ejecute
-
-Pueden configurarse una o varias aplicaciones dentro del plan para que se ejecuten en los mismos recursos informáticos
-
-Cada App Service Plan define:
-    - Región
-    - Número de instancias de VM
-    - Tamaño de instancias de VM
-    - Plan de tarifa (Gratis (F), Compartido (D), Básico (B), Estándar (S), Premium (P), PremiumV2, PremiumV3, Aislado y AisladoV2)
-
-[enlace documentación](https://docs.microsoft.com/es-es/azure/app-service/overview-hosting-plans)
-
-Tipos de planes:
-    - 
+- Puede tener contenidas muchas app
 
 ## Escalado
 
-Los recursos pueden ser escalados de forma automática (horizontalmente) o manual (horizontal o vertical)
+- El plan es el que se escala
 
-El escalado automático requiere que se configuren reglas de escalabilidad automática que especifiquen las condiciones
+- Escalado automático, solo horizontal
 
-Una regla especifica el umbral para una métrica y desencadena un evento de escalabilidad automática cuando se sobrepasa este umbral
+- Escalado manual, horizontal y vertical
 
-Al hospedar una aplicación, es una solución adecuada cuando no se puede predecir con facilidad la carga de trabajo por adelantado
+- Always-On hace que la aplicación tarde menos en responder
 
-Aunque el escalado automático no es el enfoque óptimo para controlar el crecimiento a largo plazo
+- Podemos elegir que el escalado automático se base en métricas o instancias y utilizar reglas que especifiquen cuándo escalar
 
-En caso de que los procesos que realiza la aplicación web consuman muchos recursos, puede ser necesario el escalado manual ya puede escalarse verticalmente
+- Si se consumen todos los recursos disponibles, la app deja de funcionar
 
-Para evitar el escalado automático descontrolado, el plan de App Service tiene un límite de instancias
+## Integración e implementación
 
-Los planes de los planes de tarifa más caros tienen un límite mayor
+- Integración nativa con Azure DevOps, GitHub, ...
 
-No todos los planes de tarifa de plan de App Service admiten el escalado automático
+- El back-end (código) depositado en el repositorio
 
-Los planes de tarifa de desarrollo se limitan a una única instancia (los planes F1 y D1), o bien solo proporcionan escalado manual (el plan B1). Si ha seleccionado uno de estos planes, primero debe escalar verticalmente hasta S1 o cualquiera de los planes de producción del nivel P
+- El ciclo de vida, SDLC, se recomienda que se produzca en la nube
 
-## Ranuras de implementación
+- Cuando el SDLC se produce en la nube, se llama CICD
+
+## Ranuras o slots
+
+- Apliciones activas con sus propios nombres de host
+
+- Tantas ranuras como el plan permita
+
+- Ranuras de ensayo (desarrollo) y producción (consumida por usuario final) 
+
+- Duplicados temporales que hacen swap una vez verificado funcionamiento de actualización
+
+- Solo para planes Stándar o superior
+
+- Cada ranura (entorno) puede tener configuración propia
+
+- Es posible hacer reversión del swap
+
+- Se pueden clonar los slots
+
+- Las ranuras tienen diferentes url y se redireccionan entre ellas cuando se produce el sawp
+
+## Planes y tarifas
+
+Gratis (F), Básico (B), Compartido (D), Estándar (S), Premium (P)
+
+- Proceso compartido: recursos de aplicaciones compartidos con otros clientes NO SE PUEDEN ESCALAR HORIZONTALMENTE (Gratis y Compartido)
+
+- Proceso dedicado: solo las aplicaciones del mismo plan comparten recursos (Básico, Estándar, Premium)
+
+- Aislado o Isolated: red y recursos aislados solo para nuestra app (máximas posibilidades de escalabilidad horizontal)
+
+- COnsumo: solo para las Azure FUnction (escalado dinámico)
+
+EL gratis es el único que no permite dominio propio
+
+Cada plan define: Región, Número de instancias VM, Tamaño instancias VM, Tarifa
+
+## Autenticación
+
+- Es posible añadir autenticación a la app
+
+- Azure tiene proveedores federados integrados (Microsoft, Facebook, Twitter, Google)
+
+- Relega la autenticación en el punto de conexión de inicio de sesión del proveedor y inyecta información mediante cookies o tokens en el encabezado de la solicitud
+
+- Posible añadir otros proveedores personalizados que cumplan con OAuth
+
+- El flujo es el mismo pero varía si usamos el sdk del proveedor o no
+
+- Se puede controlar quién tiene acceso mediante Apis o Vpns que filtren el tráfico
+
+- Puede aceptar solicitudes no identificadas o bloquearlas
+
+## Conexiones Híbridas
+
+- App Service es un sistema distribuido por roles de entrada y salida
+
+- Permiten que la aplicación trabaje con bases de datos on-premise
+
+- Hacen de la aplicación multiinquilino
+
+- Contienen información cifrada acerca de la fuente de datos y cómo conectarse
+
+## Configuración
+
+- Se pasa mediante variables de entorno al código
+
+- Cada entorno (ranuras) tiene las suyas propias
+
+- En c# y Java se pasan en el código y el sdk hace el resto
+
+- En el resto de lenguajes, mediante un json
+
+- Se puede realizar una configuración masiva mediante json estableciendo todos los valores
+
+Posibles configuraciones:
+    - La pila, el lenguaje y versión del sdk
+    - Plataforma en la que se ejecuta, always on, protocolo
+    - Depuración remota o no
+    - Certificados clientes para verificar al usuario o servicio
+
+## Registros de diagnóstico
+
+- Log que registra lo que ocurre en la aplicación
+
+- Existen para la aplicación en sí, para el tráfico de la web y demás
+
+- Importante volcarlos en un entorno perdurable para futuros análisis
+
+## Configuración de certificados de seguridad
+
+- Podemos utilizar el Certificado gratuito que nos da Azure por defecto o comprar otro distinto en el mismo portal o a otro proveedor e integrarlo dentro de la web app
+
+- Estos pueden ser públicos o privados
+
+## Administración de características
+
+- Administrar cómo se comporta nuestra app mediante la marca de características
+
+- Cada marca tiene un nombre y una lista de filtros
+
+## Enrutamiento de tráfico
+
+- Es posible dividir el tráfico web entre distintas ranuras por porcentajes o filtros
+
+- Se pueden etiquetar las peticiones para redirigirlas donde queramos
+
+- ARR Affinity se asegura de que el usuario es enrutado a la misma ranura que atendió su petición
+
+## CDN o Content Delivery Network
+
+- Clonación de datos colocados en varios geográficos para maximizar el ancho de banda para el acceso a datos de los clientes
+
+- Una petición toma los recursos del servidor más cercano donde se encuentra la copia
+
+- Un perfil CDN es un contenedor para los puntos de conexión de CDN y especifica una tarifa
+
+Tipos de CDN:
+- Standard Microsoft
+- Standard Akamai
+- Standard Verizon
+- Premium Verizon
+
+[Comparación entre CDN](https://docs.microsoft.com/es-es/azure/cdn/cdn-features)
+
+Akamai es el más orientado a aceleración de sitios dinámicos
+
+---
+---
+---
+
+# Azure Functions
