@@ -2,7 +2,6 @@
 `Ánimo con los estudios!!`😅
 
 # Azure 204 - Developing Solutions for Microsoft Azure
-[Notas personales](#notas-personales)
 
 >[Enlace al examen y las rutas de aprendizaje](https://docs.microsoft.com/en-us/learn/certifications/exams/az-204)
 
@@ -1167,26 +1166,3 @@ La **Coherencia** dentro de CosmosDB se miden en 5 niveles de **mayor a menor co
 
 >> [ENHORABUENA](https://www.usameme.com/wp-content/uploads/2022/02/congratulations-meme-usameme.jpg) 👏 👏 👏
 
-
----
----
----
----
----
----
-
-
-# Notas personales:
-```
-Módulo2:
-- Añadir ejemplos de decoración de Azure Functions
-
-- Es necesario una decoración para que sea una Azure Function
-
-- Añadir ?name=nombre a la url de la function, añade el nombre a la queue
-
-- Diferencia visual entre binding y triggered en el código
-
-- Desarrollar el apartado "examinando código"
-
-```
