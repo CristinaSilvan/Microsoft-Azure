@@ -987,6 +987,24 @@ Este tipo de **implementación se lleva a cabo en Azure CLI o en el PowerShell**
 
 Los **archivos** que se encuentran en el **nivel archivo o arquive** (el nivel más bajo), necesitan ser **rehidratados** para poder ser accedidos de nuevo
 
+## Que es una URI
+
+- Una URI es una cadena de caracteres que identifica un recurso web mediante nombre, ubicación o ambos
+
+- Las URL y URN son un tipo de URI
+
+- Las URI identifican un recurso mientras que la URL identifica una web o ubicación del recurso
+
+- La URI contiene componentes como el esquema, la autoridad, la ruta y la query
+
+- Las URI suelen ser utilizadas en XML, JSTL y XSTL
+
+- Una URI puede ser un protocolo, una especificación, una designación HTTP, archivo o datos
+
+- Sintáxis URI: ```esquema:[//autoridad]ruta[?query][#fragmento]```
+
+[Enlace sobre URI, URL y URN](https://www.hostinger.es/tutoriales/uri-vs-url?ppc_campaign=google_performance_max&gclid=Cj0KCQjw0JiXBhCFARIsAOSAKqDL1S3DyjlD6kMeX1lWcua45Wt-GGw3ZjOlZN7jV6gtJndq06_lgUsaAuAgEALw_wcB)
+
 ## Bibliotecas de Azure Storage
 
 Las **clases de .NET** para interactuar de una forma más fácil con el Azure Blob Storage

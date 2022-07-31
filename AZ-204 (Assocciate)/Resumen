@@ -177,3 +177,281 @@ Akamai es el más orientado a aceleración de sitios dinámicos
 ---
 
 # Azure Functions
+
+- Solucón para escribir menos código y mantener menos infraestructuras
+
+- Serverless
+
+- Se ejecutan ante una determinada lógica
+
+- Deben tener desencadenador y enlaces para los datos de entrada-salida
+
+## Ejemplos de uso
+
+- Comunicación entre sistemas, IoT, microservicios, procesamiento de imágenes o pedidos
+
+- Pueden ser utilizados como triggers
+
+## Azure Logic App
+
+- Una function que utiliza conectores para hacer actividades
+
+- Al contrario que las Azure Function, solo se ejecutan en la nube
+
+## WebJobs
+
+- Una pequeña funcionalidad que se ejecuta cada cierto tiempo dentro de una aplicación web .NET
+
+## Planes
+
+- Necesitan de un Azure Storage para almacenar información
+
+Los planes son:
+- De consumo: plan predeterminado, escalado dinámico
+
+- Plan premium de Functions: escalado dinámico pero sin retraso de respuesta con instancias más eficaces
+
+- App Service Plan (dedicado): para escenarios de larga duración en los que no sean suficiente las Durable Functions. Se ejecutan como un App Service
+
+Además se puden hospedar en ASE o Kubernetes en las que hay más control y se encuentran aisladas
+
+## Escalado
+
+- Escalan según un controlador de escala configurable que supervisa la tasa de eventos y determina el tipo de escalado necesario
+
+- Este mide según número de instancias, no potencia
+
+- Máximo 200 instancias
+
+- Una instancia puede procesar varias tareas, no tienen límite de ejecuciones simultáneas
+
+- Con desencadenadores HTTP, se asignan nuevas instáncias máximo 1 vez por segundo
+
+- Con desencadenadores no HTTP, máximo 1 cada 30 segundos
+
+## Partes de una Function
+
+- Código: puede ser en diversos lenguajes
+
+- Configuración: archivo Json que define el desencadenador y los enlaces
+
+
+## Aplicaciones de function
+
+- Una forma de organizar functions de manera colectiva
+
+- La aplicación proporciona un contexto de ejecución (se generan una serie de funcionalidades para que puedan cumplir su cometido)
+
+- Una aplicación de function se compone de una o varias funciones individuales que se administran, implementan y escalan conjuntamente
+
+- Comparten el mismo plan de precios y versiones de implementación
+
+- La duración de estas termina una vez finalizado el propósito por lo que los componentes configurados nacen y mueren con estas
+
+- Pueden ser desarrolladas localmente o en la nube
+
+## Desencadenadores y Enlaces o bindings
+
+- Deben de tener un único desencadenador
+
+- Los enlaces permiten vincularlas con recursos de almacenaje u otros recursos de Azure
+
+- Pueden ser de entrada o salida (o ambas) y son necesarios para que cumplan su objetivo (simplifican el código)
+
+- En C# y Java se definen mediante atributos (decoración)
+
+- En el resto de lenguajes, mediante fichero Json
+
+## Poison Queue
+
+- Una cola guarda una serie de mensajes apilados que al ser tratados desaparecen
+
+- Si el mensaje intenta su cometido tres veces y falla, pasa a la poison queue
+
+- Cuando añadimos un mensaje a la cola podemos indicarle tiempo de expiración (si no es leído tras ese tiempo, desaparece)
+
+## Durable Functions
+
+- Son functions cuyas ejecuciones necesitan tiempo para ser completadas (esperan respuestas o aprobaciones)
+
+- No ocupan recursos durante la espera, se desactivan
+
+- Un patrón de diseño es la definición de como resolver un problema mediante un programa
+
+- El uso común de estas funciones suele ser en aquellos casos donde hay interacción humana, Apis asíncronas, necesidad de supervisión y espera de encadenamiento de funciones
+
+## Tipos de durable functions
+
+- Orquestador: se encarga de que todo funcione concatenando los procesos (tiene un identificador único)
+
+- De actividad: las funcionalidades que se ejecutan (unidad básica de trabajo), pueden ejecutarse en serie o paralelo
+
+- De Entidad: los elementos con los que se debe comunicar o donde se guarda información (lectura y escritura);requieren de un identificador único (un par de cadenas) y un nombre de la operación para acceder a ellas
+
+- Cliente: el que solicita el proceso (proporciona los enlaces necesarios para que el orquestador y la entidad funcionen)
+
+Todas estas pueden funcionan de forma conjunta para un propósito
+
+## Centros de tareas
+
+- Contenedor lógico en las durable functions para los recursos del storage que usan los orquestadores y entidades
+
+- Solo pueden interactuar entre sí si pertenecen a la misma central de tareas
+
+Un centro de tareas consta de:
+- Una o más colas de control
+- Una cola de elementos de trabajo
+- Una tabla de historial
+- Una tabla de instancias
+- Un contenedor de almacenamiento con uno o varios blobs
+- Un contenedor de almacenamiento para grandes cargas de mensajes
+
+- Dado que las durable functions se desactivan durante la espera, almacenan información relacionada en el storage del centro de tareas
+
+- Los centros de tareas se declaran mediante json
+
+## Timer
+
+- Temporizador que usa el orquestador para implementar retrasos o configurar la expiración de las durable functions
+
+- Sirve para ayudar a organizar la desactivación y reactivación de las durable functions
+
+---
+---
+---
+
+# Soluciones que usan Blob Storage
+
+- Solución de almacenamiento de Objetos (grandes cantidades de datos no estructurados, que no se cñen a un modelo de datos o definición concretos como texto o datos binarios)
+
+## Tipos
+
+- Basados en bloque (Block Blob)
+- Basados en páginas (Page Blob)
+- Basados en anexos (Append Blob)
+
+## Tarifas
+
+- Estándar (propósito general v2) -> (Blob, Queue, Table, Files)
+- Premium (Bloques)
+- Premium (Páginas)
+
+## Jerarquía
+
+Cuenta de almacenamiento -> Contenedor -> Blob (Archivos)
+
+## Seguridad
+
+- La seguridad está basada en Azure Active Directory que comprueba los permisos mediante Acceso Basado en Roles (RBAC)
+
+- Se cifran los datos en reposo automáticamente (que no se encuentran en tránsito, es decir descarga o subida) y no se puede deshabilitar
+
+## Redundancia en Azure Storage
+
+- Redundancia primaria:
+    - Redundancia local LRS: Replica en tres sitios del mismo centro 
+    - Redundancia de zona ZRS: Replica en otras zonas disponibles de la región
+
+- Reduncandia secundaria:
+    - Redundancia geográfica GRS: Replica LRS en otra geografía
+    - Redundancia de zona geográfica GZRS: Replica LRS en otras zonas disponibles de la región además de la réplica GRS
+
+Las redundancias secundarias solo permiten lectura
+
+## Ciclo de vida en Blob Storage
+
+También llamado lyfe cycle policies
+
+Según la frecuencia de acceso a datos:
+- Frecuente (HOT) (por defecto)
+- Esporádico (Cool o Cold)
+- De Archivo (Archive)
+
+Estas afectan a la latencia
+
+Solo las cuentas de propósito general v2 (Estándar) soportan ell ciclo de vida
+
+Es posible aplicar reglas que se ejecuten una vez al día o usar filtros para por ejemplo cambiar el ciclo de vida según el uso
+
+Es posible la eliminación del almacenamiento al final de su ciclo de vida (muere)
+
+## Directivas
+
+- Es una colección de reglas
+
+Cada regla tiene varios parámetros:
+- name
+- enabled
+- type
+- definition
+
+- Incluyen un conjunto de filtros y acciones
+
+- Los filtros definen la ruta a la cual afecta una regla (jerarquía)
+
+- Las rutas se expresan mediante urls como https://cuentadealmacenamiento.blob.core.windows.net/carpeta/imagenes/ficheroenelblob.png donde la jerarquía es "carpeta -> imágenes -> ficheros"
+
+## Definir reglas
+
+- Se definen mediante un Json en los que se especifican los parámetros name, enabled type y definition
+
+- Su implementación se lleva a cabo en el Cli o en Powershell
+
+## Rehidratación de un blob
+
+- Los archivos en nivel "Archive" necesitan ser rehidratados para ser accedidos de nuevo
+
+Opciones para rehidratarlos:
+- Copia de un blob a un nivel hot
+- Cambio del nivel del blob a hot
+
+La hidratación puede tener prioridad estándar o alta
+
+## Bibliotecas de Azure Storage
+
+- Las clases de .NET ayudan a interactuar de una forma más sencilla
+
+Clases:
+- BlobClient -> permite manipular los blobs
+- BlobClientOptions -> proporciona opciones de configuración para conectarse
+- BlobContainerClient -> permite manipular contenedores y sus blobs
+- BlobServiceClient -> permite manipular recursos de servicio y contenedores. Proporciona el espacio de nombres de nivel superior para la instancia de Blob Service
+- BlobUriBuilder -> una manera de modificar contenido de una instancia URI para que apunte a diferentes recursos del Storage (cuenta, contenedor o blob)
+
+## Administración de metadatos y propiedades en .NET
+
+- Los contenedores de blobs admiten recuperar propiedades del sistema y metadatos definidos por el usuario además de los datos que contienen
+
+Recuperar propiedades del contenedor:
+- GetProperties o GetPropertiesAsync
+
+Establecer metadatos:
+- SetMetadata o SetMetadataAsync
+
+## Que es una URI
+
+- Una URI es una cadena de caracteres que identifica un recurso web mediante nombre, ubicación o ambos
+
+- Las URL y URN son un tipo de URI
+
+- Las URI identifican un recurso mientras que la URL identifica una web o ubicación del recurso
+
+- La URI contiene componentes como el esquema, la autoridad, la ruta y la query
+
+- Las URI suelen ser utilizadas en XML, JSTL y XSTL
+
+- Una URI puede ser un protocolo, una especificación, una designación HTTP, archivo o datos
+
+- Sintáxis URI: ```esquema:[//autoridad]ruta[?query][#fragmento]```
+
+[Enlace sobre URI, URL y URN](https://www.hostinger.es/tutoriales/uri-vs-url?ppc_campaign=google_performance_max&gclid=Cj0KCQjw0JiXBhCFARIsAOSAKqDL1S3DyjlD6kMeX1lWcua45Wt-GGw3ZjOlZN7jV6gtJndq06_lgUsaAuAgEALw_wcB)
+
+## Establecimiento y recuperación en .NET
+
+- Formato de encabezado (header) de metadatos: x-ms-meta-name:string-value
+
+- Sintáxis de URI para recuperar propiedades y metadatos de contenedores y blobs:
+    - GET/HEAD https://... /mycontainer?restype=container
+    - GET/HEAD https:// ... /mycontainet/myblob?comp=metadata
+    
+- Sintáxis de 
