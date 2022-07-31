@@ -1,7 +1,8 @@
 # ÍNDICE
 [App Service](#app-service)
 [Azure Functions](#azure-functions)
-
+[Blob Storage](#blob-storage)
+[Cosmos DB](#cosmos-db)
 
 ---
 ---
@@ -320,7 +321,7 @@ Un centro de tareas consta de:
 ---
 ---
 
-# Soluciones que usan Blob Storage
+# Blob Storage
 
 - Solución de almacenamiento de Objetos (grandes cantidades de datos no estructurados, que no se cñen a un modelo de datos o definición concretos como texto o datos binarios)
 
@@ -454,4 +455,65 @@ Establecer metadatos:
     - GET/HEAD https://... /mycontainer?restype=container
     - GET/HEAD https:// ... /mycontainet/myblob?comp=metadata
     
-- Sintáxis de 
+- Sintáxis de URI para establecer propiedades y metadatos de contenedores y blobs:
+    - PUT https:// ... /mycontainer?restype=container
+    - PUT https:// ... /mycontainet/myblob?comp=metadata
+
+- Las propiedades se pueden recuperar mediante el URI solo si el contenedor es público
+
+---
+---
+---
+
+# Cosmos DB
+
+- Base de datos NoSQL de Azure
+
+## Ventajas
+- Replicación global automática en varias regiones
+- Niveles de coherencia variados
+- Baja latencia, solicitudes de lectura y escritura en menos de 10ms
+- Escalabilidad horizontal elástica
+
+## Jerarquía
+
+```
+     Cuenta de Azure Cosmos
+               |
+         Base de Datos
+               |
+           Contenedor
+               |
+  Colección, tabla, grafo, ...
+               |
+Elementos (documentos, filas, ...)
+```
+
+- Azure Cosmos es el servicio como tal en el que se configura el uso
+
+- Es posible crear una o varias bases de datos
+
+- El contenedor es la unidad de escalabilidad, de rendimiento y de almacenamiento
+
+- Si queremos más potencia, aumentamos el rendimiento del contenedor
+
+- Dependiendo de la API y tecnología con la que despleguemos la cuenta, los elementos pueden ser documentos, filas, nodos o bordes de un grafo (no puede ser cambiada una vez creada)
+
+- Los contenedores también almacenan procedimientos, funciones, desencadenadores y demás
+
+## Niveles de coherencia
+
+- La sincronización de la información entre los distintos puntos de acceso
+
+De mayor a menor coherencia:
+    - Alta (Strong): los cambios se replican en todas las instancias y la operación no se confirma hasta que se han modificado todas las réplicas
+
+    - Obsolescencia limitada (Bounded Stanless): como el anterior, pero se puede configurar la obsolescencia (cantidad de tiempo o número de versiones de diferencia entre el cambio y la réplica)
+
+    - Sesión (Session): todas las instancias son coherentes entre la instancia principal y la réplica
+
+    - Prejifo Coherente (Consisten prefix): garantiza que las actualizaciones se lleven a cabo en las réplicas en el orden correcto aunque con latencia
+
+    - Ocasional (Eventual): Con el tiempo, los datos serán coherentes aunque no necesariamente en orden
+
+- Cuánto menor coherencia, mayor disponibilidad, menor latencia y rendimiento más alto
