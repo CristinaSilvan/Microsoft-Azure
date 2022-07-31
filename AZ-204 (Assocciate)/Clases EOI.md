@@ -14,7 +14,7 @@
 
 >[Respuestas Exámenes](https://github.com/CristinaSilvan/Microsoft-Azure/blob/main/AZ-204%20(Asscciate)/Otros%20apuntes/Respuestas%20Ex%C3%A1menes.md)
 
->[Resumen](https://github.com/CristinaSilvan/Microsoft-Azure/blob/main/AZ-204%20(Assocciate)/Resumen.md)
+>[Resumen](https://github.com/CristinaSilvan/Microsoft-Azure/blob/main/AZ-204%20(Assocciate)/Resumen)
 
 **Conceptos importantes**:
 - *Software escalable*: applicación utilizada por infinidad de usuarios (lo opuesto a un software usado por uno o pocos miembros dentro de una misma organización)
